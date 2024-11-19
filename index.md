@@ -19,6 +19,16 @@ SIG-RPC’s proposed purposes are to:
 
 ## Status
 
-SIG-RPC is currently pending approval of it's [draft terms of reference](https://docs.google.com/document/d/1voERql03hNYWnwPgooiM3PuEHi_TX9OQhqZnUJpMD1Q/edit?usp=sharing) by the trustees of the [Society of Research Software Engineering](https://society-rse.org/).
+SIG-RPC's [terms of reference](https://docs.google.com/document/d/1voERql03hNYWnwPgooiM3PuEHi_TX9OQhqZnUJpMD1Q/edit?usp=sharing) were approved by the trustees of the [Society of Research Software Engineering](https://society-rse.org/) at their October meeting. Therefore, we are now in the process of formally setting up the community's infrastructure and this website.
 
-The steering group hopes to bring you more information about getting involved soon.
+The first meeting, following terms of reference approval, has just been scheduled.
+
+This is open to anyone interested in software performance best practices, regardless of expertise.
+
+> Friday, 6 December · 14:00 – 15:00  
+> Time zone: Europe/London  
+> Google Meet joining info  
+> Video call link: [https://meet.google.com/ofs-ugim-irr](https://meet.google.com/ofs-ugim-irr)  
+> Or dial: ‪(GB) +44 20 3937 1909‬ PIN: ‪835 747 905‬#  
+> More phone numbers: [https://tel.meet/ofs-ugim-irr?pin=2846100395231](https://tel.meet/ofs-ugim-irr?pin=2846100395231)  
+> (Contact robert.chisholm@sheffield.ac.uk if you'd like to be sent an invite to the Google event)  
