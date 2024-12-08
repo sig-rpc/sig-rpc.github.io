@@ -1,0 +1,37 @@
+name: New Resource
+description: Suggest a new link for the resources page (further reader)
+title: "[New]: "
+labels: ["resource"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The title of the resource
+      placeholder: e.g. High Performance Python, 2nd Edition
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: url
+      description: The link to the resource
+      placeholder: e.g. a link to the publisher's website, rather than an amazon link.
+    validations:
+      required: true
+  - type: input
+    id: sub_category
+    attributes:
+      label: Sub-category
+      description: Which category within the page is most appropriate? (Or is a new category required)
+      placeholder: e.g. Books->Python
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Add any other relevant information, and whether it should be included on the website.
+      placeholder: e.g. does the resource have a licence?
+    validations:
+      required: false

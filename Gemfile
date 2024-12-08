@@ -36,3 +36,12 @@ gem "wdm", "~> 0.1.0", :platforms => [:mingw, :x64_mingw, :mswin]
 # kramdown v1, comment out this line.
 gem "kramdown-parser-gfm"
 
+
+gem "webrick", "~> 1.8"
+
+# Allows dynamic generation of collection group pages
+gem 'jekyll-archives-v2'
+
+
+gem 'jekyll-seo-tag'
+gem 'jekyll-paginate'

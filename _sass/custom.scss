@@ -1,0 +1,30 @@
+/* Notify web browser of the static header, so anchors offset */
+html {
+  scroll-padding-top: 86px; /* 76px header + 10px padding */
+}
+
+/* Filter link styling */
+div#filters a.selected {
+  font-weight: bold;
+}
+div#filters a.disabled {
+  pointer-events: none;
+  color: gray;
+  text-decoration: none; /*line-through;*/
+}
+/* Search result separators */
+div#profilers hr, div#optimisations hr {
+  margin: auto;
+  margin-top: 5px;
+  width: 200px;
+  color: gray;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-body {
+  flex: 1;
+}

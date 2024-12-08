@@ -1,34 +1,83 @@
 ---
-layout: post
-title:  "Reasonable Performance Computing SIG"
-date:   2024-09-25 16:02:20 +0100
-categories: placeholder
+layout: default-wide
 ---
 
-A community dedicated to the research, development and advocacy for performance best practices for those that work closely with software. We hope to ensure that all code achieves a minimum standard of reasonable performance, whereby all “easy performance wins” have been exhausted. Members of SIG-RPC shall collaborate to develop and disseminate guidance and training, for those that write software with any level of experience, related to techniques to profile and optimise code. 
-
-## Mission
-
-SIG-RPC’s proposed purposes are to:
-
-- organise events for members interested in growing the collective knowledge around performance best practices for research software. These may take the form of facilitated discussions, workshops or other events which allow members to collaborate, to research and share performance best practice rules and develop related training materials.
-- help members to deliver training around software performance by connecting them with other performance best practice instructors and students
-- advocate for wider application of performance best practices to the wider research software community through public outreach such as blog posts, videos or seminars.
-- work with providers of research computing software and infrastructure, such as HPC, to bridge the gap with novice users.
-- where applicable, aim to provide training materials that are broadly applicable, with the aim of allowing people from industries/fields beyond research software to also benefit.
-
-## Status
-
-SIG-RPC's [terms of reference](https://docs.google.com/document/d/1voERql03hNYWnwPgooiM3PuEHi_TX9OQhqZnUJpMD1Q/edit?usp=sharing) were approved by the trustees of the [Society of Research Software Engineering](https://society-rse.org/) at their October meeting. Therefore, we are now in the process of formally setting up the community's infrastructure and this website.
-
-The first meeting, following terms of reference approval, has just been scheduled.
-
-This is open to anyone interested in software performance best practices, regardless of expertise.
-
-> Friday, 6 December · 14:00 – 15:00  
-> Time zone: Europe/London  
-> Google Meet joining info  
-> Video call link: [https://meet.google.com/ofs-ugim-irr](https://meet.google.com/ofs-ugim-irr)  
-> Or dial: ‪(GB) +44 20 3937 1909‬ PIN: ‪835 747 905‬#  
-> More phone numbers: [https://tel.meet/ofs-ugim-irr?pin=2846100395231](https://tel.meet/ofs-ugim-irr?pin=2846100395231)  
-> (Contact robert.chisholm@sheffield.ac.uk if you'd like to be sent an invite to the Google event)  
+<div class="container">
+  <!-- Hero, introduction + call to action -->
+  <div class="row align-items-center">
+      <div class="text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Reasonable Performance Computing SIG</h1>
+      </div>
+  </div>
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-8 text-center text-lg-start">
+      <p class="fs-4">A community dedicated to the research, development and advocacy of performance best practices for those that work closely with software. We hope to ensure that all code achieves a minimum standard of reasonable performance, whereby all “easy performance wins” have been exhausted.</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-4 border rounded-3 bg-light p-2">
+      <p>Join our mailing list to keep informed of upcoming news, events and ways to get involved!</p>
+      <a class="w-100 btn btn-lg btn-primary" href="https://groups.google.com/a/society-rse.org/g/sig-rpc" _target="blank">Sign up</a>
+      <small class="text-muted p-t-1">Difficulty joining?<br/> Contact <a href="mailto:sig-rpc-managers@society-rse.org">sig-rpc-managers@society-rse.org</a></small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <p markdown="span">Learn more about [profiling](/profiling/), [optimisation](/optimisations/), [parallel computing](/parallel/) and [more](/resources/), or [contribute your own](https://github.com/sig-rpc/sig-rpc.github.io/issues/new/choose) tips and tricks!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 text-center">
+      <h2>Recent Blog Posts</h2>
+      {% assign post_exists = false %}
+      {% assign posts = site.posts | sort: "date" %}
+      {% for post in site.posts limit:2 %}
+          <div class="row post-item" data-date="{{ post.date | date: "%F" }}{% if event.to %}{{event.to | date: " %H:%M:%S"}}{% endif %}">
+            <h4 class="mt-0"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+            {% if post.date %}            
+              <div class="text-start post-meta"><i class="bi-clock"></i> {{ post.date | date: "%-d %B %Y" }}</div>
+            {% endif %}
+            {% if post.author %}
+              <div class="mt-1 text-start post-meta"><i class="bi-person"></i> {{ post.author }}</div>
+            {% endif %}
+            <div class="mt-1 text-start">
+              {{ post.excerpt }}
+            </div>
+          </div>
+          {% unless forloop.last %}<hr class="mb-2"/>{% endunless %}
+          {% assign post_exists = true %}
+      {% endfor %}
+      {% unless post_exists %}
+          The blog is currently empty!
+      {% endunless %}
+    </div>
+    <div class="col-md-4 text-center">
+      <h2>Upcoming Events</h2>
+      {% assign current_date = site.time | date: '%F' | date: '%s' %}
+      {% assign events = site.events | sort: "date" %}
+      {% assign event_exists = false %}
+      <div class="event-listing event-upcoming">
+      {% for event in events limit:2 %}
+        {% assign event_date = event.date | date: '%s' %}
+        {% if event_date >= current_date %}
+          <div class="row event-item" data-date="{{ event.date | date: "%F" }}{% if event.to %}{{event.to | date: " %H:%M:%S"}}{% endif %}">
+            <h4 class="mt-0"><a href="{{ event.url }}">{{ event.title }}</a></h4>
+            <div class="text-start"><strong><i class="bi-clock"></i> {{ event.date | date: "%-d %B %Y" }}  {% if event.end-date %} to {{ event.end-date | date: "%-d %B %Y" }}{% endif %}{% if event.from %} - {{ event.from}}{% if event.to %}-{{event.to}}{% endif %}{% endif %}</strong></div>
+            {% if event.location %}
+              <div class="mt-1 text-start"><strong><i class="bi-pin-map"></i> {{ event.location }}</strong></div>
+            {% endif %}
+            {% if event.summary %}
+              <div class="mt-1 text-start">
+                <p>{{event.summary}}</p>
+              </div>
+            {% endif %}
+          </div>
+          {% unless forloop.last %}<hr class="mb-2"/>{% endunless %}
+          {% assign event_exists = true %}
+        {% endif %}
+      {% endfor %}
+      {% unless event_exists %}
+          No events are currently scheduled, please join our <a href="https://groups.google.com/a/society-rse.org/g/sig-rpc">mailing list</a> to hear about new events.
+      {% endunless %}
+      </div>
+    </div>
+  </div>
+</div>

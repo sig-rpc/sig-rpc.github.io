@@ -1,0 +1,76 @@
+name: New Profiler
+description: Suggest a new profiler
+title: "[New]: "
+labels: ["profiler"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The name of the profiler
+      placeholder:
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: website
+      description: The profilers official website
+      placeholder:
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Languages
+      description: What languages can it profile?
+      placeholder: e.g. Python, C/C++, OpenMP
+    validations:
+      required: true
+  - type: checkboxes
+    id: style
+    attributes:
+      label: Profiling Styles
+      description: What style of profiling does it support?
+      options:
+        - label: Function-Level
+        - label: Line-Level
+        - label: Timeline
+        - label: Memory
+        - label: Hardware-Metrics
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A high-level introduction to the profiler
+      placeholder: Foo is a modern Bar profiler that provides an interactive GUI which aides interpretation of results. 
+    validations:
+      required: true
+  - type: textarea
+    id: quickstart
+    attributes:
+      label: Quick Start
+      description: A concise walkthrough for new users.
+      placeholder: | 
+        1. Compile with...
+        2. Run via...
+        3. This will produce output...
+        4. It can be interpreted...
+    validations:
+      required: false
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations
+      description: Any known issues with this profiler that may catch a new user out.
+      placeholder: Does not work correctly with OpenMP.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Add any other relevant information about the profiler here.
+      placeholder:
+    validations:
+      required: false

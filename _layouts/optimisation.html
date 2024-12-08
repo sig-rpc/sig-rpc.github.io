@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.name }}</h1>
+    <p class="post-languages">
+      Language: 
+      {% for lang in page.language %}
+        <a href="/optimisations/{{ lang | slugify: 'pretty' }}/">{{ lang }}</a>{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    </p>
+    {% if page.subcategory != empty %}
+      <p class="post-subcategories">
+        <small>
+          Subcategory:    
+          {% for subcat in page.subcategory %}
+            {{ subcat }}{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        </small>
+      </p>
+    {% endif %}
+  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>
