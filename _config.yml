@@ -14,19 +14,81 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Reasonable Performance Computing SIG
-email: your-email@example.com
+email: sig-rpc-managers@society-rse.org
 description: >- # this means to ignore newlines until "baseurl:"
   SIG-RPC is a community dedicated to the research, development and advocacy for performance best practices enabling easy wins for those that work closely with software. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sig-rpc.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+mailing_list: https://groups.google.com/a/society-rse.org/g/sig-rpc
+slack_url: https://ukrse.slack.com/archives/C07LNNHKSJV
+slack_channel: sig-rpc
 twitter_username: sig_rpc
-github_username:  sig-rpc
+github_username: sig-rpc
+umami_analytics: 5c9ba744-ef00-4e6d-b234-33dcbf2620c1
+
+future: true # required for collections with a date field, where future events are desired.
+collections:
+  events:
+    output: true
+  profilers:
+    output: true
+    permalink: /profiler/:path/
+  optimisations:
+    output: true
+    permalink: /optimisation/:path/
+
+jekyll-archives:
+  profilers:
+    enabled: [language]
+    permalinks:
+      language: '/profilers/:name/'
+    layouts:
+      language: profilers-language-archive
+    slug_mode: pretty
+  optimisations:
+    enabled: [language]
+    permalinks:
+      language: '/optimisations/:name/'
+    layouts:
+      language: optimisations-language-archive
+    slug_mode: pretty
+
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      permalink: "/blog/:slug/"
+  - scope:
+      path: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "profilers"
+    values:
+      layout: "profiler"
+      excerpt_separator: <!--more-->
+  - scope:
+      path: ""
+      type: "optimisations"
+    values:
+      layout: "optimisation"
+      excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-archives-v2
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Configure Blog
+paginate: 10
+paginate_path: /blog/page:num/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="mb-3">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    {% if page.date %}            
+      <div class="text-start post-meta" itemprop="datePublished"><i class="bi-clock"></i> {{ page.date | date: "%-d %B %Y" }}</div>
+    {% endif %}
+    {% if page.author %}
+      <div class="mt-1 text-start post-meta" itemprop="author"><i class="bi-person"></i> {{ page.author }}</div>
+    {% endif %}
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

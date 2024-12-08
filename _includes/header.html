@@ -1,0 +1,86 @@
+<header class="site-header fixed-top" role="banner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <svg role="img" aria-label="SIG-RPC Logo" height="50" width="125">
+          <title>SIG-RPC Logo</title>
+          <desc>SIG | Reasonable Performance Computing</desc>
+          <use href="/assets/logo/draft.svg#Layer_1"></use>
+        </svg>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <!-- home -->
+          <li class="nav-item">
+            <a class="nav-link active" {% if page.url == "/" %}aria-current="page"{% endif %} href="/">Home</a>
+          </li>
+          <!-- Profiling -->
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Profiling
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" {% if page.url == "/profiling/" %}aria-current="page"{% endif %} href="/profiling/">Introduction to Profiling</a></li>
+              <li><a class="dropdown-item" {% if page.url == "/profilers/" %}aria-current="page"{% endif %} href="/profilers/">Profiler Database</a></li>
+              <li><hr class="dropdown-divider"></li>              
+              <!-- Create an array of unique profiler languages. -->
+              {% assign all_languages = "" %}
+              {% for profiler in site.profilers %}
+                {% for language in profiler.language %}
+                  {% assign all_languages = all_languages | append: language | append: "," %}
+                {% endfor %}
+              {% endfor %}
+              {% assign unique_languages = all_languages | split: "," | uniq | sort %}
+              {% for lang in unique_languages %}
+                {% assign pretty_slug = lang | slugify: 'pretty' %}    
+                {% assign prof_url = "/profilers/" | append: pretty_slug | append: "/" %}
+                <li><a class="dropdown-item" {% if page.url == prof_url %}aria-current="page"{% endif %} href="/profilers/{{ lang | slugify: 'pretty' }}/">{{ lang }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <!-- Optimisation -->           
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Optimisation
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" {% if page.url == "/optimisations/" %}aria-current="page"{% endif %} href="/optimisations/">Optimisations Database</a></li>
+              <li><hr class="dropdown-divider"></li>              
+              <!-- Create an array of unique optimisation languages. -->
+              {% assign all_languages = "" %}
+              {% for optimisation in site.optimisations %}
+                {% for language in optimisation.language %}
+                  {% assign all_languages = all_languages | append: language | append: "," %}
+                {% endfor %}
+              {% endfor %}
+              {% assign unique_languages = all_languages | split: "," | uniq | sort %}
+              {% for lang in unique_languages %}
+                {% assign pretty_slug = lang | slugify: 'pretty' %}    
+                {% assign opt_url = "/optimisations/" | append: pretty_slug | append: "/" %}
+                <li><a class="dropdown-item" {% if page.url == opt_url %}aria-current="page"{% endif %} href="{{ opt_url }}">{{ lang }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <!-- Parallel -->
+          <li class="nav-item">
+            <a class="nav-link active" {% if page.url == "/parallel/" %}aria-current="page"{% endif %} href="/parallel">Parallel</a>
+          </li>
+          <!-- Blog -->
+          <li class="nav-item">
+            <a class="nav-link active" {% if page.url == "/blog/" %}aria-current="page"{% endif %} href="/blog">Blog</a>
+          </li>
+          <!-- Resources -->
+          <li class="nav-item">
+            <a class="nav-link active" {% if page.url == "/resources/" %}aria-current="page"{% endif %} href="/resources">Resources</a>
+          </li>
+          <!-- About -->
+          <li class="nav-item">
+            <a class="nav-link active" {% if page.url == "/about/" %}aria-current="page"{% endif %} href="/about">About</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+</header>

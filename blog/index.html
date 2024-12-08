@@ -1,0 +1,44 @@
+---
+layout: page
+title: SIG-RPC Blog
+---
+
+<div class="post-meta" style="margin-top:-20px; margin-bottom: 15px;">Community updates, case studies and other relevant news.</div>
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  {% if post.date %}            
+    <div class="mb-1 post-meta"><i class="bi-clock"></i> {{ post.date | date: "%-d %B %Y" }}</div>
+  {% endif %}
+  {% if post.author %}
+    <div class="mb-1 post-meta"><i class="bi-person"></i> {{ post.author }}</div>
+  {% endif %}
+
+<div class="blog-excerpt">
+    {{ post.excerpt }}
+</div>
+
+  {% if post != paginator.posts.last %}
+<hr class="blog-post-seperator"/>
+  {% endif %}
+
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination-wrapper">
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      Previous
+    </a>
+  {% endif %}
+  <span class="page_number ">
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% endif %}
+</div>
+</div>

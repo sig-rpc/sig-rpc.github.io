@@ -1,0 +1,77 @@
+name: New Optimisation Pattern
+description: Suggest a new optimisation pattern
+title: "[New]: "
+labels: ["optimisation"]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Title
+      description: A brief title that summarises the optimisation
+      placeholder: e.g. Use list comprehension to construct lists
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A brief title that summarises the optimisation
+      placeholder: e.g. Use list comprehension to construct lists
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: What languages can is it relevant to? Preferable optimisations are mirrored for each relevant language to ensure matching examples.
+      placeholder: e.g. Python
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Subcategory
+      description: Is there an appropriate subcategory? This would typically be for library specific optimisations.
+      placeholder: e.g. numPy
+    validations:
+      required: false
+  - type: textarea
+    id: abstract
+    attributes:
+      label: abstract
+      description: E.g. a minimal explanation of the optimisation pattern
+      placeholder:
+    validations:
+      required: true
+  - type: textarea
+    id: example_code
+    attributes:
+      label: Example Code
+      description: A self contained example of good vs bad practice
+      placeholder: 
+    validations:
+      required: false
+  - type: textarea
+    id: technical_explanation
+    attributes:
+      label: Technical Explanation
+      description: Any lower level background to the optimisation that may be of interest to readers.
+      placeholder:
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: tags
+      description: a comma separated list of tags, these may be used for search
+      placeholder: e.g. list,set,unique,duplicate
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Add any other relevant information about the optimisation pattern here.
+      placeholder:
+    validations:
+      required: false
