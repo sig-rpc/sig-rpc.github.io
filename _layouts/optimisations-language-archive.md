@@ -46,6 +46,9 @@ layout: default
         {%- endfor %}
       </div>
     {% endif %}
+    <div id="search">
+      <input type="text" id="search-box" placeholder="Search... (beta)" />
+    </div>
     <div id="optimisations">
       {% assign optimisations = site.optimisations | sort: 'name' | sort: 'level'  %}
       {% for optimisation in optimisations %}
@@ -65,6 +68,9 @@ layout: default
               {{ optimisation.excerpt }}
               <a href="{{ optimisation.url }}">Read More</a>
               {% unless forloop.last %}<hr/>{% endunless %}
+              <div class="full-text" style="display:none">
+                {{ optimisation.content }}
+              </div>
             </div>
           {% endif %}
         {% endfor %}
@@ -79,27 +85,29 @@ layout: default
   document.addEventListener("DOMContentLoaded", () => {
     const optimisations = document.querySelectorAll("#optimisations .optimisation");
     const filters = document.querySelectorAll("#filters a");
+    const searchBox = document.getElementById("search-box");
 
     // Function to filter optimisations based on query string
     const filterOptimisations = () => {
       // Get the current filter value from the URL
       const urlParams = new URLSearchParams(window.location.search);
       const filter = urlParams.get("filter");
+      const searchText = searchBox.value.toLowerCase();
 
       // Clear any existing <hr /> elements
       document.querySelectorAll("#optimisations hr").forEach((hr) => hr.remove());
 
-      if (!filter || filter === "none") {        
-        // If "filter=none" or no filter is specified, show all optimisations
-        optimisations.forEach((optimisation) => (optimisation.style.display = ""));
-      } else {
-        // Otherwise, show optimisations that match the filter
-        optimisations.forEach((optimisation) => {
-          const attributes = optimisation.dataset.attributes.split(" ");
-          const isVisible = attributes.includes(filter);
-          optimisation.style.display = isVisible ? "" : "none";
-        });
-      }
+      optimisations.forEach((optimisation) => {
+        const attributes = optimisation.dataset.attributes.split(" ");
+        const body = optimisation.querySelector(".full-text").textContent.toLowerCase();
+
+        const matchesFilter =
+          !filter || filter === "none" || attributes.includes(filter);
+        const matchesSearch = !searchText || body.includes(searchText);
+
+        // Display profiler only if it matches both the filter and search text
+        optimisation.style.display = matchesFilter && matchesSearch ? "" : "none";
+      });
 
       // Highlight the selected filter
       filters.forEach((filterLink) => {
@@ -134,6 +142,9 @@ layout: default
         filterOptimisations(); // Apply the filter
       });
     });
+
+     // Apply filtering when the search box value changes
+     searchBox.addEventListener("input", filterOptimisations);
 
     // Initial filtering when the page loads
     filterOptimisations();
