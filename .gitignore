@@ -7,3 +7,5 @@ _site/
 vendor/
 # WSL/VSCode temp files
 *:Zone.Identifier
+# Providing Gemfile.lock breaks CI building the website
+Gemfile.lock
