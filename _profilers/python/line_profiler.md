@@ -29,6 +29,8 @@ conda install conda-forge::line_profiler
 ```py
 # Import the @profile decorator
 from line_profiler import profile 
+# Import sys for runtime arguments
+import sys
 
 # Attach the decorator to the functions to be profiled
 @profile
@@ -40,13 +42,21 @@ def is_prime(number):
             return False
     return True
     
-print(is_prime(1087))
+print(is_prime(int(sys.argv[1])))
 ```
 
 **3.** Run the Python code via `line_profiler`.
 
-```py
-python -m kernprof -lvr my_script.py
+If you would normally execute your script as 
+
+```sh
+python my_script.py 1087
+```
+
+You can call `line_profiler` with the below, including any required runtime arguments as normal.
+
+```sh
+python -m kernprof -lvr my_script.py 1087
 ```
 
 ## Interpreting Output
