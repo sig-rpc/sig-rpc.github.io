@@ -1,5 +1,5 @@
 name: New Resource
-description: Suggest a new link for the resources page (further reader)
+description: Suggest a new link for the resources page (further reading)
 title: "[New]: "
 labels: ["resource"]
 body:
