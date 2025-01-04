@@ -112,7 +112,7 @@ This should open snakeviz's visualisation of the profiling results in your web b
 <details markdown="block">
 <summary>Example Snakeviz Output</summary>
 
-![A web page, with a central diagram representing a call-stack, with the root at the top and the horizontal axis representing the duration of each call. Below this diagram is the top of a table detailing the statistics of individual methods.](/assets/snakeviz-example.png)An example of the default 'icicle' visualisation provided by `snakeviz`.
+![A web page, with a central diagram representing a call-stack, with the root at the top and the horizontal axis representing the duration of each call. Below this diagram is the top of a table detailing the statistics of individual methods.](/assets/snakeviz-example.png) An example of the default 'icicle' visualisation provided by `snakeviz`.
 
 The icicle diagram displayed by `snakeviz` represents an aggregate of the call stack during the execution of the profiled code.
 The box which fills the top row represents the the root call, filling the row shows that it occupied 100% of the runtime.
