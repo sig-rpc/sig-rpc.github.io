@@ -23,12 +23,12 @@ body:
     id: language
     attributes:
       label: Language
-      description: What languages can is it relevant to? Preferable optimisations are mirrored for each relevant language to ensure matching examples.
+      description: What languages is it relevant to? Preferable optimisations are mirrored for each relevant language to ensure matching example codes.
       placeholder: e.g. Python
     validations:
       required: true
   - type: input
-    id: language
+    id: subcategory
     attributes:
       label: Subcategory
       description: Is there an appropriate subcategory? This would typically be for library specific optimisations.
