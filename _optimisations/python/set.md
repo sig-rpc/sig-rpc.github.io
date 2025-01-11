@@ -3,7 +3,7 @@ level: 1
 published: true
 authors: Robert Chisholm
 
-name: Data Structure: Set
+name: Set 
 language: [Python]
 subcategory: [Core]
 tags: [list, set, duplicate, unique]
