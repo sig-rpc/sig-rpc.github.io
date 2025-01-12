@@ -48,9 +48,6 @@ The output file `analysis.txt` can be opened with a text editor, it contains sev
 
 This first section provides a table that identifies functions in order of the proportion of execution time they occupied.
 
-<details markdown="block">
-<summary>Example Flat Profile Output</summary>
-
 ```
 Flat profile:
 
@@ -72,6 +69,9 @@ Each sample counts as 0.01 seconds.
 ```
 
 After the table, a key to the columns is provided.
+
+<details markdown="block">
+<summary>Flat Profile Key</summary>
 
 ```
  %         the percentage of the total running time of the
@@ -108,8 +108,6 @@ name       the name of the function.  This is the minor sort
 
 Following the flat profile, is the call graph. This further breaks down the information from the flat profile into the unique calling hierarchies. This is much longer and can be harder to interpret, however it may provide useful context if a function highlighted by the flat profile is called from many locations.
 
-<details markdown="block">
-<summary>Example Call Graph Output</summary>
 
 ```
 ...
@@ -131,6 +129,8 @@ Following the flat profile, is the call graph. This further breaks down the info
 
 Again it is followed by an explanation for understanding the output.
 
+<details markdown="block">
+<summary>Call Graph Help Text</summary>
 ```
 This table describes the call tree of the program, and was sorted by
  the total amount of time spent in each function and its children.

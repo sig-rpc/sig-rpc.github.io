@@ -63,9 +63,6 @@ python -m kernprof -lvr my_script.py 1087
 
 At exit, a table will be printed to the command-line for the profiling results of each targeted function.
 
-<details markdown="block">
-<summary>Example Output</summary>
-
 *If running this in a terminal, you should see rich output with highlight colours.*
 
 ```
@@ -99,7 +96,6 @@ The columns have the following definitions:
 | `% Time` | The time spent executing the line, including child function calls, relative to the other lines of the function. |
 | `Line Contents` | A copy of the line from the file. |
 
-</details>
 
 ## Jupyter Notebooks
 
