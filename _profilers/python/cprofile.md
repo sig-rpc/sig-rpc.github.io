@@ -39,9 +39,6 @@ No additional changes to your Python code are required, it’s really that simpl
 
 The output file `analysis.txt` can be opened with a text editor, it contains a table that identifies functions in order of the proportion of execution time they occupied.
 
-<details markdown="block">
-<summary>Example Output</summary>
-
 ```
          28 function calls in 4.754 seconds
 
@@ -71,7 +68,6 @@ The columns have the following definitions:
 | `percall` | The average cumtime per function call (`cumtime`/`ncalls`). |
 | `filename:lineno(function)` | The location of the given function's definition and it's name. |
 
-</details>
 
 ## Visualising Output
 
