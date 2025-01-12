@@ -59,7 +59,7 @@ These abstractions reduce the need to thoroughly understand threads and other pa
 
 Further to the above reasons, performance of multi-threading via these methods is further limited by the overhead of creating and destroying parallel environments and how loads are balanced between threads. In order to maximise performance, again the relevant package's documentation should be reviewed to ensure best practices are followed.
 
-A common mistake among OpenMP users is to apply `#pragma omp parallel for` to many individual `for` loops, rather than the recommended single `#pragma omp parallel` block with `#pragma omp for` applied to it's contained `for` loops. Whilst both approaches work, the latter can be more complicated to apply but reduces the overhead of creating parallel sections. Similarly, some small loops may become slower if parallelised due to this overhead.
+There are many common pitfalls, such as [false sharing](/optimisation/openmp/false-sharing), which can lead to a disappointing speedup when OpenMP is added to a codebase. Make sure to review our [OpenMP optimisation database](/optimisations/openmp) to avoid them!
 
 ## GPU
 
