@@ -51,7 +51,7 @@ You may have used this approach before to ensure reasonable performance, but the
 
 Software is typically comprised of a hierarchy of function calls, both functions written by the developer and those used from the language’s standard library and third party packages.
 
-Function-level profiling analyses where time is being spent with respect to functions. Typically function-level profiling will calculate the number of times each function is called and the total time spent executing each function, inclusive and exclusive of child function calls.
+Function-level profiling analyses where time is being spent with respect to functions. Typically function-level profiling will the total time spent executing each function, inclusive and exclusive of child function calls. <a href="#deterministic-vs-sampling-profilers">Deterministic</a> profiling tools may also count the number of times each function is called. 
 
 This allows functions that occupy a disproportionate amount of the total runtime to be quickly identified and investigated.
 
@@ -61,7 +61,7 @@ Function-level profiling will normally be your first choice when profiling to ac
 
 Function-level profiling may not always be granular enough, perhaps your software is a single long script, or function-level profiling highlighted a particularly complex function.
 
-Line-level profiling provides greater granularity, analysing where time is being spent with respect to individual lines of code. Some profiling tools will line profile a whole code-base, others will require you to specify the functions to be line profiled.
+Line-level profiling provides greater granularity, analysing where time is being spent with respect to individual lines of code. Some profiling tools will line profile a whole codebase, others will require you to specify the functions to be line profiled.
 
 This will identify individual lines of code that occupy an disproportionate amount of the total runtime.
 
@@ -81,7 +81,7 @@ In most cases you're unlikely to require timeline profiling to ensure reasonable
 
 Memory profiling instead profiles the allocation and release of memory, this can be useful for identifying performance issues related to high memory consumption such as memory leaks.
 
-If you're code consumes too much memory, running it through a memory profiler might help explain the cause.
+If your code consumes too much memory, running it through a memory profiler might help explain the cause.
 
 ### Hardware Metric Profiling
 
@@ -92,3 +92,11 @@ Using these advanced hardware metrics requires a thorough understanding of the r
 Examples of these profilers include; Intel’s VTune, AMD’s uProf, and NVIDIA’s Nsight Compute.
 
 You shouldn't need access to hardware metrics to ensure reasonable performance.
+
+## Deterministic vs Sampling Profilers
+
+There are two main approaches that profilers use for function and line level profiling, deterministic and sampling. The majority of timeline, memory and hardware metric profiling is implemented in a deterministic manner.
+
+Deterministic profilers provide precise measurements by recording every relevant event (e.g. function or line executed) during execution. This comprehensive tracking ensures consistent and reproducible results, however due to this granularity deterministic profiling can significantly slow down program execution and generate large volumes of data. For this reason deterministic profilers are best suited for small profiles.
+
+In contrast, sampling profilers operate similar to a debugger, pausing the profiled code at a regular sampling interval (e.g. 1000 times a second). The profiler then logs where the code was paused before resuming execution. This approach is significantly less granular in it's data collection, however any component that occupies a significant proportion of the runtime will inevitably be caught by a significant proportion of the samples. This approach is low-overhead, not significantly increasing the runtime during profiling. Sampling profilers typically allow the sampling rate to be increased, to increase collection granularity, this does however increase the overhead of profiling. Advanced profiling tools typically utilise sampling (atleast for a subset of their metrics), so that they can be used to profile large and complex software.
