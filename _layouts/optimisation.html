@@ -3,22 +3,20 @@ layout: default
 ---
 <article class="post">
 
-  <header class="post-header">
+  <header class="post-header mb-3">
     <h1 class="post-title">{{ page.name }}</h1>
-    <p class="post-languages">
-      Language: 
+    <p class="post-languages post-meta">
+      <strong>Language: </strong>
       {% for lang in page.language %}
         <a href="/optimisations/{{ lang | slugify: 'pretty' }}/">{{ lang }}</a>{% unless forloop.last %},{% endunless %}
       {% endfor %}
     </p>
     {% if page.subcategory != empty %}
-      <p class="post-subcategories">
-        <small>
-          Subcategory:    
-          {% for subcat in page.subcategory %}
-            {{ subcat }}{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        </small>
+      <p class="post-subcategories mt-1 post-meta">
+        <strong>Subcategory: </strong>    
+        {% for subcat in page.subcategory %}
+          {{ subcat }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
       </p>
     {% endif %}
   </header>

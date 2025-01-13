@@ -56,22 +56,25 @@ layout: default
           {% assign slugified_lang = lang | slugify: 'pretty' %}
           {% if slugified_lang == current_language_slug %}
             {% assign joined_subcategories = optimisation.subcategory | join: " " %}          
-            <div class="optimisation" data-attributes="{{ joined_subcategories }}">
-              <h2>{{ optimisation.name }}</h2>
-              {% if optimisation.subcategory != empty %}
-                <small>Subcategory: 
-                  {% for subcat in optimisation.subcategory %}
-                    <code>{{ subcat }}</code>{% unless forloop.last %},{% endunless %}
-                  {% endfor %}
-                </small>
-              {% endif %}
+            <article class="post optimisation" data-attributes="{{ joined_subcategories }}">
+              <header class="post-header mb-2">
+                <h2 class="mb-2">{{ optimisation.name }}</h2>
+                {% if optimisation.subcategory != empty %}                
+                  <p class="post-subcategories post-meta">
+                    <strong>Subcategory: </strong> 
+                    {% for subcat in optimisation.subcategory %}
+                      {{ subcat }}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                  </p>
+                {% endif %}
+              </header>
               {{ optimisation.excerpt }}
               <a href="{{ optimisation.url }}">Read More</a>
               {% unless forloop.last %}<hr/>{% endunless %}
               <div class="full-text" style="display:none">
                 {{ optimisation.content }}
               </div>
-            </div>
+            </article>
           {% endif %}
         {% endfor %}
       {% endfor %}
