@@ -47,12 +47,13 @@ On success VizTracer will output a file `result.json` to the working directory. 
 python -m vizviewer result.json
 ```
 
-
 ## Interpreting Output
 
 VizViewer provides an interactive visualisation of the timeline, that can be panned and zoomed to investigate the call-stack throughout the program's execution.
 
-[![A visualisation of a call-stack's execution timeline within VizTracer.](/assets/viztracer-example.png)](/assets/viztracer-example.png) An example of the visualisation provided by VizViewer.
+{% figure caption:"An example of the visualisation provided by VizViewer." label:viztracer-example %}
+[![A visualisation of a call-stack's execution timeline within VizTracer.](/assets/viztracer-example.png)](/assets/viztracer-example.png) 
+{% endfigure %}
 
 Within the above example, the profile demonstrates iterative steps of a model on the left-hand side of the timeline followed by generation/export of a plot of the results on the right-hand side where the pattern changes.
 

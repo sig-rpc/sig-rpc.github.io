@@ -123,9 +123,11 @@ Reordering accesses of `matrix` to avoid false sharing executed over 4x faster.
 
 Modern processors do not directly access variables inside a computers RAM, instead variables are loaded through layers of caches. These caches, L1, L2 & L3 increase in size and get slower with their number. Each CPU core (which can be considered a proxy for a thread), Some of these caches (e.g. L1) are per-core, whereas others (e.g. L3) are shared by all cores CPU.
 
-<!-- Architecture diagram from pando could be used here -->
+{% figure caption:"An abstract visualisation of how memory reaches a thread for computation from RAM within a CPU." label:cpu-caches %}
+![A diagram showing how a thread is connected to RAM via registers, L1 cache, L2 cache, L3 cache (shared by other CPU cores) and finally RAM via the memory bus.](/assets/hardware/cpu-caches.png)
+{% endfigure %}
 
-When a variable is accessed, a full 64 byte cache-line is loaded from the RAM (a typical variable is 4 or 8 bytes). This is stored first in the shared L3 cache, then L2 and subsequently L1 for the relevant CPU core. If a second CPU core, accesses a variable in this same 64 byte cache-line, it will have to load the same cache line either from RAM or the shared L3 cache in to it's own L1 cache.
+When a variable is accessed, a full 64 byte cache-line is loaded from the RAM (a typical variable is 4 or 8 bytes). This is stored first in the shared L3 cache, then L2 and subsequently L1 for the relevant CPU core (computation is performed directly in the registers). If a second CPU core, accesses a variable in this same 64 byte cache-line, it will have to load the same cache line either from RAM or the shared L3 cache in to it's own L1 cache and registers.
 
 As each CPU core using that cache line holds a unique copy in their L1, if one core modifies a variable the cache line is invalidated in all the other cores. This forces them to reload the entire cache line before they can use it again.
 

@@ -85,10 +85,15 @@ plugins:
   - jekyll-archives-v2
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-figure
 
 # Configure Blog
 paginate: 10
 paginate_path: /blog/page:num/
+
+# Prevent img or captions from including placed inside <p> tags
+jekyll-figure:
+  paragraphs: false
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

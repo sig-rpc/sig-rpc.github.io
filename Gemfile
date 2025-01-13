@@ -45,3 +45,6 @@ gem 'jekyll-archives-v2'
 
 gem 'jekyll-seo-tag'
 gem 'jekyll-paginate'
+
+# Support for styled image captions
+gem 'jekyll-figure'

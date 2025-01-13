@@ -44,13 +44,17 @@ Open Intel VTune via your operating system's start menu or `./vtune-gui`.
 
 By default it will show the welcome tab, click the large "Configure Analysis..." button, or select the configure analysis option (the <i class="bi-play" title="play"></i> icon) from the left-hand menu.
 
-![A screenshot of Intel VTune's configure analysis tab showing three panes; where, what and how. The Where pane has an icon of a laptop with the option selected as local host. The What pane has an icon of a clapperboard with the option selected as launch application, it provides sub fields for configuring the application, the application's parameters and working directory. The How pane has an icon of a flame with the option selected as hotspots, the it provides sub options to switch between user-mode sampling (selected) and event-based sampling with a minimised details block.](/assets/intel_vtune/configure_analysis.png) Intel VTune's configure analysis tab.
+{% figure caption:"Intel VTune's configure analysis tab." label:configure-analysis %}
+![A screenshot of Intel VTune's configure analysis tab showing three panes; where, what and how. The Where pane has an icon of a laptop with the option selected as local host. The What pane has an icon of a clapperboard with the option selected as launch application, it provides sub fields for configuring the application, the application's parameters and working directory. The How pane has an icon of a flame with the option selected as hotspots, the it provides sub options to switch between user-mode sampling (selected) and event-based sampling with a minimised details block.](/assets/intel_vtune/configure_analysis.png) 
+{% endfigure %}
 
 The default settings, shown above, to profile on the "Local Host", via "Launch Application" with "Hotspots" profiling using "user-mode sampling" are sufficient for function-level and line-level profiling. You only need to complete the application field, by selecting the location to the program to be profiled. If necessary, you should also specify any parameters passed to the application ("application parameters") and it's "working directory".
 
 Once configured, you can click the start (<i class="bi-play" title="play"></i>) to begin profiling. As shown below, Intel VTune displays the application's output log and the elapsed execution time whilst collecting profiling data. The stop button (<i class="bi-stop" title="stop"></i>) can be pressed, to exit the application early and display the currently collected profiling data.
 
-![A screenshot of Intel VTune's collection log tab whilst profiling data is being collected. It includes a console titled application output, which shows the applications output stream. Below this there are buttons to start, pause, stop and cancel profiling.](/assets/intel_vtune/opening_result.png) Intel VTune's collection log tab.
+{% figure caption:"Intel VTune's collection log tab, whilst the profiling data is being collected." label:opening-result %}
+![A screenshot of Intel VTune's collection log tab whilst profiling data is being collected. It includes a console titled application output, which shows the applications output stream. Below this there are buttons to start, pause, stop and cancel profiling.](/assets/intel_vtune/opening_result.png)
+{% endfigure %}
 
 Once complete, the profiling results will be opened.
 
@@ -58,29 +62,41 @@ Once complete, the profiling results will be opened.
 
 On opening hotspots profiling results the summary tab will be shown, with other tabs "Bottom-up", "Caller/Callee", "Top-down Tree" and "Flame Graph" which provide different visualisations of the function-level profiling results.
 
-![A screenshot of Intel VTune's results summary for a hotspots profile.](/assets/intel_vtune/summary.png) The hotspots profile Summary tab.
+{% figure caption:"Intel VTune's hotspots profile Summary tab." label:summary %}
+![A screenshot of Intel VTune's results summary for a hotspots profile.](/assets/intel_vtune/summary.png)
+{% endfigure %}
 
 The hotspots profile summary shows some high-level information, most important of these is the "Top Hotspots" section which lists the functions that consumed the most runtime.
 
 By default, the **Bottom-up** tab lists functions in order of CPU time (grouped by Function/Call Stack), they can then be expanded to show the call stacks in which they were called. This can be useful if an expensive function is called in multiple places, to identify the most expensive.
 
-![A screenshot of Intel VTune's results bottom-up results for a hotspots profile.](/assets/intel_vtune/bottom_up.png) The hotspots profile Bottom-up tab.
+{% figure caption:"Intel VTune's hotspots profile Bottom-up tab." label:bottom-up %}
+![A screenshot of Intel VTune's results bottom-up results for a hotspots profile.](/assets/intel_vtune/bottom_up.png)
+{% endfigure %}
 
 By default, the **Caller/Callee** tab lists functions in order of their total CPU time, inclusive of child function calls, displaying self CPU time (without child function calls) in the neighbouring column. When a function is selected, it's callers and callees are displayed with their respective CPU times relative to the selected function's CPU time in panels on the right-hand side.
 
-![A screenshot of Intel VTune's results caller/callee results for a hotspots profile.](/assets/intel_vtune/caller_callee.png) The hotspots profile Caller/Callee tab.
+{% figure caption:"Intel VTune's hotspots profile Caller/Callee tab." label:caller-callee %}
+![A screenshot of Intel VTune's results caller/callee results for a hotspots profile.](/assets/intel_vtune/caller_callee.png)
+{% endfigure %}
 
 By default, the **Top-down Tree** tab provides an inverse to the Bottom-up tab, a tree starting from the root function call can be expanded to visualise paths through the call stack and respective CPU times.
 
-![A screenshot of Intel VTune's results top-down tree results for a hotspots profile.](/assets/intel_vtune/top_down_tree.png) The hotspots profile Top-down Tree tab.
+{% figure caption:"Intel VTune's hotspots profile Top-down tree tab." label:top-down-tree %}
+![A screenshot of Intel VTune's results top-down tree results for a hotspots profile.](/assets/intel_vtune/top_down_tree.png)
+{% endfigure %}
 
 Finally, the **Flame Graph** tab provides an interactive visualisation to the Bottom-up results (it can be toggled to Icicle graph to display top-down results). The width of the graph represents the total CPU time of the application, each layer above this shows child function calls and with widths relative to their respective CPU times. Hovering a function's box displays it's information in a tooltip, and clicking one zoom's the flame graph such that the selected function becomes the root with full width.
 
-![A screenshot of Intel VTune's results flame graph for a hotspots profile.](/assets/intel_vtune/flame_graph.png) The hotspots profile Flame Graph tab.
+{% figure caption:"Intel VTune's hotspots profile Flame Graph tab." label:flame-graph %}
+![A screenshot of Intel VTune's results flame graph for a hotspots profile.](/assets/intel_vtune/flame_graph.png)
+{% endfigure %}
 
 **Line-level** profile information can be accessed for functions, if the source file has not changed, by right clicking them and selecting "view source" from the context menu. This will open the relevant function's source file, and focus the most expensive line of code.
 
-![A screenshot of line-level profiling information within Intel VTune.](/assets/intel_vtune/line-level.png) Line-level profiling information.
+{% figure caption:"Line-level profiling information shown within Intel VTune after selecting to view a function's source." label:line-level %}
+![A screenshot of line-level profiling information within Intel VTune.](/assets/intel_vtune/line-level.png)
+{% endfigure %}
 
 ## Python
 
