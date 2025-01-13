@@ -62,17 +62,20 @@ layout: default
           {% assign slugified_lang = lang | slugify: 'pretty' %}
           {% if slugified_lang == current_language_slug %}
             {% assign joined_styles = profiler.style | join: " " %}          
-            <div class="profiler" data-attributes="{{ joined_styles }}">
-              <h2>{{ profiler.name }}</h2>
-              <small>Styles: 
-                {% for style in profiler.style %}
-                  <code>{{ style }}</code>{% unless forloop.last %},{% endunless %}
-                {% endfor %}
-              </small>
+            <article class="post profiler" data-attributes="{{ joined_styles }}">
+              <header class="post-header mb-2">
+                <h2 class="mb-2">{{ profiler.name }}</h2>
+                <p class="post-styles post-meta">
+                <strong>Styles: </strong>
+                  {% for style in profiler.style %}
+                    {{ style }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+              </header>
               {{ profiler.excerpt }}
               <a href="{{ profiler.url }}">Read More</a>
               {% unless forloop.last %}<hr/>{% endunless %}
-            </div>
+            </article>
           {% endif %}
         {% endfor %}
       {% endfor %}
