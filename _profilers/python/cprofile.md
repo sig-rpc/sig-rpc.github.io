@@ -105,10 +105,9 @@ python -m snakeviz out.prof
 
 This should open snakeviz's visualisation of the profiling results in your web browser
 
-<details markdown="block">
-<summary>Example Snakeviz Output</summary>
-
-![A web page, with a central diagram representing a call-stack, with the root at the top and the horizontal axis representing the duration of each call. Below this diagram is the top of a table detailing the statistics of individual methods.](/assets/snakeviz-example.png) An example of the default 'icicle' visualisation provided by `snakeviz`.
+{% figure caption:" An example of the default 'icicle' visualisation provided by `snakeviz`." label:snakeviz-example %}
+![A web page, with a central diagram representing a call-stack, with the root at the top and the horizontal axis representing the duration of each call. Below this diagram is the top of a table detailing the statistics of individual methods.](/assets/snakeviz-example.png)
+{% endfigure %}
 
 The icicle diagram displayed by `snakeviz` represents an aggregate of the call stack during the execution of the profiled code.
 The box which fills the top row represents the the root call, filling the row shows that it occupied 100% of the runtime.
@@ -118,8 +117,6 @@ This continues with each subsequent row, however where a method only occupies 50
 By clicking a box within the diagram, it will "zoom" making the selected box the root allowing more detail to be explored. The diagram is limited to 10 rows by default ("Depth") and methods with a relatively small proportion of the runtime are hidden ("Cutoff").
 
 As you hover each box, information to the left of the diagram updates specifying the location of the method and for how long it ran.
-
-</details>
 
 ## Jupyter Notebooks
 

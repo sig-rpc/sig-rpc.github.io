@@ -57,19 +57,25 @@ The profiling results are broken into several sections.
 
 At the top of the page, a blue bar is shown, which shows the proportion of the overall runtime that was sampled in Python, Native and System execution. Hovering over the sections of the bar provides a tooltip showing the absolute time.
 
-![The Scalene logo, below it there's a minimised "AI optimisation options" link, followed by a bar broken into 3 sections denoted Python 21%, native 67% and system 11%.](/assets/scalene/header.png)<br/>The header of a Scalene profiling report.
+{% figure caption:"The header of a Scalene profiling report." label:header %}
+![The Scalene logo, below it there's a minimised "AI optimisation options" link, followed by a bar broken into 3 sections denoted Python 21%, native 67% and system 11%.](/assets/scalene/header.png)
+{% endfigure %}
 
 Below this, there is a list of each of the source Python files touched during the profile, these can be minimised with the triangle button (▼). Each file contains both a line-level and function-level profile.
 
 The **line-level** profile is displayed first, by default this only displays lines which were caught in the profilers samples, as such the majority of lines of code may not be displayed (including some class names!).
   
-![A function-level profile within Scalene, on the right hand side a subset of lines of code from a file "predprey.py" are displayed with syntax highlighting. To the left of this are bars which denote how much CPU time was spent on each line.](/assets/scalene/line-level.png)<br/>A line-level profile report within Scalene.
+{% figure caption:"A line-level profile report within Scalene." label:line-level %}
+![A function-level profile within Scalene, on the right hand side a subset of lines of code from a file "predprey.py" are displayed with syntax highlighting. To the left of this are bars which denote how much CPU time was spent on each line.](/assets/scalene/line-level.png)
+{% endfigure %}
 
 In the above line-level report, it is clear that over 50% of the code's runtime is occupied by `predprey.py:286`.
 
 The **function-level** results for the file, are below the line-level results.
 
-![A line-level profile within Scalene, it is a table where the left hand shows times, and the right-hand side has function names and the line of code at which they are declared.](/assets/scalene/function-level.png)<br/>A function-level profile report within Scalene.
+{% figure caption:"A function-level profile report within Scalene." label:function-level %}
+![A line-level profile within Scalene, it is a table where the left hand shows times, and the right-hand side has function names and the line of code at which they are declared.](/assets/scalene/function-level.png)
+{% endfigure %}
 
 Here it is clear that 65% of the runtime is spent within the `Grass.eaten()` function which can be found at line 278. This is the function that includes the most expensive line identified in the line profiler.
 
