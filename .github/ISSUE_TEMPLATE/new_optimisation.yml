@@ -4,14 +4,6 @@ title: "[New]: "
 labels: ["optimisation"]
 body:
   - type: input
-    id: language
-    attributes:
-      label: Title
-      description: A brief title that summarises the optimisation
-      placeholder: e.g. Use list comprehension to construct lists
-    validations:
-      required: true
-  - type: input
     id: title
     attributes:
       label: Title
