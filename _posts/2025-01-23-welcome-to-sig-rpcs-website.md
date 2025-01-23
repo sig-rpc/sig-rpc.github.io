@@ -56,7 +56,7 @@ Finally, the resources page provides further reading if you'd like to go deeper 
 
 ## Next Steps
 
-Now that the initial website has been released, there's still a long way to go building up the website. I personally have a [backlog of optimisations](https://github.com/sig-rpc/sig-rpc.github.io/issues/8) to write up and add to the database. If you have a favourite profiler, or optimisation pattern you'd like to submit please to submit an issue or pull request on [our GitHub](https://github.com/sig-rpc/sig-rpc.github.io). Current content focuses on Python/C++/OpenMP, which I use reguarly, but we're welcoming to content for all commonly used languages (and libraries).
+Now that the initial website has been released, there's still a long way to go building up the website. I personally have a [backlog of optimisations](https://github.com/sig-rpc/sig-rpc.github.io/issues/8) to write up and add to the database. If you have a favourite profiler, or optimisation pattern you'd like to submit please to submit an issue or pull request on [our GitHub](https://github.com/sig-rpc/sig-rpc.github.io). Current content focuses on Python/C++/OpenMP, which I use regularly, but we're welcoming to content for all commonly used languages (and libraries).
 
 Furthermore, as someone with a degree in Computer Science, that's been programming for nearly two decades and specialising in performance for much of the second decade I'm not the target audience. We require feedback to understand whether we're hitting the mark, please tell us if you have suggestions for how the website and community could be improved. Either [via GitHub](https://github.com/sig-rpc/sig-rpc.github.io/issues/new/choose) or by contacting SIG-RPC's organising committee at [sig-rpc-managers@society-rse.org](mailto:sig-rpc-managers@society-rse.org).
 
@@ -69,5 +69,7 @@ Unfortunately, a member of SIG-RPC's founding committee has stepped down after t
 The next SIG-RPC meeting/event is yet to be scheduled. To stay updated and be among the first to know when it's announced, join our [mailing list](https://groups.google.com/a/society-rse.org/g/sig-rpc).
 
 Robert Chisholm
+
 SIG-RPC Chair
+
 [sig-rpc-managers@society-rse.org](mailto:sig-rpc-managers@society-rse.org)
