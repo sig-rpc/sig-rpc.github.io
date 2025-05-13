@@ -10,39 +10,39 @@ A directory of recommended resources if you'd like to learn more about any of th
 Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.github.io/issues/new?assignees=&labels=Resource&projects=&template=new_resource.yml&title=%5BNew%5D%3A+).
 
 - [Books](#books)
-  - [Python](#python)
-- [Training](#training)
-  - [C++](#c)
-  - [Python](#python-1)
-  - [R](#r)
+  - [Python](#python-books)
+- [Training](#trainingcourses)
+  - [C++](#cpp-training)
+  - [Python](#python-training)
+  - [R](#r-training)
 - [Web](#web)
-  - [C++](#c-1)
-  - [Computer Science](#computer-science)
-  - [GPU Computing](#gpu-computing)
+  - [C++](#cpp-web)
+  - [Computer Science](#cs-web)
+  - [GPU Computing](#gpu-web)
 
 ## Books
 
-- **Python**
+- **Python**{:id="python-books"}
   - [High Performance Python, 2nd Edition](https://www.oreilly.com/library/view/high-performance-python/9781492055013/){:target="_blank"} (CC BY-NC-ND 3.0)
 
 
 ## Training/Courses
 
 - [Archer2 Upcoming Training](https://www.archer2.ac.uk/training/#upcoming-training){:target="_blank"}
-- **C++**
+- **C++**{:id="cpp-training"}
   - [Modern C++ Programming](https://federico-busato.github.io/Modern-CPP-Programming){:target="_blank"}
-- **Python**
+- **Python**{:id="python-training"}
   - [Performance Profiling & Optimisation (Python)](https://carpentries-incubator.github.io/pando-python/){:target="_blank"}
-- **R**
+- **R**{:id="r-training"}
   - [Performant R: Doing things faster with R](https://richardjacton.github.io/performantR/Performant_R.html){:target="_blank"}
 
 
 ## Web
 
-- **C++**
+- **C++**{:id="cpp-web"}
   - [Cpp Optimizations Diary](https://cpp-optimizations.netlify.app/){:target="_blank"}
-- **Computer Science**
+- **Computer Science**{:id="cs-web"}
   - [What scientists must know about hardware to write fast code](https://viralinstruction.com/posts/hardware/){:target="_blank"}
-- **GPU Computing**
+- **GPU Computing**{:id="gpu-web"}
   - [The CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/){:target="_blank"}
   - [GPU Glossary](https://modal.com/gpu-glossary){:target="_blank"}
