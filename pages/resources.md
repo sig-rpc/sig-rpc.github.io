@@ -14,6 +14,7 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
 - [Training](#training)
   - [C++](#c)
   - [Python](#python-1)
+  - [R](#r)
 - [Web](#web)
   - [C++](#c-1)
   - [Computer Science](#computer-science)
@@ -32,6 +33,8 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [Modern C++ Programming](https://federico-busato.github.io/Modern-CPP-Programming){:target="_blank"}
 - **Python**
   - [Performance Profiling & Optimisation (Python)](https://carpentries-incubator.github.io/pando-python/){:target="_blank"}
+- **R**
+  - [Performant R: Doing things faster with R](https://richardjacton.github.io/performantR/Performant_R.html){:target="_blank"}
 
 
 ## Web
