@@ -32,7 +32,7 @@ Use a `set`
 ```py
 import random
 # Create a set of 1000 random numbers in the range [0, 2000)
-set_out = []
+set_out = {}
 while len(set_out) < 1000:
     t = random.randint(0, 2000)
     set_out.add(t)
