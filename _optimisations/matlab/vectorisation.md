@@ -68,7 +68,7 @@ Using vectorisation is both more concise and more performant.
 
 ## The Technical Detail
 
-The vector instructions, which MATLAB takes advantage of, enable a CPU to apply the same operation to multiple data elements in parallel with a single thread.
+Vector instructions, which MATLAB takes advantage of, enable a CPU to apply the same operation to multiple data elements in parallel with a single thread.
 
 Modern CPUs use SIMD (Single Instruction, Multiple Data) instructions to operate on several values packed into a register. Since a typical CPU cache line is 64 bytes, and standard data types like 32-bit or 64-bit floats and integers are 4 or 8 bytes each, 8–16 values can fit within a single cache line and be processed together by a single vector instruction.
 
