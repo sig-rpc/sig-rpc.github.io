@@ -13,7 +13,7 @@ MATLAB makes it easy to run matrix operations on an [NVIDIA GPU](https://uk.math
 
 <!--more-->
 
-MATLAB uses the `gpuArray` type to represent arrays used in GPU computation, and it [supports most core MATLAB matrix and vector operations](](https://uk.mathworks.com/help/referencelist.html?type=function&capability=gpuarrays)).
+MATLAB uses the `gpuArray` type to represent arrays used in GPU computation, and it [supports most core MATLAB matrix and vector operations](https://uk.mathworks.com/help/referencelist.html?type=function&capability=gpuarrays).
 
 ## Example Code
 
