@@ -58,7 +58,7 @@ D_gpu = A_gpu .* B_gpu;
 E_gpu = D_gpu * C_gpu;
 % Copy the data back from the GPU
 E_gpu = gather(E_gpu);
-g = toc;
+toc
 ```
 
 <!-- This could be fleshed out further, timing compute and memcpy separate. -->
