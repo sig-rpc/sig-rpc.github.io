@@ -36,7 +36,7 @@ toc
 
 This takes around 19 ms to compute.
 
-In contrast, performing the same operation on the GPU and copying the data back only takes 2.21ms.
+In contrast, performing the same operation on the GPU and copying the data back only takes 2 ms. Note, it may run slower the first time the code is run while MATLAB compiles an internal CUDA kernel.
 
 
 ```matlab
