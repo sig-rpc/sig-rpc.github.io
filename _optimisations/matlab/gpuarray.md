@@ -31,7 +31,7 @@ C = rand(l,1);
 tic
 D = A .* B;
 E = D * C;
-c = toc;
+toc
 ```
 
 This takes around 19ms to compute.
