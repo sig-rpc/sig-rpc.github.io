@@ -34,7 +34,7 @@ E = D * C;
 toc
 ```
 
-This takes around 19ms to compute.
+This takes around 19 ms to compute.
 
 In contrast, performing the same operation on the GPU and copying the data back only takes 2.21ms.
 
