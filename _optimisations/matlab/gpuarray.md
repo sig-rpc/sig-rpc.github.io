@@ -65,7 +65,7 @@ toc
 
 ## The Technical Detail
 
-GPU parallelism requires distinct accelerator hardware suitable for some highly parallel tasks, in contrast to a CPU’s upto 100 parallel cores, GPUs require 3 order of magnitude more threads to be fully saturated (e.g. 100,000 threads).
+GPU parallelism requires distinct accelerator hardware suitable for some highly parallel tasks. In contrast to a CPU’s up to 100 parallel cores, GPUs require 3 order of magnitude more threads to be fully saturated (e.g. 100,000 threads).
 
 To help enhance GPU parallelism, MATLAB provides support functions such as `pagefun` to help [parallelise small GPU operations](https://uk.mathworks.com/help/parallel-computing/improve-performance-of-small-matrix-problems-on-the-gpu-using-pagefun.html).
 
