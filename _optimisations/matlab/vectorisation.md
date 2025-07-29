@@ -34,7 +34,7 @@ To use vectorisation, it can be rewritten as a single line of code
 % Allocate an array of 1 million elements
 vals = 1:1000000;
 % Multiply all elements by 2
-vals = vals * 2;
+vals = vals .* 2;
 ```
 
 Not all of your MATLAB code will be this simple though, maybe you have conditional logic which restricts which elements the operation should be performed on.
