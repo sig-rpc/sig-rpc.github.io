@@ -68,8 +68,8 @@ Using vectorisation is both more concise and more performant.
 
 ## The Technical Detail
 
-Vector instructions, which MATLAB takes advantage of, enable a CPU to apply the same operation to multiple data elements in parallel with a single thread.
+Vector instructions, which MATLAB can take advantage of, enable a CPU to apply the same operation to multiple data elements in parallel with a single thread.
 
 Modern CPUs use SIMD (Single Instruction, Multiple Data) instructions to operate on several values packed into a register. Since a typical CPU cache line is 64 bytes, and standard data types like 32-bit or 64-bit floats and integers are 4 or 8 bytes each, 8–16 values can fit within a single cache line and be processed together by a single vector instruction.
 
-However, to take advantage of this, the data must be aligned in memory. Laid out such that it fits neatly into the expected cache line boundaries. Default memory allocations in Python don’t guarantee this kind of alignment, as doing so for all objects would waste memory. MATLAB arrays are explicitly designed for numerical performance, they allocate memory with alignment guarantees, ensuring that vector instructions can be used.
+However, to take advantage of this, the data must be aligned in memory. Laid out such that it fits neatly into the expected cache line boundaries. MATLAB arrays are explicitly designed for numerical performance, they allocate memory with alignment guarantees, ensuring that vector instructions can be used. Therefore, you just need to make sure where possible you're using operations which support vectorisation.
