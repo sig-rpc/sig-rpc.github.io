@@ -16,7 +16,7 @@ HYBIRD successfully applied to the University of Sheffield's (internal) RSE Call
 
 HYBIRD is provided with several (small) tutorial models, I was asked to use these as representative workloads.
 
-## Profile 1: Inlining
+## Inlining
 
 I initially profiled the "Granular Column" tutorial with the function level profiler [GProf](). This tutorial simulates a column of ~N <!-- How many?? --> particles collapsing (pure DEM).
 
@@ -57,7 +57,7 @@ tVect tVect::operator+(const tVect& vec) const {
 
 As the function has been defined in `myvector.cpp`, it's implementation won't be visible when it's called from other `.cpp` files. This means that it cannot be inlined, and every call to the function will incur a call overhead. Due to the function being so small, and called so frequently, that call overhead is likely to be substantial relative to the cost of the function's computation.
 
-Due to there being so many similar functions in this source file, it was easiest to [inline the whole file](https://github.com/gnomeCreative/HYBIRD/commit/8cf8b84ab89d18b10ddce908d4655db409794f19) by marking each function definition `inline`, renaming it `.inl` so that it is not directly compiled) and including it from the end of `myvector.h`.
+Due to there being so many similar functions in this source file, it was easiest to [inline the whole file](https://github.com/gnomeCreative/HYBIRD/commit/8cf8b84ab89d18b10ddce908d4655db409794f19) by marking each function definition `inline`, renaming the file as `myvector.inl` (so that it is not directly compiled) and including it at the end of `myvector.h`.
 
 When profiled a second time, all of the inlined functions have disappeared. As they are now implemented in-line, they no longer have a function call. If they are still visible, the compiler may have decided to not inline them, this could be because they are too expensive or you've not enabled compiler optimisations.
 
@@ -82,9 +82,15 @@ Overall this quick change reduced the runtime of the small tutorial from 1422 to
 
 *An alternate option would have been to replace the home-made vector classes with an external library such as [GLM](https://github.com/g-truc/glm), which has been implemented by experienced performance-aware programmers.*
 
-## Profile 2: File IO
+## Redundant Code
 
-## 
+## Small IO Operations
+
+## OpenMP
+
+Alongside this
+
+## Conclusion
 
 Robert Chisholm
 
