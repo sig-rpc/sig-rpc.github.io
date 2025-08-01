@@ -4,6 +4,14 @@ layout: default
 <article class="post">
   <header class="post-header mb-3">
     <h1 class="post-title">{{ page.name }}</h1>
+    {% if page.authors != empty %}
+      <p class="post-authors mb-0 post-meta">
+        <strong>Authored By: </strong>
+        {% for subcat in page.authors %}
+          {{ subcat }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
     <p class="post-languages mb-1 post-meta">
       <strong>Languages: </strong>
       {% for lang in page.language %}
