@@ -46,7 +46,7 @@ for (i in 1:10000) {
 
 This now executes in 0.81 seconds (26.56 seconds for 100,000 rows).
 
-We can however go one further, if we instead use `data.table` and take advantage of vectorisation.
+We can however go one further, if we instead use `data.table` and take advantage of [vectorisation](vectorisation).
 
 ```r
 # Import the data.table library
