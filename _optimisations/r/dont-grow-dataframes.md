@@ -35,9 +35,9 @@ But if we initialise the data-frame with the correct number of rows, and instead
 
 ```r
 # Allocate a data.frame with 3 columns and preallocate 10,000 rows.
-df <- data.frame(x = numeric(100000), y = numeric(100000), z = numeric(100000))
+df <- data.frame(x = numeric(10000), y = numeric(10000), z = numeric(10000))
 # Append 10,000 rows
-for (i in 1:100000) {
+for (i in 1:10000) {
   df$x[i] <- i
   df$y[i] <- i * 2
   df$z[i] <- i * 3
@@ -47,7 +47,6 @@ for (i in 1:100000) {
 This now executes in 0.81 seconds (26.56 seconds for 100,000 rows).
 
 We can however go one further, if we instead use `data.table` and take advantage of vectorisation.
-
 
 ```r
 # Import the data.table library
