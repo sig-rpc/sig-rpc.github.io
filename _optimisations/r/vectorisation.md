@@ -9,9 +9,11 @@ subcategory: [Core]
 tags: [array, maths, loops]
 ---
 
-R is optimised to take advantage of vectorisation for mathematical operations between arrays, whereby the processor executes one instruction across multiple variables simultaneously. Vectorisation can perform mathematical operations many times faster than a for loop and even take advantage of conditional logic.
+R has many functions which operate on entire vectors and matrices, which have been implemented in faster C. Vectorisation can perform mathematical operations many times faster than a for loop and even take advantage of conditional logic.
 
 <!--more-->
+
+Note, when R users talk about vectorisation they're typically referring to functions which operate on whole vectors, not advanced SIMD instructions.
 
 ## Example Code
 
@@ -77,13 +79,10 @@ The `ifelse()` approach reduced the runtime from 0.35 seconds to 0.06 seconds.
 
 Using vectorisation is both more concise and more performant.
 
-You might be tempted to use `sapply()` or `vapply()`, which allow you to apply a transformation function to each element within an array, but these don't appear to takes advantage of vectorisation so were slower than the original loop in testing.
-
+You might be tempted to use `sapply()` or `vapply()`, which allow you to apply a transformation function to each element within an array, but these were slower than the original loop in testing.
 
 ## The Technical Detail
 
-Vector instructions, which R can take advantage of, enable a CPU to apply the same operation to multiple data elements in parallel with a single thread.
+Many of R's mathematical vector functions rely on the scientific libraries BLAS and LAPACK, which provide efficient implementations of the operations. These are faster when executed in a single call to C, rather than an R loop over a vector which makes many individual calls.
 
-Modern CPUs use SIMD (Single Instruction, Multiple Data) instructions to operate on several values packed into a register. Since a typical CPU cache line is 64 bytes, and standard data types like 32-bit or 64-bit floats and integers are 4 or 8 bytes each, 8–16 values can fit within a single cache line and be processed together by a single vector instruction.
-
-However, to take advantage of this, the data must be aligned in memory. Laid out such that it fits neatly into the expected cache line boundaries. R arrays and matrices are explicitly designed for numerical performance, they allocate memory with alignment guarantees, ensuring that vector instructions can be used. Therefore, you just need to make sure where possible you're using operations which support vectorisation.
+BLAS and LAPACK can take advantage of even faster SIMD (Single Instruction, Multiple Data) instructions to operate on several values in parallel which are packed into a register. However, most R installations are provided with a reference implementation of these libraries which is unlikely to take advantage of these. It's currently non-trivial to install R with an accelerated version of BLAS, but it's likely your will find one [setup on HPC systems](https://rse.shef.ac.uk/blog/intel-r-iceberg/).
