@@ -28,26 +28,40 @@ for (i in 1:10000) {
   df <- rbind(df, new_row)
 }
 ```
-But this took 3.27 seconds (103.92 seconds for 100,000 rows!).
 
-Prefer using a `data.table` instead.
+This took 4.42 seconds (141.91 seconds for 100,000 rows!).
+
+But if we initialise the data-frame with the correct number of rows, and instead update the elements in-place.
+
+```r
+# Allocate a data.frame with 3 columns and preallocate 10,000 rows.
+df <- data.frame(x = numeric(100000), y = numeric(100000), z = numeric(100000))
+# Append 10,000 rows
+for (i in 1:100000) {
+  df$x[i] <- i
+  df$y[i] <- i * 2
+  df$z[i] <- i * 3
+}
+```
+
+This now executes in 0.81 seconds (26.56 seconds for 100,000 rows).
+
+We can however go one further, if we instead use `data.table` and take advantage of vectorisation.
+
 
 ```r
 # Import the data.table library
 library(data.table)
-# Allocate a data.table with 3 columns
-df <- data.table(x = numeric(1e6), y = numeric(1e6), z = numeric(1e6))
-# Update 10,000 rows
-for (i in 1:10000) {
-  df[[i]] <- data.table(x = i, y = i * 2, z = i * 3)
-}
-toc()
-
+df <- data.table(x = numeric(10000), y = numeric(10000), z = numeric(10000))
+rows <- 1:10000
+df[rows, `:=`(
+  x = rows,
+  y = rows * 2,
+  z = rows * 3
+)]
 ```
 
-We've updated this by importing `data.table` and updating the type of `df`, otherwise the syntax is identical.
-
-But it finishes executing in 0.04 seconds (and didn't get slower for 100,000 rows!).
+This now executes in `0.05` seconds (and doesn't get slower for 100,000 elements)
 
 If you need to convert it back to a `data.frame`, you can call `as.data.frame()` passing your `data.table` as a parameter. 
 
@@ -56,5 +70,3 @@ If you need to convert it back to a `data.frame`, you can call `as.data.frame()`
 R data-frames are column major, and many operations force the columns to be re-allocated. In particular, if you add a row each column of the data-table will be re-allocated.
 
 `data.table` is almost always equal if not faster in performance to the core `data.frame`, so there's little reason not to use it.
-
-*If you know more about why the performance of `data.frame` suffers so badly, please contribute. In testing pre-allocating a `data.frame` came out slower than growing, why?*
