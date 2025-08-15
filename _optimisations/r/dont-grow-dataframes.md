@@ -60,7 +60,7 @@ df[rows, `:=`(
 )]
 ```
 
-This now executes in `0.05` seconds (and doesn't get slower for 100,000 elements)
+This now executes in 0.05 seconds (and doesn't get slower for 100,000 elements)
 
 If you need to convert it back to a `data.frame`, you can call `as.data.frame()` passing your `data.table` as a parameter. 
 
