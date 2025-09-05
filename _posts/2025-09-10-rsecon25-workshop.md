@@ -27,6 +27,45 @@ Don't worry if you haven't got time to prepare ahead of the workshop, we'll be b
 
 ## Guidance
 
-*We'll add this detailed guidance for the workshop closer to the event (likely morning of).*
+You can find the intro slides to the workshop on [Google Slides](https://docs.google.com/presentation/d/15Lult4wHnJnE5dyoJD7uksLhtfPoyOzylHS5koJXF1Y/edit?usp=sharing).
 
-See you there!
+Please open the [collaborative document](https://semestriel.framapad.org/p/sig-rpc-ag09) to use for the event, this contains:
+
+- A list of links to existing articles to review/edit
+- A list of new ideas which haven't yet been drafted, claim one or add your own by attaching your name
+
+### Task 1 - Reviewing
+
+Open either the [Profiling](https://sig-rpc.github.io/profilers/) or [Optimisations](https://sig-rpc.github.io/optimisations/) knowledge-base, and select a language you know and pick a guide.
+
+Review some of the existing content, and provide any feedback in an [issue on GitHub](https://github.com/sig-rpc/sig-rpc.github.io/issues/new/choose) (one per guide please!).
+
+
+### Task 2 - Editing
+
+[Fork the git repository](https://github.com/sig-rpc/sig-rpc.github.io/fork) and make a clone.
+
+You can find existing guides in the respective `_profilers` and `_optimisations` directories.
+Find guides that you're familiar with, and submit a [pull request](https://github.com/sig-rpc/sig-rpc.github.io/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen) with your changes.
+
+We endeavour to merge input from as many contributors as possible, but remember the target audience are researchers without significant formal programming training!
+
+### Task 3 - Creation
+
+[Fork the git repository](https://github.com/sig-rpc/sig-rpc.github.io/fork) and make a clone.
+
+Locate or add your suitable idea to the [collaborative document](https://semestriel.framapad.org/p/sig-rpc-ag09), this will avoid multiple people submitting independent drafts of the same idea.
+
+Create a new markdown file in the corresponding `_profilers/<language>` or `_optimisations/<language>` directory and submit a [pull request](https://github.com/sig-rpc/sig-rpc.github.io/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aopen).
+
+Use an existing guide (e.g. [profiler](https://github.com/sig-rpc/sig-rpc.github.io/blob/master/_profilers/python/cprofile.md?plain=1), [optimisation](https://github.com/sig-rpc/sig-rpc.github.io/blob/master/_optimisations/python/list-comprehension.md)) to copy the structure of the YAML header, and remember to include `<!-- more -->` to denote where the body content shown in the index ends.
+
+*Even if you don't finish during this session, please submit a draft PR with what you've started. We can then either remind you to finish, or finalise it ourselves!*
+
+### Paper Tasks
+
+We've tried our best to make it possible for a few people to complete the workshop on paper, so you will find some sheets/pens on each table.
+
+-----------
+
+Feel free to chat with the presenters during the activity to discuss ideas, or ask questions!
