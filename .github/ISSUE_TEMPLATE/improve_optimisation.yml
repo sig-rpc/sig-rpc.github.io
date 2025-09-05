@@ -1,0 +1,45 @@
+name: Improve an Optimisation Pattern
+description: Suggest a correction or improvement to an existing optimisation pattern
+title: "[Fix]: "
+labels: ["optimisation"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A brief title that summarises the optimisation
+      placeholder: e.g. Use list comprehension to construct lists
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: What languages is it relevant to? Preferable optimisations are mirrored for each relevant language to ensure matching example codes.
+      placeholder: e.g. Python
+    validations:
+      required: true
+  - type: input
+    id: subcategory
+    attributes:
+      label: Subcategory
+      description: Is there an appropriate subcategory? This would typically be for library specific optimisations.
+      placeholder: e.g. numPy
+    validations:
+      required: false
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: E.g. an explanation of what is wrong or could be improved.
+      placeholder:
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Add any other relevant information about the optimisation pattern here.
+      placeholder:
+    validations:
+      required: false
