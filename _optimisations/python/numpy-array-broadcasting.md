@@ -22,7 +22,7 @@ The auto-parallelisation of these functions is hardware dependant, so you won't 
 
 ### `vectorise()`
 
-NumPy provides `vectorize()` an functions for operating over it's arrays.
+NumPy provides a `vectorize()` function for operating over it's arrays.
 
 This doesn't actually make use of processor-level vectorisation, so won't afford a speed up. From NumPy's [documentation](https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html):
 
