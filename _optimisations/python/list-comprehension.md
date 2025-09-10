@@ -26,7 +26,7 @@ for x in range(100):
 Use a list comprehension
 
 ```py
-squares = [x**2 for x in range(10)]
+squares = [x**2 for x in range(100)]
 ```
 
 Whilst being more concise and readable, it is also typically faster. The speed-up will depend on the length of the list, and complexity of it's construction but is likely to be twice as fast.
@@ -95,3 +95,6 @@ This has two implications:
 
 * If you are creating large static lists, they will use upto 12.5% excess memory.
 * If you are growing a list with `append()`, there will be large amounts of redundant allocations and copies as the list grows.
+
+Both of which will result in slower code. 
+
