@@ -9,7 +9,7 @@ subcategory: [Core]
 tags: [data.frame, vector, memory]
 ---
 
-When you grow a `data.frame` by one, for example using `rbind()` or `cbind()` to add a row or column, R will allocate a new `data.frame` one larger and copy across all the old data. If you're doing this regularly, that's alot of redundant expensive memory movement. Either pre-allocate your `data.frame` to the correct size at the start, or use a `data.table` instead which provides faster growth (and many other performance improvements).
+When you grow a `data.frame` by one, for example using `rbind()` or `cbind()` to add a row or column, R will allocate a new `data.frame` one larger and copy across all the old data. If you're doing this regularly, that's a lot of redundant expensive memory movement. Either pre-allocate your `data.frame` to the correct size at the start, or use a `data.table` instead which provides faster growth (and many other performance improvements).
 
 <!--more-->
 
@@ -46,7 +46,20 @@ for (i in 1:10000) {
 
 This now executes in 0.81 seconds (26.56 seconds for 100,000 rows).
 
-We can however go one further, if we instead use `data.table` and take advantage of [vectorisation](vectorisation).
+Using `lapply` followed by `do.call` to `rbind` the rows is *slightly* faster:
+
+```r
+list_of_rows <- lapply(1:100000, function(i){
+    data.frame(x = i, y = i * 2, z = i * 3)
+  })
+df <- do.call(rbind, list_of_rows)
+```
+
+This executes in ~0.75 seconds (20.78 seconds for 100,000 rows).
+
+We can however improve this even further, by taking advantage of [vectorisation](vectorisation).
+
+This can be done using the `data.table` library:
 
 ```r
 # Import the data.table library
@@ -60,9 +73,20 @@ df[rows, `:=`(
 )]
 ```
 
-This now executes in 0.05 seconds (and doesn't get slower for 100,000 elements)
+This now executes in 0.05 seconds (and doesn't get slower for 100,000 elements).
 
 If you need to convert it back to a `data.frame`, you can call `as.data.frame()` passing your `data.table` as a parameter. 
+
+The `dplyr` library is even faster in this case:
+
+```r
+# Import the dplyr package
+library(dplyr)
+df <- data.frame(x = 1:10000)
+dplyr::mutate(df, y = x * 2, z = x * 3)
+```
+
+This executes in 0.001 seconds  (and doesn't get slower for 100,000 elements).
 
 ## The Technical Detail
 
