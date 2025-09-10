@@ -86,4 +86,4 @@ After the cell has been executed, a "Show VizTracer Report" button will appear, 
 
 As a timeline profiler it will collect information for every function call, to avoid running out of memory it uses a circular buffer, whereby [it only holds (by default) the last 1 million function calls](https://viztracer.readthedocs.io/en/latest/basic_usage.html#circular-buffer-size). If your profiled code runs for a very long time, you may lose profiling information from the start of execution.
 
-VizTracer is implemented in Python, so it's performance may suffer (unconfirmed) when profiling complex code with many function calls.
+VizTracer is implemented in Python, so its performance may suffer (unconfirmed) when profiling complex code with many function calls.

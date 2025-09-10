@@ -9,20 +9,20 @@ subcategory: [NumPy]
 tags: [array, maths, loops]
 ---
 
-The manner by which NumPy stores data in arrays enables it's functions to utilise array broadcasting (more broadly known as vectorisation), whereby the processor executes one instruction across multiple variables simultaneously, for every mathematical operation between arrays. Array broadcasting can perform mathematical operations many times faster, however it requires using supported functions.
+The manner by which NumPy stores data in arrays enables its functions to utilise array broadcasting (more broadly known as vectorisation), whereby the processor executes one instruction across multiple variables simultaneously, for every mathematical operation between arrays. Array broadcasting can perform mathematical operations many times faster, however it requires using supported functions.
 
 <!--more-->
 
 ### Auto Parallel NumPy
 
 <!-- https://superfastpython.com/multithreaded-numpy-functions/ -->
-Additionally, NumPy functions which support array broadcasting can sometimes take advantage of auto parallelisation, particularly on HPC systems. These functions are typically backed by BLAS and LAPACK, it's [not well documented](https://superfastpython.com/multithreaded-numpy-functions/) which functions support auto parallelisation, but they most correspond to [linear algerbra operations](https://numpy.org/doc/stable/reference/routines.linalg.html).
+Additionally, NumPy functions which support array broadcasting can sometimes take advantage of auto parallelisation, particularly on HPC systems. These functions are typically backed by BLAS and LAPACK, it's [not well documented](https://superfastpython.com/multithreaded-numpy-functions/) which functions support auto parallelisation, but they mostly correspond to [linear algerbra operations](https://numpy.org/doc/stable/reference/routines.linalg.html).
 
-The auto-parallelisation of these functions is hardware dependant, so you won't always automatically get the additional benefit of parallelisation. However, HPC systems should be primed to take advantage, so try increasing the number of cores you request when submitting your jobs and see if the performance improves.
+The auto-parallelisation of these functions is hardware dependent, so you won't always automatically get the additional benefit of parallelisation. However, HPC systems should be primed to take advantage, so try increasing the number of cores you request when submitting your jobs and see if the performance improves.
 
-### `vectorise()`
+### `vectorize()`
 
-NumPy provides `vectorize()` an functions for operating over it's arrays.
+NumPy provides a `vectorize()` function for operating over its arrays.
 
 This doesn't actually make use of processor-level vectorisation, so won't afford a speed up. From NumPy's [documentation](https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html):
 
@@ -77,6 +77,6 @@ The vector instructions, which NumPy's array broadcasting take advantage of, ena
 
 Modern CPUs use SIMD (Single Instruction, Multiple Data) instructions to operate on several values packed into a register. Since a typical CPU cache line is 64 bytes, and standard data types like 32-bit or 64-bit floats and integers are 4 or 8 bytes each, 8–16 values can fit within a single cache line and be processed together by a single vector instruction.
 
-However, to take advantage of this, the data must be aligned in memory. Laid out such that it fits neatly into the expected cache line boundaries. Default memory allocations in Python don’t guarantee this kind of alignment, as doing so for all objects would waste memory.
+However, to take advantage of this, the data must be aligned in memory, laid out such that it fits neatly into the expected cache line boundaries. Default memory allocations in Python don’t guarantee this kind of alignment, as doing so for all objects would waste memory.
 
 NumPy arrays, in contrast, are explicitly designed for numerical performance. They allocate memory with alignment guarantees, ensuring that vector instructions can be used.
