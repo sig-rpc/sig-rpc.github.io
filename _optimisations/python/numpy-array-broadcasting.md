@@ -77,6 +77,6 @@ The vector instructions, which NumPy's array broadcasting take advantage of, ena
 
 Modern CPUs use SIMD (Single Instruction, Multiple Data) instructions to operate on several values packed into a register. Since a typical CPU cache line is 64 bytes, and standard data types like 32-bit or 64-bit floats and integers are 4 or 8 bytes each, 8–16 values can fit within a single cache line and be processed together by a single vector instruction.
 
-However, to take advantage of this, the data must be aligned in memory. Laid out such that it fits neatly into the expected cache line boundaries. Default memory allocations in Python don’t guarantee this kind of alignment, as doing so for all objects would waste memory.
+However, to take advantage of this, the data must be aligned in memory, laid out such that it fits neatly into the expected cache line boundaries. Default memory allocations in Python don’t guarantee this kind of alignment, as doing so for all objects would waste memory.
 
 NumPy arrays, in contrast, are explicitly designed for numerical performance. They allocate memory with alignment guarantees, ensuring that vector instructions can be used.
