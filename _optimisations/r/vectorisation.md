@@ -81,6 +81,11 @@ Using vectorisation is both more concise and more performant.
 
 You might be tempted to use `sapply()` or `vapply()`, which allow you to apply a transformation function to each element within an array, but these were slower than the original loop in testing.
 
+This is because the `apply()` family of functions, in contrast to popular believe, are _not_ more performant than `for` loops in R.
+In fact, the `apply()` implementation contains a regular R `for` loop. The reason they may sometimes be more performant than `for` loops
+is because they take care of the common pitfalls with loops, like the [growing data problem](./dont-grow-dataframes.md).
+However, using an `apply` function is not vectorisation, it is loop-hiding (see also the Fourth Circle of [The R Inferno](https://www.burns-stat.com/documents/books/the-r-inferno/)).
+
 ## The Technical Detail
 
 Many of R's mathematical vector functions rely on the scientific libraries BLAS and LAPACK, which provide efficient implementations of the operations. These are faster when executed in a single call to C, rather than an R loop over a vector which makes many individual calls.
