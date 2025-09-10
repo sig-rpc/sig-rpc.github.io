@@ -127,3 +127,31 @@ The simplest example of a task array job script would be:
 This could be made more advanced, processing multiple jobs per task, by dynamically dividing a for loop within the job script.
 
 Tasks arrays are a really easy way to speed up the execution of embarrassingly parallel tasks, where you have many independent jobs to be executed. It's worth reviewing the documentation for the HPC system that you will be using, exact usage may vary slightly depending on how the scheduler is configured.
+
+#### Profiling slurm job efficiencies
+
+To run any job in slurm, the compute resources are specified, even if this is just the default values.
+
+This gives scope to introduce inefficiencies by over-specifying or under-specifying the memory and CPU/GPU resources for each job. Over specifying resources implies that the resources are allocated but not used - depriving other jobs and ultimately slowing the HPC system down; whereas under specifying resources can increase the time taken to run the job, or even cause it to fail if the allocated memory is too small.
+
+A good first step in identifying inefficient slurm resource allocations is to run the program `seff` (short for 'slurm efficiencies') on a completed job, passing the job ID. This gives several useful measurements, e.g.:
+
+
+```
+seff 12345678
+Job ID: 12345678
+Array Job ID: 12345678_11
+Cluster: my_hpc
+User/Group: a.user/a.group
+State: COMPLETED (exit code 0)
+Cores: 20
+CPU Utilized: 37-12:06:38
+CPU Efficiency: 99.42% of 37-17:21:04 core-walltime
+Job Wall-clock time: 14:08:46
+Memory Utilized: 9.96 GB
+Memory Efficiency: 3.98% of 250.00 GB
+
+```
+
+In this example, the CPU efficiency is high at over 90%, but the memory used is very low - so reducing the allocated memory may be more efficent to potentially allow more jobs to simultaneously run, depending on the number of cores on a node. 
+
