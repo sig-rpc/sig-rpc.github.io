@@ -9,7 +9,7 @@ subcategory: [Core]
 tags: [list, loop]
 ---
 
-[List comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) (e.g. `[expression for item in iterable if condition == True]`) is faster than constructing a list with a loop. it can't be used for all list construction, such as where items depend on one another, but it should be used whenever possible.
+[List comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) (e.g. `[expression for item in iterable if condition == True]`) is faster than constructing a list with a loop. It can't be used for all list constructions, such as where items depend on one another, but it should be used whenever possible.
 
 <!--more-->
 
