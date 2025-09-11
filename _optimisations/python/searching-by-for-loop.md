@@ -1,9 +1,9 @@
 ---
 level: 1
 published: true
-authors: 
+authors: Mike Laverick, Sam Cunliffe
 
-name: Mike Laverick, Sam Cunliffe
+name: Searching with a for-loop
 language: [Python]
 subcategory: [Core]
 tags: [loop, search, operator]
