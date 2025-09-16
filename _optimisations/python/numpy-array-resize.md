@@ -60,4 +60,8 @@ array_resize: 82.66ms
 
 Resizing an array, allocates a new buffer in memory of the required size, copies the data across, and de-allocates the old storage.
 
-In comparison a list, whilst backed by an array, performs greedy resizes. The length of the list visible to the user, does not reflect the length of the internal array. This allows it to simply store new items and increase it's length counter when appending. Only occasionally, does it need to perform an additional greedy resize. This greatly improves the append performance, at the cost of a slight memory overhead.
+In comparison a list, whilst backed by an array, performs greedy resizes.
+The length of the list visible to the user does not reflect the length of the internal array.
+This allows it to simply store new items and increase its length-counter when appending.
+Only occasionally, does it need to perform an additional greedy resize.
+This greatly improves the append performance, at the cost of a slight memory overhead.
