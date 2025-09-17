@@ -19,6 +19,7 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [C++](#cpp-web)
   - [Computer Science](#cs-web)
   - [GPU Computing](#gpu-web)
+  - [Python](#python-web)
 
 ## Books
 
@@ -33,9 +34,10 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [Modern C++ Programming](https://federico-busato.github.io/Modern-CPP-Programming){:target="_blank"}
 - **Python**{:id="python-training"}
   - [Performance Profiling & Optimisation (Python)](https://carpentries-incubator.github.io/pando-python/){:target="_blank"}
+  - [High Performance Python; Improving Code Efficiency and Performance](https://www.youtube.com/watch?v=eQbmQxP2HRo){:target="_blank"} (Video 1h38m)
+      - [Course Materials](https://github.com/ycrc/high_performance_python)
 - **R**{:id="r-training"}
   - [Performant R: Doing things faster with R](https://richardjacton.github.io/performantR/Performant_R.html){:target="_blank"}
-
 
 ## Web
 
@@ -47,8 +49,7 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [The CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/){:target="_blank"}
   - [GPU Glossary](https://modal.com/gpu-glossary){:target="_blank"}
  **Python**{:id="python-web"}
-  - [High Performance Python; Improving Code Efficiency and Performance](https://www.youtube.com/watch?v=eQbmQxP2HRo){:target="_blank"}
-  - https://github.com/ycrc/high_performance_python 
   - [330× faster: Four different ways to speed up your code](https://pythonspeed.com/articles/different-ways-speed/){:target="_blank"}
   
+
 
