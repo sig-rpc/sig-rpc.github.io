@@ -35,7 +35,7 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
 - **Python**{:id="python-training"}
   - [Performance Profiling & Optimisation (Python)](https://carpentries-incubator.github.io/pando-python/){:target="_blank"}
   - [High Performance Python; Improving Code Efficiency and Performance](https://www.youtube.com/watch?v=eQbmQxP2HRo){:target="_blank"} (Video 1h38m)
-      - [Course Materials](https://github.com/ycrc/high_performance_python)
+    - [Course Materials](https://github.com/ycrc/high_performance_python)
 - **R**{:id="r-training"}
   - [Performant R: Doing things faster with R](https://richardjacton.github.io/performantR/Performant_R.html){:target="_blank"}
 
@@ -51,5 +51,6 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
  **Python**{:id="python-web"}
   - [330× faster: Four different ways to speed up your code](https://pythonspeed.com/articles/different-ways-speed/){:target="_blank"}
   
+
 
 
