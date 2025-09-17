@@ -16,7 +16,7 @@ Profiling is useful when you have written any code that will be running for a su
 
 ## When to Profile?
 
-Profiling is most relevant to working code, when you have reached a stage that the code works and are considering deploying it. During development the bottlenecks are likely to change, so profiling at this stage may lead to redundant optimisations.
+Profiling is most relevant to working code, when you have reached a stage that the code works and are considering deploying it. During development, the bottlenecks are likely to change, so profiling at this stage may lead to redundant optimisations.
 
 Profiling should be a relatively quick and inexpensive process. If there are no significant bottlenecks in your code you can quickly be confident that your code is reasonably optimised. If you do identify a concerning bottleneck, further work to optimise your code and reduce the bottleneck could see significant improvements to the performance of your code and hence productivity.
 
@@ -100,3 +100,4 @@ There are two main approaches that profilers use for function and line level pro
 Deterministic profilers provide precise measurements by recording every relevant event (e.g. function or line executed) during execution. This comprehensive tracking ensures consistent and reproducible results, however due to this granularity deterministic profiling can significantly slow down program execution and generate large volumes of data. For this reason deterministic profilers are best suited for small profiles.
 
 In contrast, sampling profilers operate similar to a debugger, pausing the profiled code at a regular sampling interval (e.g. 1000 times a second). The profiler then logs where the code was paused before resuming execution. This approach is significantly less granular in it's data collection, however any component that occupies a significant proportion of the runtime will inevitably be caught by a significant proportion of the samples. This approach is low-overhead, not significantly increasing the runtime during profiling. Sampling profilers typically allow the sampling rate to be increased, to increase collection granularity, this does however increase the overhead of profiling. Advanced profiling tools typically utilise sampling (atleast for a subset of their metrics), so that they can be used to profile large and complex software.
+
