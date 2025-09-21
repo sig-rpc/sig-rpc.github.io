@@ -125,6 +125,10 @@ Common to C/C++ profiling, you won't be able to get profiling detail for any lib
 
 Intel VTune is a sampling profiler therefore only CPU time is reported by function-level profiling, it does not track how many times each function or line is called.
 
-If profiling code that uses OpenMP, you will find many functions that you don't recognise, some which are only displayed as addresses. These are functions inserted by OpenMP to parallelise your code. Try working with the flame graph visualisation to understand how they fit around the code you have written.
+If profiling code that uses OpenMP, you will find many functions that you don't recognise, some which are only displayed as addresses. These are functions inserted by OpenMP to parallelise your code. Try working with the flame graph visualisation to understand how they fit around the code you have written. You can control some of those functions appearing from the menus in the bottom of the vtune window
+
+{% figure caption:"Intel VTune's menus controlling which functions appear in the various tabs." label:functions-menus %}
+![A screenshot of the area in the bottom of the Intel VTune window, showing the menus that control which functions will be included in tables and graphs.](/assets/intel_vtune/functions-menus.png)
+{% endfigure %}
 
 For many of the advanced profiling features of Intel VTune it requires administrator access and extra drivers to be installed. Likewise, some hardware metrics available in these advanced profiling modes are only available with a supported Intel CPU.
