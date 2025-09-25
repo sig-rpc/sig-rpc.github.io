@@ -1,0 +1,917 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 28.73     16.42    16.42  5451435     0.00     0.00  node::computeApparentViscosity(double const*, FluidMaterial const&)
+ 23.36     29.77    13.35 16000012     0.00     0.00  void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter)
+ 14.58     38.10     8.33  5372781     0.00     0.00  node::computeEquilibrium(double*)
+ 11.08     44.43     6.33      156     0.04     0.04  LB::getZ(unsigned int const&) const
+ 10.52     50.44     6.01  7072394     0.00     0.00  node::addForce(double*, tVect const&)
+  5.53     53.60     3.16  7512840     0.00     0.00  node::reconstruct()
+  1.92     54.70     1.10  6324299     0.00     0.00  node::solveCollision(double const*)
+  0.98     55.26     0.56  5242043     0.00     0.00  node::shiftVelocity(tVect const&)
+  0.98     55.82     0.56  2000001     0.00     0.00  LB::streaming(std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&)
+  0.89     56.33     0.51  9011735     0.00     0.00  node::store()
+  0.31     56.51     0.18  4000003     0.00     0.00  LB::cleanLists()
+  0.19     56.62     0.11       68     0.00     0.00  node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&)
+  0.19     56.73     0.11       68     0.00     0.00  node::setEquilibrium(tVect const&, double const&, tVect const&)
+  0.17     56.83     0.10                             node::addForceTRT(tVect const&)
+  0.16     56.92     0.09                             node::computeEquilibriumTRT(double*, double*)
+  0.07     56.96     0.04  2000001     0.00     0.00  LB::updateInterface()
+  0.07     57.00     0.04  2000001     0.00     0.00  LB::latticeBoltzmannFreeSurfaceStep()
+  0.07     57.04     0.04                             node::solveCollisionTRT(double const*, double const*, double const&)
+  0.03     57.06     0.02 19856644     0.00     0.00  node::isFluid() const
+  0.03     57.08     0.02  2000001     0.00     0.00  LB::updateMutants(double&)
+  0.03     57.10     0.02  2000001     0.00     0.00  LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&)
+  0.02     57.11     0.01  9982476     0.00     0.00  node::bounceBackForce(unsigned int const&, double const*, double const&, double const&, double const&) const
+  0.02     57.12     0.01  2000001     0.00     0.00  LB::removeIsolated(double&)
+  0.02     57.13     0.01  2000001     0.00     0.00  LB::smoothenInterface(double&)
+  0.02     57.14     0.01  2000001     0.00     0.00  LB::findInterfaceMutants()
+  0.02     57.15     0.01                             LB::curvedWallReconstruction(unsigned int const&, node const*, tVect const&) const
+  0.00     57.15     0.00 32108542     0.00     0.00  node::isInterface() const
+  0.00     57.15     0.00 22744828     0.00     0.00  node::massStream(unsigned int const&) const
+  0.00     57.15     0.00  9976390     0.00     0.00  node::getSolidIndex() const
+  0.00     57.15     0.00  2000002     0.00     0.00  IO::createFiles(LB const&, DEM const&)
+  0.00     57.15     0.00  2000001     0.00     0.00  DEM::evolveBoundaries()
+  0.00     57.15     0.00    50300     0.00     0.00  node::isInsideParticle() const
+  0.00     57.15     0.00    11100     0.00     0.00  LB::getPosition(unsigned int const&) const
+  0.00     57.15     0.00    10050     0.00     0.00  wall::dist(tVect) const
+  0.00     57.15     0.00     6146     0.00     0.00  node::isActive() const
+  0.00     57.15     0.00     2436     0.00     0.00  GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00     1764     0.00     0.00  node::isWall() const
+  0.00     57.15     0.00     1516     0.00     0.00  elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&)
+  0.00     57.15     0.00     1114     0.00     0.00  node::setOutsideParticle()
+  0.00     57.15     0.00      650     0.00     0.00  node::isTopography() const
+  0.00     57.15     0.00      566     0.00     0.00  LB::generateNode(unsigned int const&, types const&)
+  0.00     57.15     0.00      566     0.00     0.00  LB::findNeighbors(unsigned int*, node const*)
+  0.00     57.15     0.00      566     0.00     0.00  node::setType(types const&)
+  0.00     57.15     0.00      548     0.00     0.00  std::_Rb_tree<unsigned int const, std::pair<unsigned int const, node>, std::_Select1st<std::pair<unsigned int const, node> >, std::less<unsigned int const>, std::allocator<std::pair<unsigned int const, node> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<unsigned int const, node> >, unsigned int const&)
+  0.00     57.15     0.00      402     0.00     0.00  energy::updateTotal()
+  0.00     57.15     0.00      402     0.00     0.00  energy::reset()
+  0.00     57.15     0.00      400     0.00     0.00  std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00      357     0.00     0.00  LB::getX(unsigned int const&) const
+  0.00     57.15     0.00      357     0.00     0.00  LB::getY(unsigned int const&) const
+  0.00     57.15     0.00      250     0.00     0.00  node::isPeriodic() const
+  0.00     57.15     0.00      215     0.00     0.00  LB::getPositionZ(unsigned int const&) const
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportEnergy(DEM const&, LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportFluidMass(LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportWallForce(DEM const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportFluidFlowRate(LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportMaxSpeedFluid(LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportMeanViscosity(LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportFluidCenterOfMass(LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  IO::exportFreeSurfaceExtent(LB const&)
+  0.00     57.15     0.00      201     0.00     0.00  LB::updateEnergy(double&)
+  0.00     57.15     0.00      201     0.00     0.00  LB::getPositionX(unsigned int const&) const
+  0.00     57.15     0.00      201     0.00     0.00  LB::getPositionY(unsigned int const&) const
+  0.00     57.15     0.00      196     0.00     0.00  GetPot::_request_variable(char const*) const
+  0.00     57.15     0.00      105     0.00     0.00  GetPot::search(char const*)
+  0.00     57.15     0.00      102     0.00     0.00  GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00       96     0.00     0.00  GetPot::variable::take(char const*, char const*)
+  0.00     57.15     0.00       96     0.00     0.00  GetPot::variable::~variable()
+  0.00     57.15     0.00       96     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00       95     0.00     0.00  void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00     57.15     0.00       88     0.00     0.00  GetPot::variable::variable(GetPot::variable const&)
+  0.00     57.15     0.00       68     0.00     0.00  node::addForce(tVect const&)
+  0.00     57.15     0.00       36     0.00     0.00  void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00       21     0.00     0.00  IO::exportLagrangianParaviewFluid(LB const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00       21     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00     57.15     0.00       18     0.00     0.00  node::setStatWall()
+  0.00     57.15     0.00       18     0.00     0.00  node::setSolidIndex(unsigned short const&)
+  0.00     57.15     0.00       18     0.00     0.00  node::isStatWall() const
+  0.00     57.15     0.00       18     0.00     0.00  node::isCylinderWall() const
+  0.00     57.15     0.00       18     0.00     0.00  double GetPot::operator()<double>(char const*, double const&) const
+  0.00     57.15     0.00       16     0.00     0.00  GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*)
+  0.00     57.15     0.00       15     0.00     3.36  goCycle(IO&, DEM&, LB&)
+  0.00     57.15     0.00       14     0.00     0.00  void std::vector<node*, std::allocator<node*> >::_M_realloc_insert<node* const&>(__gnu_cxx::__normal_iterator<node**, std::vector<node*, std::allocator<node*> > >, node* const&)
+  0.00     57.15     0.00       11     0.00     0.00  void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&)
+  0.00     57.15     0.00       10     0.00     0.00  GetPot::operator()(char const*, char const*) const
+  0.00     57.15     0.00        8     0.00     0.00  void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&)
+  0.00     57.15     0.00        8     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00     57.15     0.00        7     0.00     0.00  DEM::updateEnergy(double&)
+  0.00     57.15     0.00        6     0.00     0.00  boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00        6     0.00     0.00  frame_dummy
+  0.00     57.15     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     57.15     0.00        2     0.00     3.15  LB::initializeLatticeBoundaries()
+  0.00     57.15     0.00        2     0.00     0.00  pbc::setPlanes()
+  0.00     57.15     0.00        2     0.00     0.00  pbc::pbcShow() const
+  0.00     57.15     0.00        2     0.00     0.00  wall::wallShow() const
+  0.00     57.15     0.00        2     0.00     0.00  void std::vector<pbc, std::allocator<pbc> >::_M_realloc_insert<pbc const&>(__gnu_cxx::__normal_iterator<pbc*, std::vector<pbc, std::allocator<pbc> > >, pbc const&)
+  0.00     57.15     0.00        2     0.00     0.00  void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&)
+  0.00     57.15     0.00        2     0.00     0.00  std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN2IO10initializeEv
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN3DEM18discreteElementGetER6GetPotS1_
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK2LB6LBShowEv
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4elmt8elmtShowEv
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4node14liquidFractionEv
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4wall4distE5tVect
+  0.00     57.15     0.00        1     0.00     0.00  _GLOBAL__sub_I_exit_code
+  0.00     57.15     0.00        1     0.00     0.00  measureUnits::setComposite()
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeLists()
+  0.00     57.15     0.00        1     0.00     0.06  LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&)
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeCurved(std::vector<cylinder, std::allocator<cylinder> >&)
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeInterface(double)
+  0.00     57.15     0.00        1     0.00     0.16  LB::initializeVariables()
+  0.00     57.15     0.00        1     0.00    16.78  LB::latticeBoltzmannGet(GetPot&, GetPot&)
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeTopography()
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeWallBoundaries(std::vector<wall, std::allocator<wall> >&)
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeObjectBoundaries(std::vector<object, std::allocator<object> >&)
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeCylinderBoundaries(std::vector<cylinder, std::allocator<cylinder> >&)
+  0.00     57.15     0.00        1     0.00     0.00  LB::initializeParticleBoundaries(std::vector<particle, std::allocator<particle> >&)
+  0.00     57.15     0.00        1     0.00     0.00  DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&)
+  0.00     57.15     0.00        1     0.00     0.00  DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&)
+  0.00     57.15     0.00        1     0.00     0.00  DEM::discreteElementGet(GetPot&, GetPot&)
+  0.00     57.15     0.00        1     0.00     0.00  DEM::compositeProperties()
+  0.00     57.15     0.00        1     0.00     0.00  DEM::initializeCylinders()
+  0.00     57.15     0.00        1     0.00     0.00  node::setInterface()
+  0.00     57.15     0.00        1     0.00     0.00  GetPot::_read_in_stream[abi:cxx11](std::istream&)
+  0.00     57.15     0.00        1     0.00     0.00  GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+  0.00     57.15     0.00        1     0.00     0.00  std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long)
+  0.00     57.15     0.00        1     0.00     0.00  std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long)
+  0.00     57.15     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2016 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.02% of 57.15 seconds
+
+index % time    self  children    called     name
+                0.00   16.78       5/15          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00   33.57      10/15          parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+[1]     88.1    0.00   50.35      15         goCycle(IO&, DEM&, LB&) [1]
+                0.02   25.38 2000001/2000001     LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [5]
+                0.04   24.92 2000001/2000001     LB::latticeBoltzmannFreeSurfaceStep() [6]
+                0.00    0.00 2000001/2000001     DEM::evolveBoundaries() [48]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     88.1    0.00   50.35                 parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+                0.00   33.57      10/15          goCycle(IO&, DEM&, LB&) [1]
+                0.00   16.78       1/1           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00    0.00      44/196         GetPot::_request_variable(char const*) const [78]
+                0.00    0.00      26/105         GetPot::search(char const*) [79]
+                0.00    0.00      12/18          double GetPot::operator()<double>(char const*, double const&) const [94]
+                0.00    0.00       9/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                0.00    0.00       1/1           DEM::discreteElementGet(GetPot&, GetPot&) [127]
+-----------------------------------------------
+                             16000012             void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+                0.00    0.00       1/16000012     LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+                1.67    4.51 2000001/16000012     LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [5]
+                1.67    4.51 2000001/16000012     LB::latticeBoltzmannFreeSurfaceStep() [6]
+               10.01   27.08 12000009/16000012     LB::cleanLists() [4]
+[3]     86.5   13.35   36.10 16000012+16000012 void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+               16.42    0.00 5451435/5451435     node::computeApparentViscosity(double const*, FluidMaterial const&) [8]
+                8.33    0.00 5372781/5372781     node::computeEquilibrium(double*) [9]
+                6.01    0.00 7072394/7072394     node::addForce(double*, tVect const&) [13]
+                3.16    0.00 7512840/7512840     node::reconstruct() [14]
+                1.10    0.00 6324299/6324299     node::solveCollision(double const*) [17]
+                0.56    0.00 5242043/5242043     node::shiftVelocity(tVect const&) [18]
+                0.51    0.00 9011735/9011735     node::store() [20]
+                0.01    0.00 9854995/19856644     node::isFluid() const [30]
+                0.00    0.00 22744828/22744828     node::massStream(unsigned int const&) const [45]
+                0.00    0.00 22152591/32108542     node::isInterface() const [44]
+                             16000012             void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+-----------------------------------------------
+                0.00    0.00       1/4000003     LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+                0.09   18.54 2000001/4000003     LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [5]
+                0.09   18.54 2000001/4000003     LB::latticeBoltzmannFreeSurfaceStep() [6]
+[4]     65.2    0.18   37.09 4000003         LB::cleanLists() [4]
+               10.01   27.08 12000009/16000012     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+-----------------------------------------------
+                0.02   25.38 2000001/2000001     goCycle(IO&, DEM&, LB&) [1]
+[5]     44.4    0.02   25.38 2000001         LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [5]
+                0.09   18.54 2000001/4000003     LB::cleanLists() [4]
+                1.67    4.51 2000001/16000012     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+                0.56    0.00 2000001/2000001     LB::streaming(std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [19]
+-----------------------------------------------
+                0.04   24.92 2000001/2000001     goCycle(IO&, DEM&, LB&) [1]
+[6]     43.7    0.04   24.92 2000001         LB::latticeBoltzmannFreeSurfaceStep() [6]
+                0.09   18.54 2000001/4000003     LB::cleanLists() [4]
+                1.67    4.51 2000001/16000012     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+                0.04    0.06 2000001/2000001     LB::updateInterface() [24]
+-----------------------------------------------
+                0.00   16.78       1/1           parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+[7]     29.4    0.00   16.78       1         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00   16.78       5/15          goCycle(IO&, DEM&, LB&) [1]
+                0.00    0.00      87/196         GetPot::_request_variable(char const*) const [78]
+                0.00    0.00      54/105         GetPot::search(char const*) [79]
+                0.00    0.00      14/215         LB::getPositionZ(unsigned int const&) const [66]
+                0.00    0.00       7/10          GetPot::operator()(char const*, char const*) const [98]
+                0.00    0.00       6/6           boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [102]
+                0.00    0.00       6/18          double GetPot::operator()<double>(char const*, double const&) const [94]
+                0.00    0.00       2/2           std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [109]
+                0.00    0.00       1/1           measureUnits::setComposite() [117]
+                0.00    0.00       1/1           std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long) [133]
+-----------------------------------------------
+               16.42    0.00 5451435/5451435     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[8]     28.7   16.42    0.00 5451435         node::computeApparentViscosity(double const*, FluidMaterial const&) [8]
+-----------------------------------------------
+                8.33    0.00 5372781/5372781     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[9]     14.6    8.33    0.00 5372781         node::computeEquilibrium(double*) [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]    11.5    0.00    6.56                 LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+                0.00    6.29       2/2           LB::initializeLatticeBoundaries() [12]
+                0.00    0.16       1/1           LB::initializeVariables() [22]
+                0.00    0.06       1/1           LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [27]
+                0.00    0.05      18/566         LB::generateNode(unsigned int const&, types const&) [15]
+                0.00    0.00       1/4000003     LB::cleanLists() [4]
+                0.00    0.00       1/16000012     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+                0.00    0.00       1/1           LB::initializeLists() [36]
+                0.00    0.00      50/50300       node::isInsideParticle() const [49]
+                0.00    0.00      18/18          node::setSolidIndex(unsigned short const&) [91]
+                0.00    0.00      18/18          node::setStatWall() [90]
+                0.00    0.00       1/1           LB::initializeCylinderBoundaries(std::vector<cylinder, std::allocator<cylinder> >&) [123]
+                0.00    0.00       1/1           LB::initializeWallBoundaries(std::vector<wall, std::allocator<wall> >&) [121]
+                0.00    0.00       1/1           LB::initializeObjectBoundaries(std::vector<object, std::allocator<object> >&) [122]
+                0.00    0.00       1/1           LB::initializeTopography() [120]
+                0.00    0.00       1/1           LB::initializeInterface(double) [119]
+                0.00    0.00       1/1           LB::initializeCurved(std::vector<cylinder, std::allocator<cylinder> >&) [118]
+                0.00    0.00       1/1           LB::initializeParticleBoundaries(std::vector<particle, std::allocator<particle> >&) [124]
+-----------------------------------------------
+                1.46    0.00      36/156         LB::findNeighbors(unsigned int*, node const*) [16]
+                4.87    0.01     120/156         LB::initializeLatticeBoundaries() [12]
+[11]    11.1    6.33    0.01     156         LB::getZ(unsigned int const&) const [11]
+                0.01    0.00 9982476/9982476     node::bounceBackForce(unsigned int const&, double const*, double const&, double const&, double const&) const [32]
+                0.00    0.00 9976390/9976390     node::getSolidIndex() const [46]
+                0.00    0.00 9954953/32108542     node::isInterface() const [44]
+-----------------------------------------------
+                0.00    6.29       2/2           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[12]    11.0    0.00    6.29       2         LB::initializeLatticeBoundaries() [12]
+                4.87    0.01     120/156         LB::getZ(unsigned int const&) const [11]
+                0.00    1.42     548/566         LB::generateNode(unsigned int const&, types const&) [15]
+                0.00    0.00     120/357         LB::getX(unsigned int const&) const [63]
+                0.00    0.00     120/357         LB::getY(unsigned int const&) const [64]
+-----------------------------------------------
+                6.01    0.00 7072394/7072394     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[13]    10.5    6.01    0.00 7072394         node::addForce(double*, tVect const&) [13]
+-----------------------------------------------
+                3.16    0.00 7512840/7512840     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[14]     5.5    3.16    0.00 7512840         node::reconstruct() [14]
+-----------------------------------------------
+                0.00    0.05      18/566         LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+                0.00    1.42     548/566         LB::initializeLatticeBoundaries() [12]
+[15]     2.6    0.00    1.46     566         LB::generateNode(unsigned int const&, types const&) [15]
+                0.00    1.46     566/566         LB::findNeighbors(unsigned int*, node const*) [16]
+                0.00    0.00    5068/6146        node::isActive() const [52]
+                0.00    0.00     650/650         node::isTopography() const [57]
+                0.00    0.00     650/1764        node::isWall() const [54]
+                0.00    0.00     566/566         node::setType(types const&) [58]
+                0.00    0.00     566/1114        node::setOutsideParticle() [56]
+                0.00    0.00     548/548         std::_Rb_tree<unsigned int const, std::pair<unsigned int const, node>, std::_Select1st<std::pair<unsigned int const, node> >, std::less<unsigned int const>, std::allocator<std::pair<unsigned int const, node> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<unsigned int const, node> >, unsigned int const&) [59]
+-----------------------------------------------
+                0.00    1.46     566/566         LB::generateNode(unsigned int const&, types const&) [15]
+[16]     2.6    0.00    1.46     566         LB::findNeighbors(unsigned int*, node const*) [16]
+                1.46    0.00      36/156         LB::getZ(unsigned int const&) const [11]
+                0.00    0.00     566/1764        node::isWall() const [54]
+                0.00    0.00     530/6146        node::isActive() const [52]
+                0.00    0.00     250/250         node::isPeriodic() const [65]
+                0.00    0.00      36/357         LB::getX(unsigned int const&) const [63]
+                0.00    0.00      36/357         LB::getY(unsigned int const&) const [64]
+-----------------------------------------------
+                1.10    0.00 6324299/6324299     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[17]     1.9    1.10    0.00 6324299         node::solveCollision(double const*) [17]
+-----------------------------------------------
+                0.56    0.00 5242043/5242043     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[18]     1.0    0.56    0.00 5242043         node::shiftVelocity(tVect const&) [18]
+-----------------------------------------------
+                0.56    0.00 2000001/2000001     LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [5]
+[19]     1.0    0.56    0.00 2000001         LB::streaming(std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [19]
+-----------------------------------------------
+                0.51    0.00 9011735/9011735     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[20]     0.9    0.51    0.00 9011735         node::store() [20]
+-----------------------------------------------
+                0.03    0.03      18/68          LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [27]
+                0.08    0.08      50/68          LB::initializeVariables() [22]
+[21]     0.4    0.11    0.11      68         node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&) [21]
+                0.11    0.00      68/68          node::setEquilibrium(tVect const&, double const&, tVect const&) [23]
+                0.00    0.00      68/68          node::addForce(tVect const&) [86]
+-----------------------------------------------
+                0.00    0.16       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[22]     0.3    0.00    0.16       1         LB::initializeVariables() [22]
+                0.08    0.08      50/68          node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&) [21]
+                0.00    0.00    1096/19856644     node::isFluid() const [30]
+                0.00    0.00     548/6146        node::isActive() const [52]
+                0.00    0.00     499/32108542     node::isInterface() const [44]
+                0.00    0.00       1/1           node::setInterface() [130]
+-----------------------------------------------
+                0.11    0.00      68/68          node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&) [21]
+[23]     0.2    0.11    0.00      68         node::setEquilibrium(tVect const&, double const&, tVect const&) [23]
+-----------------------------------------------
+                0.04    0.06 2000001/2000001     LB::latticeBoltzmannFreeSurfaceStep() [6]
+[24]     0.2    0.04    0.06 2000001         LB::updateInterface() [24]
+                0.01    0.01 2000001/2000001     LB::removeIsolated(double&) [29]
+                0.02    0.00 2000001/2000001     LB::updateMutants(double&) [31]
+                0.01    0.00 2000001/2000001     LB::smoothenInterface(double&) [33]
+                0.01    0.00 2000001/2000001     LB::findInterfaceMutants() [34]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     0.2    0.10    0.00                 node::addForceTRT(tVect const&) [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.2    0.09    0.00                 node::computeEquilibriumTRT(double*, double*) [26]
+-----------------------------------------------
+                0.00    0.06       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[27]     0.1    0.00    0.06       1         LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [27]
+                0.03    0.03      18/68          node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&) [21]
+                0.00    0.00     548/1764        node::isWall() const [54]
+                0.00    0.00      18/18          node::isStatWall() const [92]
+                0.00    0.00       6/14          void std::vector<node*, std::allocator<node*> >::_M_realloc_insert<node* const&>(__gnu_cxx::__normal_iterator<node**, std::vector<node*, std::allocator<node*> > >, node* const&) [96]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.1    0.04    0.00                 node::solveCollisionTRT(double const*, double const*, double const&) [28]
+-----------------------------------------------
+                0.01    0.01 2000001/2000001     LB::updateInterface() [24]
+[29]     0.0    0.01    0.01 2000001         LB::removeIsolated(double&) [29]
+                0.01    0.00 10000005/19856644     node::isFluid() const [30]
+-----------------------------------------------
+                0.00    0.00     548/19856644     LB::initializeLists() [36]
+                0.00    0.00    1096/19856644     LB::initializeVariables() [22]
+                0.01    0.00 9854995/19856644     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+                0.01    0.00 10000005/19856644     LB::removeIsolated(double&) [29]
+[30]     0.0    0.02    0.00 19856644         node::isFluid() const [30]
+-----------------------------------------------
+                0.02    0.00 2000001/2000001     LB::updateInterface() [24]
+[31]     0.0    0.02    0.00 2000001         LB::updateMutants(double&) [31]
+-----------------------------------------------
+                0.01    0.00 9982476/9982476     LB::getZ(unsigned int const&) const [11]
+[32]     0.0    0.01    0.00 9982476         node::bounceBackForce(unsigned int const&, double const*, double const&, double const&, double const&) const [32]
+-----------------------------------------------
+                0.01    0.00 2000001/2000001     LB::updateInterface() [24]
+[33]     0.0    0.01    0.00 2000001         LB::smoothenInterface(double&) [33]
+-----------------------------------------------
+                0.01    0.00 2000001/2000001     LB::updateInterface() [24]
+[34]     0.0    0.01    0.00 2000001         LB::findInterfaceMutants() [34]
+-----------------------------------------------
+                                                 <spontaneous>
+[35]     0.0    0.01    0.00                 LB::curvedWallReconstruction(unsigned int const&, node const*, tVect const&) const [35]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[36]     0.0    0.00    0.00       1         LB::initializeLists() [36]
+                0.00    0.00     548/19856644     node::isFluid() const [30]
+                0.00    0.00     499/32108542     node::isInterface() const [44]
+                0.00    0.00       8/14          void std::vector<node*, std::allocator<node*> >::_M_realloc_insert<node* const&>(__gnu_cxx::__normal_iterator<node**, std::vector<node*, std::allocator<node*> > >, node* const&) [96]
+-----------------------------------------------
+                0.00    0.00       2/6           DEM::discreteElementGet(GetPot&, GetPot&) [127]
+                0.00    0.00       4/6           DEM::compositeProperties() [128]
+[37]     0.0    0.00    0.00       6         frame_dummy [37]
+-----------------------------------------------
+                0.00    0.00     499/32108542     LB::initializeLists() [36]
+                0.00    0.00     499/32108542     LB::initializeVariables() [22]
+                0.00    0.00 9954953/32108542     LB::getZ(unsigned int const&) const [11]
+                0.00    0.00 22152591/32108542     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[44]     0.0    0.00    0.00 32108542         node::isInterface() const [44]
+-----------------------------------------------
+                0.00    0.00 22744828/22744828     void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+[45]     0.0    0.00    0.00 22744828         node::massStream(unsigned int const&) const [45]
+-----------------------------------------------
+                0.00    0.00 9976390/9976390     LB::getZ(unsigned int const&) const [11]
+[46]     0.0    0.00    0.00 9976390         node::getSolidIndex() const [46]
+-----------------------------------------------
+                0.00    0.00 2000002/2000002     IO::outputStep(LB&, DEM&) [146]
+[47]     0.0    0.00    0.00 2000002         IO::createFiles(LB const&, DEM const&) [47]
+                0.00    0.00      21/21          IO::exportLagrangianParaviewFluid(LB const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [88]
+-----------------------------------------------
+                0.00    0.00 2000001/2000001     goCycle(IO&, DEM&, LB&) [1]
+[48]     0.0    0.00    0.00 2000001         DEM::evolveBoundaries() [48]
+-----------------------------------------------
+                0.00    0.00      50/50300       LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+                0.00    0.00   10050/50300       IO::exportFluidFlowRate(LB const&) [70]
+                0.00    0.00   10050/50300       IO::exportFluidCenterOfMass(LB const&) [73]
+                0.00    0.00   10050/50300       IO::exportFluidMass(LB const&) [68]
+                0.00    0.00   20100/50300       LB::updateEnergy(double&) [75]
+[49]     0.0    0.00    0.00   50300         node::isInsideParticle() const [49]
+-----------------------------------------------
+                0.00    0.00    1050/11100       IO::exportLagrangianParaviewFluid(LB const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [88]
+                0.00    0.00   10050/11100       IO::exportFluidCenterOfMass(LB const&) [73]
+[50]     0.0    0.00    0.00   11100         LB::getPosition(unsigned int const&) const [50]
+-----------------------------------------------
+                0.00    0.00   10050/10050       LB::updateEnergy(double&) [75]
+[51]     0.0    0.00    0.00   10050         wall::dist(tVect) const [51]
+-----------------------------------------------
+                0.00    0.00     530/6146        LB::findNeighbors(unsigned int*, node const*) [16]
+                0.00    0.00     548/6146        LB::initializeVariables() [22]
+                0.00    0.00    5068/6146        LB::generateNode(unsigned int const&, types const&) [15]
+[52]     0.0    0.00    0.00    6146         node::isActive() const [52]
+-----------------------------------------------
+                0.00    0.00      24/2436        IO::initialize() [145]
+                0.00    0.00     804/2436        IO::outputStep(LB&, DEM&) [146]
+                0.00    0.00    1608/2436        IO::exportEnergy(DEM const&, LB const&) [67]
+[53]     0.0    0.00    0.00    2436         GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+                0.00    0.00       9/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                0.00    0.00       2/8           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [100]
+                0.00    0.00       1/36          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [87]
+                0.00    0.00       1/1           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+                0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) [135]
+                0.00    0.00       1/1           GetPot::_read_in_stream[abi:cxx11](std::istream&) [131]
+-----------------------------------------------
+                0.00    0.00     548/1764        LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [27]
+                0.00    0.00     566/1764        LB::findNeighbors(unsigned int*, node const*) [16]
+                0.00    0.00     650/1764        LB::generateNode(unsigned int const&, types const&) [15]
+[54]     0.0    0.00    0.00    1764         node::isWall() const [54]
+-----------------------------------------------
+                                 287             elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                0.00    0.00       7/1516        LB::~LB() [201]
+                0.00    0.00       8/1516        parseCommandLine(IO&, GetPot&) [137]
+                0.00    0.00       8/1516        void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [99]
+                0.00    0.00       9/1516        parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+                0.00    0.00       9/1516        GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+                0.00    0.00      21/1516        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+                0.00    0.00      25/1516        GetPot::~GetPot() [263]
+                0.00    0.00      87/1516        GetPot::variable::variable(GetPot::variable const&) [85]
+                0.00    0.00      96/1516        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [83]
+                0.00    0.00     107/1516        printUfo(GetPot&, GetPot&) [138]
+                0.00    0.00     288/1516        GetPot::variable::take(char const*, char const*) [81]
+                0.00    0.00     387/1516        GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+                0.00    0.00     464/1516        GetPot::_read_in_stream[abi:cxx11](std::istream&) [131]
+[55]     0.0    0.00    0.00    1516+287     elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                                 287             elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+-----------------------------------------------
+                0.00    0.00     548/1114        LB::initializeParticleBoundaries(std::vector<particle, std::allocator<particle> >&) [124]
+                0.00    0.00     566/1114        LB::generateNode(unsigned int const&, types const&) [15]
+[56]     0.0    0.00    0.00    1114         node::setOutsideParticle() [56]
+-----------------------------------------------
+                0.00    0.00     650/650         LB::generateNode(unsigned int const&, types const&) [15]
+[57]     0.0    0.00    0.00     650         node::isTopography() const [57]
+-----------------------------------------------
+                0.00    0.00     566/566         LB::generateNode(unsigned int const&, types const&) [15]
+[58]     0.0    0.00    0.00     566         node::setType(types const&) [58]
+-----------------------------------------------
+                0.00    0.00     548/548         LB::generateNode(unsigned int const&, types const&) [15]
+[59]     0.0    0.00    0.00     548         std::_Rb_tree<unsigned int const, std::pair<unsigned int const, node>, std::_Select1st<std::pair<unsigned int const, node> >, std::less<unsigned int const>, std::allocator<std::pair<unsigned int const, node> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<unsigned int const, node> >, unsigned int const&) [59]
+-----------------------------------------------
+                0.00    0.00     402/402         LB::updateEnergy(double&) [75]
+[60]     0.0    0.00    0.00     402         energy::updateTotal() [60]
+-----------------------------------------------
+                0.00    0.00     402/402         LB::updateEnergy(double&) [75]
+[61]     0.0    0.00    0.00     402         energy::reset() [61]
+-----------------------------------------------
+                0.00    0.00       3/400         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [103]
+                0.00    0.00      96/400         GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+                0.00    0.00     105/400         GetPot::search(char const*) [79]
+                0.00    0.00     196/400         GetPot::_request_variable(char const*) const [78]
+[62]     0.0    0.00    0.00     400         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
+-----------------------------------------------
+                0.00    0.00      36/357         LB::findNeighbors(unsigned int*, node const*) [16]
+                0.00    0.00     120/357         LB::initializeLatticeBoundaries() [12]
+                0.00    0.00     201/357         LB::getPositionX(unsigned int const&) const [76]
+[63]     0.0    0.00    0.00     357         LB::getX(unsigned int const&) const [63]
+-----------------------------------------------
+                0.00    0.00      36/357         LB::findNeighbors(unsigned int*, node const*) [16]
+                0.00    0.00     120/357         LB::initializeLatticeBoundaries() [12]
+                0.00    0.00     201/357         LB::getPositionY(unsigned int const&) const [77]
+[64]     0.0    0.00    0.00     357         LB::getY(unsigned int const&) const [64]
+-----------------------------------------------
+                0.00    0.00     250/250         LB::findNeighbors(unsigned int*, node const*) [16]
+[65]     0.0    0.00    0.00     250         node::isPeriodic() const [65]
+-----------------------------------------------
+                0.00    0.00      14/215         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00    0.00     201/215         IO::exportFreeSurfaceExtent(LB const&) [74]
+[66]     0.0    0.00    0.00     215         LB::getPositionZ(unsigned int const&) const [66]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[67]     0.0    0.00    0.00     201         IO::exportEnergy(DEM const&, LB const&) [67]
+                0.00    0.00    1608/2436        GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[68]     0.0    0.00    0.00     201         IO::exportFluidMass(LB const&) [68]
+                0.00    0.00   10050/50300       node::isInsideParticle() const [49]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[69]     0.0    0.00    0.00     201         IO::exportWallForce(DEM const&) [69]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[70]     0.0    0.00    0.00     201         IO::exportFluidFlowRate(LB const&) [70]
+                0.00    0.00   10050/50300       node::isInsideParticle() const [49]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[71]     0.0    0.00    0.00     201         IO::exportMaxSpeedFluid(LB const&) [71]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[72]     0.0    0.00    0.00     201         IO::exportMeanViscosity(LB const&) [72]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[73]     0.0    0.00    0.00     201         IO::exportFluidCenterOfMass(LB const&) [73]
+                0.00    0.00   10050/50300       node::isInsideParticle() const [49]
+                0.00    0.00   10050/11100       LB::getPosition(unsigned int const&) const [50]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[74]     0.0    0.00    0.00     201         IO::exportFreeSurfaceExtent(LB const&) [74]
+                0.00    0.00     201/201         LB::getPositionX(unsigned int const&) const [76]
+                0.00    0.00     201/201         LB::getPositionY(unsigned int const&) const [77]
+                0.00    0.00     201/215         LB::getPositionZ(unsigned int const&) const [66]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::outputStep(LB&, DEM&) [146]
+[75]     0.0    0.00    0.00     201         LB::updateEnergy(double&) [75]
+                0.00    0.00   20100/50300       node::isInsideParticle() const [49]
+                0.00    0.00   10050/10050       wall::dist(tVect) const [51]
+                0.00    0.00     402/402         energy::reset() [61]
+                0.00    0.00     402/402         energy::updateTotal() [60]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::exportFreeSurfaceExtent(LB const&) [74]
+[76]     0.0    0.00    0.00     201         LB::getPositionX(unsigned int const&) const [76]
+                0.00    0.00     201/357         LB::getX(unsigned int const&) const [63]
+-----------------------------------------------
+                0.00    0.00     201/201         IO::exportFreeSurfaceExtent(LB const&) [74]
+[77]     0.0    0.00    0.00     201         LB::getPositionY(unsigned int const&) const [77]
+                0.00    0.00     201/357         LB::getY(unsigned int const&) const [64]
+-----------------------------------------------
+                0.00    0.00      10/196         GetPot::operator()(char const*, char const*) const [98]
+                0.00    0.00      18/196         double GetPot::operator()<double>(char const*, double const&) const [94]
+                0.00    0.00      37/196         DEM::discreteElementGet(GetPot&, GetPot&) [127]
+                0.00    0.00      44/196         parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+                0.00    0.00      87/196         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[78]     0.0    0.00    0.00     196         GetPot::_request_variable(char const*) const [78]
+                0.00    0.00     196/400         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
+-----------------------------------------------
+                0.00    0.00       5/105         parseCommandLine(IO&, GetPot&) [137]
+                0.00    0.00      20/105         DEM::discreteElementGet(GetPot&, GetPot&) [127]
+                0.00    0.00      26/105         parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+                0.00    0.00      54/105         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[79]     0.0    0.00    0.00     105         GetPot::search(char const*) [79]
+                0.00    0.00     105/400         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
+-----------------------------------------------
+                0.00    0.00     102/102         GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+[80]     0.0    0.00    0.00     102         GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [80]
+-----------------------------------------------
+                0.00    0.00      96/96          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+[81]     0.0    0.00    0.00      96         GetPot::variable::take(char const*, char const*) [81]
+                0.00    0.00     288/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                0.00    0.00      95/95          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [84]
+-----------------------------------------------
+                0.00    0.00      96/96          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+[82]     0.0    0.00    0.00      96         GetPot::variable::~variable() [82]
+-----------------------------------------------
+                0.00    0.00      96/96          GetPot::_read_in_stream[abi:cxx11](std::istream&) [131]
+[83]     0.0    0.00    0.00      96         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [83]
+                0.00    0.00      96/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+-----------------------------------------------
+                0.00    0.00      95/95          GetPot::variable::take(char const*, char const*) [81]
+[84]     0.0    0.00    0.00      95         void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [84]
+-----------------------------------------------
+                0.00    0.00      88/88          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+[85]     0.0    0.00    0.00      88         GetPot::variable::variable(GetPot::variable const&) [85]
+                0.00    0.00      87/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+-----------------------------------------------
+                0.00    0.00      68/68          node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&) [21]
+[86]     0.0    0.00    0.00      68         node::addForce(tVect const&) [86]
+-----------------------------------------------
+                0.00    0.00       1/36          GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+                0.00    0.00       5/36          printUfo(GetPot&, GetPot&) [138]
+                0.00    0.00      12/36          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+                0.00    0.00      18/36          GetPot::_read_in_stream[abi:cxx11](std::istream&) [131]
+[87]     0.0    0.00    0.00      36         void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [87]
+-----------------------------------------------
+                0.00    0.00      21/21          IO::createFiles(LB const&, DEM const&) [47]
+[88]     0.0    0.00    0.00      21         IO::exportLagrangianParaviewFluid(LB const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [88]
+                0.00    0.00    1050/11100       LB::getPosition(unsigned int const&) const [50]
+-----------------------------------------------
+                0.00    0.00       1/21          parseCommandLine(IO&, GetPot&) [137]
+                0.00    0.00      20/21          IO::initialize() [145]
+[89]     0.0    0.00    0.00      21         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [89]
+                0.00    0.00      21/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+-----------------------------------------------
+                0.00    0.00      18/18          LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[90]     0.0    0.00    0.00      18         node::setStatWall() [90]
+-----------------------------------------------
+                0.00    0.00      18/18          LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[91]     0.0    0.00    0.00      18         node::setSolidIndex(unsigned short const&) [91]
+-----------------------------------------------
+                0.00    0.00      18/18          LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [27]
+[92]     0.0    0.00    0.00      18         node::isStatWall() const [92]
+-----------------------------------------------
+                0.00    0.00      18/18          LB::initializeCurved(std::vector<cylinder, std::allocator<cylinder> >&) [118]
+[93]     0.0    0.00    0.00      18         node::isCylinderWall() const [93]
+-----------------------------------------------
+                0.00    0.00       6/18          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00    0.00      12/18          parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+[94]     0.0    0.00    0.00      18         double GetPot::operator()<double>(char const*, double const&) const [94]
+                0.00    0.00      18/196         GetPot::_request_variable(char const*) const [78]
+-----------------------------------------------
+                0.00    0.00      16/16          void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [99]
+[95]     0.0    0.00    0.00      16         GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*) [95]
+-----------------------------------------------
+                0.00    0.00       6/14          LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [27]
+                0.00    0.00       8/14          LB::initializeLists() [36]
+[96]     0.0    0.00    0.00      14         void std::vector<node*, std::allocator<node*> >::_M_realloc_insert<node* const&>(__gnu_cxx::__normal_iterator<node**, std::vector<node*, std::allocator<node*> > >, node* const&) [96]
+-----------------------------------------------
+                0.00    0.00      11/11          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+[97]     0.0    0.00    0.00      11         void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&) [97]
+-----------------------------------------------
+                0.00    0.00       3/10          DEM::discreteElementGet(GetPot&, GetPot&) [127]
+                0.00    0.00       7/10          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[98]     0.0    0.00    0.00      10         GetPot::operator()(char const*, char const*) const [98]
+                0.00    0.00      10/196         GetPot::_request_variable(char const*) const [78]
+-----------------------------------------------
+                0.00    0.00       8/8           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+[99]     0.0    0.00    0.00       8         void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [99]
+                0.00    0.00      16/16          GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*) [95]
+                0.00    0.00       8/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+-----------------------------------------------
+                0.00    0.00       1/8           GetPot::_read_in_stream[abi:cxx11](std::istream&) [131]
+                0.00    0.00       2/8           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+                0.00    0.00       2/8           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+                0.00    0.00       3/8           printUfo(GetPot&, GetPot&) [138]
+[100]    0.0    0.00    0.00       8         std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [100]
+-----------------------------------------------
+                0.00    0.00       7/7           DEM::discreteElementGet(GetPot&, GetPot&) [127]
+[101]    0.0    0.00    0.00       7         DEM::updateEnergy(double&) [101]
+-----------------------------------------------
+                0.00    0.00       6/6           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[102]    0.0    0.00    0.00       6         boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [102]
+-----------------------------------------------
+                0.00    0.00       3/3           parseCommandLine(IO&, GetPot&) [137]
+[103]    0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [103]
+                0.00    0.00       3/400         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
+-----------------------------------------------
+                0.00    0.00       2/2           DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [125]
+[104]    0.0    0.00    0.00       2         pbc::setPlanes() [104]
+-----------------------------------------------
+                0.00    0.00       2/2           DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [125]
+[105]    0.0    0.00    0.00       2         pbc::pbcShow() const [105]
+-----------------------------------------------
+                0.00    0.00       2/2           DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [126]
+[106]    0.0    0.00    0.00       2         wall::wallShow() const [106]
+-----------------------------------------------
+                0.00    0.00       2/2           DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [125]
+[107]    0.0    0.00    0.00       2         void std::vector<pbc, std::allocator<pbc> >::_M_realloc_insert<pbc const&>(__gnu_cxx::__normal_iterator<pbc*, std::vector<pbc, std::allocator<pbc> > >, pbc const&) [107]
+-----------------------------------------------
+                0.00    0.00       2/2           DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [126]
+[108]    0.0    0.00    0.00       2         void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&) [108]
+-----------------------------------------------
+                0.00    0.00       2/2           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[109]    0.0    0.00    0.00       2         std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [109]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[110]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN2IO10initializeEv [110]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[111]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN3DEM18discreteElementGetER6GetPotS1_ [111]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[112]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK2LB6LBShowEv [112]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[113]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4elmt8elmtShowEv [113]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[114]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4node14liquidFractionEv [114]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[115]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4wall4distE5tVect [115]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [358]
+[116]    0.0    0.00    0.00       1         _GLOBAL__sub_I_exit_code [116]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[117]    0.0    0.00    0.00       1         measureUnits::setComposite() [117]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[118]    0.0    0.00    0.00       1         LB::initializeCurved(std::vector<cylinder, std::allocator<cylinder> >&) [118]
+                0.00    0.00      18/18          node::isCylinderWall() const [93]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[119]    0.0    0.00    0.00       1         LB::initializeInterface(double) [119]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[120]    0.0    0.00    0.00       1         LB::initializeTopography() [120]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[121]    0.0    0.00    0.00       1         LB::initializeWallBoundaries(std::vector<wall, std::allocator<wall> >&) [121]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[122]    0.0    0.00    0.00       1         LB::initializeObjectBoundaries(std::vector<object, std::allocator<object> >&) [122]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[123]    0.0    0.00    0.00       1         LB::initializeCylinderBoundaries(std::vector<cylinder, std::allocator<cylinder> >&) [123]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+[124]    0.0    0.00    0.00       1         LB::initializeParticleBoundaries(std::vector<particle, std::allocator<particle> >&) [124]
+                0.00    0.00     548/1114        node::setOutsideParticle() [56]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [215]
+[125]    0.0    0.00    0.00       1         DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [125]
+                0.00    0.00       2/2           pbc::setPlanes() [104]
+                0.00    0.00       2/2           pbc::pbcShow() const [105]
+                0.00    0.00       2/2           void std::vector<pbc, std::allocator<pbc> >::_M_realloc_insert<pbc const&>(__gnu_cxx::__normal_iterator<pbc*, std::vector<pbc, std::allocator<pbc> > >, pbc const&) [107]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [215]
+[126]    0.0    0.00    0.00       1         DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [126]
+                0.00    0.00       2/2           void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&) [108]
+                0.00    0.00       2/2           wall::wallShow() const [106]
+-----------------------------------------------
+                0.00    0.00       1/1           parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [2]
+[127]    0.0    0.00    0.00       1         DEM::discreteElementGet(GetPot&, GetPot&) [127]
+                0.00    0.00      37/196         GetPot::_request_variable(char const*) const [78]
+                0.00    0.00      20/105         GetPot::search(char const*) [79]
+                0.00    0.00       7/7           DEM::updateEnergy(double&) [101]
+                0.00    0.00       3/10          GetPot::operator()(char const*, char const*) const [98]
+                0.00    0.00       2/6           frame_dummy [37]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [215]
+[128]    0.0    0.00    0.00       1         DEM::compositeProperties() [128]
+                0.00    0.00       4/6           frame_dummy [37]
+                0.00    0.00       1/1           std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long) [134]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [215]
+[129]    0.0    0.00    0.00       1         DEM::initializeCylinders() [129]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::initializeVariables() [22]
+[130]    0.0    0.00    0.00       1         node::setInterface() [130]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+[131]    0.0    0.00    0.00       1         GetPot::_read_in_stream[abi:cxx11](std::istream&) [131]
+                0.00    0.00     464/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                0.00    0.00      96/96          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [83]
+                0.00    0.00      18/36          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [87]
+                0.00    0.00       1/8           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [100]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+[132]    0.0    0.00    0.00       1         GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [132]
+                0.00    0.00     387/1516        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [55]
+                0.00    0.00     102/102         GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [80]
+                0.00    0.00      96/400         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
+                0.00    0.00      96/96          GetPot::variable::take(char const*, char const*) [81]
+                0.00    0.00      96/96          GetPot::variable::~variable() [82]
+                0.00    0.00      88/88          GetPot::variable::variable(GetPot::variable const&) [85]
+                0.00    0.00      12/36          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [87]
+                0.00    0.00      11/11          void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&) [97]
+                0.00    0.00       8/8           void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [99]
+                0.00    0.00       2/8           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [100]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[133]    0.0    0.00    0.00       1         std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long) [133]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::compositeProperties() [128]
+[134]    0.0    0.00    0.00       1         std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long) [134]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+[135]    0.0    0.00    0.00       1         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) [135]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2016 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [110] _GLOBAL__sub_I__ZN2IO10initializeEv [19] LB::streaming(std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [35] LB::curvedWallReconstruction(unsigned int const&, node const*, tVect const&) const
+ [111] _GLOBAL__sub_I__ZN3DEM18discreteElementGetER6GetPotS1_ [101] DEM::updateEnergy(double&) [63] LB::getX(unsigned int const&) const
+ [112] _GLOBAL__sub_I__ZNK2LB6LBShowEv [125] DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [64] LB::getY(unsigned int const&) const
+ [113] _GLOBAL__sub_I__ZNK4elmt8elmtShowEv [126] DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [11] LB::getZ(unsigned int const&) const
+ [114] _GLOBAL__sub_I__ZNK4node14liquidFractionEv [48] DEM::evolveBoundaries() [105] pbc::pbcShow() const
+ [115] _GLOBAL__sub_I__ZNK4wall4distE5tVect [127] DEM::discreteElementGet(GetPot&, GetPot&) [65] node::isPeriodic() const
+ [116] _GLOBAL__sub_I_exit_code [128] DEM::compositeProperties() [92] node::isStatWall() const
+ [102] boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129] DEM::initializeCylinders() [45] node::massStream(unsigned int const&) const
+   [1] goCycle(IO&, DEM&, LB&) [104] pbc::setPlanes()     [44] node::isInterface() const
+ [117] measureUnits::setComposite() [55] elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [57] node::isTopography() const
+  [47] IO::createFiles(LB const&, DEM const&) [21] node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&) [46] node::getSolidIndex() const
+  [67] IO::exportEnergy(DEM const&, LB const&) [25] node::addForceTRT(tVect const&) [93] node::isCylinderWall() const
+  [68] IO::exportFluidMass(LB const&) [14] node::reconstruct() [32] node::bounceBackForce(unsigned int const&, double const*, double const&, double const&, double const&) const
+  [69] IO::exportWallForce(DEM const&) [90] node::setStatWall() [49] node::isInsideParticle() const
+  [70] IO::exportFluidFlowRate(LB const&) [130] node::setInterface() [54] node::isWall() const
+  [71] IO::exportMaxSpeedFluid(LB const&) [91] node::setSolidIndex(unsigned short const&) [30] node::isFluid() const
+  [72] IO::exportMeanViscosity(LB const&) [18] node::shiftVelocity(tVect const&) [52] node::isActive() const
+  [73] IO::exportFluidCenterOfMass(LB const&) [23] node::setEquilibrium(tVect const&, double const&, tVect const&) [51] wall::dist(tVect) const
+  [74] IO::exportFreeSurfaceExtent(LB const&) [17] node::solveCollision(double const*) [106] wall::wallShow() const
+  [88] IO::exportLagrangianParaviewFluid(LB const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [28] node::solveCollisionTRT(double const*, double const*, double const&) [78] GetPot::_request_variable(char const*) const
+   [4] LB::cleanLists()        [9] node::computeEquilibrium(double*) [98] GetPot::operator()(char const*, char const*) const
+  [15] LB::generateNode(unsigned int const&, types const&) [56] node::setOutsideParticle() [94] double GetPot::operator()<double>(char const*, double const&) const
+  [75] LB::updateEnergy(double&) [26] node::computeEquilibriumTRT(double*, double*) [107] void std::vector<pbc, std::allocator<pbc> >::_M_realloc_insert<pbc const&>(__gnu_cxx::__normal_iterator<pbc*, std::vector<pbc, std::allocator<pbc> > >, pbc const&)
+  [16] LB::findNeighbors(unsigned int*, node const*) [8] node::computeApparentViscosity(double const*, FluidMaterial const&) [108] void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&)
+  [31] LB::updateMutants(double&) [20] node::store()     [133] std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long)
+  [29] LB::removeIsolated(double&) [58] node::setType(types const&) [99] void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&)
+  [36] LB::initializeLists()  [13] node::addForce(double*, tVect const&) [87] void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [27] LB::initializeWalls(std::vector<wall, std::allocator<wall> >&, std::vector<cylinder, std::allocator<cylinder> >&, std::vector<object, std::allocator<object> >&) [86] node::addForce(tVect const&) [84] void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  [24] LB::updateInterface() [131] GetPot::_read_in_stream[abi:cxx11](std::istream&) [100] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+ [118] LB::initializeCurved(std::vector<cylinder, std::allocator<cylinder> >&) [53] GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [96] void std::vector<node*, std::allocator<node*> >::_M_realloc_insert<node* const&>(__gnu_cxx::__normal_iterator<node**, std::vector<node*, std::allocator<node*> > >, node* const&)
+  [33] LB::smoothenInterface(double&) [80] GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [134] std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long)
+ [119] LB::initializeInterface(double) [132] GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [109] std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
+  [22] LB::initializeVariables() [103] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [97] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&)
+   [7] LB::latticeBoltzmannGet(GetPot&, GetPot&) [79] GetPot::search(char const*) [59] std::_Rb_tree<unsigned int const, std::pair<unsigned int const, node>, std::_Select1st<std::pair<unsigned int const, node> >, std::less<unsigned int const>, std::allocator<std::pair<unsigned int const, node> > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<unsigned int const, node> >, unsigned int const&)
+   [5] LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [81] GetPot::variable::take(char const*, char const*) [62] std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [34] LB::findInterfaceMutants() [85] GetPot::variable::variable(GetPot::variable const&) [3] void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter)
+ [120] LB::initializeTopography() [82] GetPot::variable::~variable() [135] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
+ [121] LB::initializeWallBoundaries(std::vector<wall, std::allocator<wall> >&) [60] energy::updateTotal() [95] GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*)
+ [122] LB::initializeObjectBoundaries(std::vector<object, std::allocator<object> >&) [61] energy::reset() [89] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  [12] LB::initializeLatticeBoundaries() [50] LB::getPosition(unsigned int const&) const [83] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+ [123] LB::initializeCylinderBoundaries(std::vector<cylinder, std::allocator<cylinder> >&) [76] LB::getPositionX(unsigned int const&) const [37] frame_dummy
+ [124] LB::initializeParticleBoundaries(std::vector<particle, std::allocator<particle> >&) [77] LB::getPositionY(unsigned int const&) const
+   [6] LB::latticeBoltzmannFreeSurfaceStep() [66] LB::getPositionZ(unsigned int const&) const

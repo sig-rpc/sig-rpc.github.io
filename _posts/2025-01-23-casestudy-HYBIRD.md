@@ -18,7 +18,7 @@ HYBIRD is provided with several (small) tutorial models, I was asked to use thes
 
 ## Inlining
 
-I initially profiled the granular column tutorial with the function level profiler [GProf](/profiler/cpp/gprof/) (and OpenMP disabled). This tutorial simulates a column of 1005 particles collapsing (pure DEM).
+I initially profiled their [granular column tutorial](https://github.com/gnomeCreative/HYBIRD/wiki/Tutorial-4) with the function level profiler [GProf](/profiler/cpp/gprof/) (and OpenMP disabled). This tutorial simulates a column of 1005 particles collapsing (pure DEM).
 
 <!-- image/video of start/finish? -->
 
@@ -26,6 +26,8 @@ The start of GProf's output is shown below, it shows the 20 most expensive funct
 
 <!-- gprof with commit a0cd4dd and OpenMP disabled (via modifying CMake source) -->
 ```GProf
+Flat profile:
+
 Each sample counts as 0.01 seconds.
   %   cumulative   self                self     total           
  time   seconds   seconds    calls     s/call   s/call  name    
@@ -101,11 +103,122 @@ Each sample counts as 0.01 seconds.
 ...
 ```
 
-**Overall this quick change, inlining all the small mathematical methods, reduced the runtime of the granular column tutorial from 28m5s to 14m24s. A 1.95x speedup!**
+**Overall this quick change, inlining all the small mathematical methods, reduced the runtime of the granular column tutorial from 28m5s to 14m24s. A 1.95x speedup to the parallel code!**
 
 *An alternate option would have been to replace the home-made vector classes with an external library such as [GLM](https://github.com/g-truc/glm), which has been implemented by experienced performance-aware programmers.*
 
 ## Redundant Code
+
+With no obvious problems remaining in the previous tutorial's profile, it was next suggested I profile their [granular flow tutorial](https://github.com/gnomeCreative/HYBIRD/wiki/Tutorial-3). This tutorial simulates a Newtonian fluid of 50 small particles on an incline (pure LBM).
+
+So I repeated the earlier process, profiling with [GProf](/profiler/cpp/gprof/). Although this time I failed to disable OpenMP.
+
+<!-- gprof with commit 319dff5 and OpenMP enabled -->
+```GProf
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 28.73     16.42    16.42  5451435     0.00     0.00  node::computeApparentViscosity(double const*, FluidMaterial const&)
+ 23.36     29.77    13.35 16000012     0.00     0.00  void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter)
+ 14.58     38.10     8.33  5372781     0.00     0.00  node::computeEquilibrium(double*)
+ 11.08     44.43     6.33      156     0.04     0.04  LB::getZ(unsigned int const&) const
+ 10.52     50.44     6.01  7072394     0.00     0.00  node::addForce(double*, tVect const&)
+  5.53     53.60     3.16  7512840     0.00     0.00  node::reconstruct()
+  1.92     54.70     1.10  6324299     0.00     0.00  node::solveCollision(double const*)
+  0.98     55.26     0.56  5242043     0.00     0.00  node::shiftVelocity(tVect const&)
+  0.98     55.82     0.56  2000001     0.00     0.00  LB::streaming(std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&)
+  0.89     56.33     0.51  9011735     0.00     0.00  node::store()
+  0.31     56.51     0.18  4000003     0.00     0.00  LB::cleanLists()
+  0.19     56.62     0.11       68     0.00     0.00  node::initialize(double const&, tVect const&, double const&, double const&, tVect const&, double const&, tVect const&)
+  0.19     56.73     0.11       68     0.00     0.00  node::setEquilibrium(tVect const&, double const&, tVect const&)
+  0.17     56.83     0.10                             node::addForceTRT(tVect const&)
+  0.16     56.92     0.09                             node::computeEquilibriumTRT(double*, double*)
+  0.07     56.96     0.04  2000001     0.00     0.00  LB::updateInterface()
+  0.07     57.00     0.04  2000001     0.00     0.00  LB::latticeBoltzmannFreeSurfaceStep()
+  0.07     57.04     0.04                             node::solveCollisionTRT(double const*, double const*, double const&)
+  0.03     57.06     0.02 19856644     0.00     0.00  node::isFluid() const
+  0.03     57.08     0.02  2000001     0.00     0.00  LB::updateMutants(double&)
+...
+```
+
+The second most expensive method here, is `std::__heap_select` an internal C++ method, to investigate that further, I looked for it later in the GProf analysis. Beyond the flat profile, there is the call graph, which described the call tree of the program, sorted by the total amount of time spent in each function.
+
+Below is the first section of the call-graph, which contains `std::_heap_select`.
+
+```GProf
+...
+-----------------------------------------------
+                             16000012             void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+                0.00    0.00       1/16000012     LB::latticeBolzmannInit(std::vector<cylinder, std::allocator<cylinder> >&, std::vector<wall, std::allocator<wall> >&, std::vector<particle, std::allocator<particle> >&, std::vector<object, std::allocator<object> >&, bool, bool) [10]
+                1.67    4.51 2000001/16000012     LB::latticeBolzmannStep(std::vector<elmt, std::allocator<elmt> >&, std::vector<particle, std::allocator<particle> >&, std::vector<wall, std::allocator<wall> >&, std::vector<object, std::allocator<object> >&) [5]
+                1.67    4.51 2000001/16000012     LB::latticeBoltzmannFreeSurfaceStep() [6]
+               10.01   27.08 12000009/16000012     LB::cleanLists() [4]
+[3]     86.5   13.35   36.10 16000012+16000012 void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+               16.42    0.00 5451435/5451435     node::computeApparentViscosity(double const*, FluidMaterial const&) [8]
+                8.33    0.00 5372781/5372781     node::computeEquilibrium(double*) [9]
+                6.01    0.00 7072394/7072394     node::addForce(double*, tVect const&) [13]
+                3.16    0.00 7512840/7512840     node::reconstruct() [14]
+                1.10    0.00 6324299/6324299     node::solveCollision(double const*) [17]
+                0.56    0.00 5242043/5242043     node::shiftVelocity(tVect const&) [18]
+                0.51    0.00 9011735/9011735     node::store() [20]
+                0.01    0.00 9854995/19856644     node::isFluid() const [30]
+                0.00    0.00 22744828/22744828     node::massStream(unsigned int const&) const [45]
+                0.00    0.00 22152591/32108542     node::isInterface() const [44]
+                             16000012             void std::__heap_select<std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter>(std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, std::reverse_iterator<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > >, __gnu_cxx::__ops::_Iter_less_iter) [3]
+-----------------------------------------------
+...
+```
+
+The call graph is much harder to interpret, but here we can see the focused call to `std::_heap_select` in the middle beginning with `[3]`, the line above it shows the function `LB::cleanLists()` which must be where this call is occurring. This function was shown in the above flat profile, so it's not clear why `std::_heap_select`s cost wasn't included in it's cost.
+
+Regardless, it's worth taking a look at `LB::cleanLists()`:
+
+```cpp
+void LB::cleanLists() {
+    // sorts the active-node list and removes duplicates
+    std::sort(fluidNodes.begin(), fluidNodes.end());
+    std::sort(interfaceNodes.begin(), interfaceNodes.end());
+
+    for (int ind = fluidNodes.size() - 1; ind > 0; --ind) {
+        node* i = fluidNodes[ind];
+        node* j = fluidNodes[ind - 1];
+        if (i == j) {
+            cout << "duplicate-fluid!" << endl;
+            fluidNodes.erase(fluidNodes.begin() + ind);
+        }
+    }
+    for (int ind = interfaceNodes.size() - 1; ind > 0; --ind) {
+        node* i = interfaceNodes[ind];
+        node* j = interfaceNodes[ind - 1];
+        if (i == j) {
+            cout << "duplicate-interface!" << endl;
+            interfaceNodes.erase(interfaceNodes.begin() + ind);
+        }
+    }
+
+    // list with active nodes i.e. nodes where collision and streaming are solved
+    // solid nodes, particle nodes and gas nodes are excluded
+    activeNodes.clear();
+    activeNodes.reserve(fluidNodes.size() + interfaceNodes.size());
+    activeNodes.insert(activeNodes.end(), fluidNodes.begin(), fluidNodes.end());
+    activeNodes.insert(activeNodes.end(), interfaceNodes.begin(), interfaceNodes.end());
+
+}
+```
+
+The LBM model within HYBRID stores nodes sparsely, so it has lists `fluidNodes` (nodes filled with fluid), `interfaceNodes` (nodes which form the boundary between fluid and gas) and `activeNodes` a list which contains elements from both the other lists. Gas nodes are not explicitly represented, and these lists hold pointers.
+
+Therefore, it can be understood that `LB::cleanLists()` first sorts the fluid and interface lists, then iterates each of them to remove consecutive duplicate elements before finally combining them to update `activeNodes`. The sorting of the lists here, is probably what's triggering `std::_heap_select`.
+
+This approach to managing duplicates isn't the most naïve (it's avoiding nested iteration), but it would be faster to use a set data-structure ([python set guide](/optimisation/python/set/)<!--@todo-->, until we have a C++ guide). However, when informed of this issue the main author of HYBIRD clarified that this validation was redundant left in from an old bug. As such, I added some pre-processor macros to ensure it was only executed during debug builds ([changes shown here](https://github.com/gnomeCreative/HYBIRD/commit/50d84400a12a937a5697b4d4dc2d54a456d1ef55)).
+
+**This small change, removing redundant validation, reduced the runtime of the granular flow tutorial from 2m4s to 1m9s. A 1.80x speedup to the parallel code! Furthermore, the nature of the removed code would likely scale poorly as the number of particles increased, suggesting it may have enabled higher speedups.**
+
+*It's worth noting that this issue was only prominent in a parallel profile, as it was one of the few methods which did not utilise parallelisation.*
+
+## Set
+
+
 
 ## Small IO Operations
 
