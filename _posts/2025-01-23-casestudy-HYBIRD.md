@@ -24,6 +24,7 @@ I initially profiled the granular column tutorial with the function level profil
 
 The start of GProf's output is shown below, it shows the 20 most expensive functions:
 
+<!-- gprof with commit a0cd4dd and OpenMP disabled (via modifying CMake source) -->
 ```GProf
 Each sample counts as 0.01 seconds.
   %   cumulative   self                self     total           
@@ -70,6 +71,7 @@ With there being so many similar functions in this source file, it was easiest t
 
 When profiled a second time, all of the inlined functions have disappeared. As they are now implemented in-line, they no longer have a function call. If they are still visible, the compiler may have decided to not inline them (`inline` is only a compiler hint), this could be because they are too expensive or you've not enabled compiler optimisations.
 
+<!-- gprof with commit 8cf8b84 and OpenMP disabled (via modifying CMake source) -->
 ```GProf
 Flat profile:
 
