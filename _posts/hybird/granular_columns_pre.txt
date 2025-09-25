@@ -1,0 +1,1126 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+  9.60    167.59   167.59 4068178008     0.00     0.00  DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*)
+  8.66    318.68   151.08 153054682294     0.00     0.00  tVect::operator+(tVect const&) const
+  6.38    429.95   111.27 12659255385     0.00     0.00  tVect::norm() const
+  5.92    533.25   103.30 2392019595     0.00     0.00  elmt::predict(double const*, double const*)
+  5.88    635.80   102.55 117157305920     0.00     0.00  tVect::operator*(double const&) const
+  5.58    733.22    97.42 9568078380     0.00     0.00  project(tVect, quaternion)
+  5.30    825.80    92.58 2392019595     0.00     0.00  elmt::correct(double const*, double const*)
+  4.78    909.21    83.40 47840391900     0.00     0.00  quaternion::operator+(quaternion const&) const
+  4.00    979.01    69.81  2380119     0.00     0.00  DEM::particleParticleContacts()
+  3.61   1041.96    62.95 23934514861     0.00     0.00  tVect::reset()
+  3.55   1103.95    61.99 45963670642     0.00     0.00  tVect::operator-(tVect const&) const
+  3.40   1163.29    59.33 47840391900     0.00     0.00  quaternion::operator*(double const&) const
+  3.32   1221.25    57.97  2380119     0.00     0.00  DEM::evaluateForces()
+  2.99   1273.52    52.27 4784039190     0.00     0.00  quaternion::normalize()
+  2.99   1325.73    52.21 16726846623     0.00     0.00  tVect::cross(tVect const&) const
+  2.61   1371.27    45.54 4295249450     0.00     0.00  DEM::normalContact(double const&, double const&, double const&, double const&) const
+  2.60   1416.69    45.41                             tVect::operator-=(tVect const&)
+  2.39   1458.37    41.68 16727253648     0.00     0.00  tVect::operator+=(tVect const&)
+  2.13   1495.58    37.21 4295241157     0.00     0.00  DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&)
+  1.28   1517.96    22.38 6460471666     0.00     0.00  tVect::operator/(double const&) const
+  1.24   1539.58    21.62 2392019595     0.00     0.00  quaternion::operator-(quaternion const&) const
+  1.09   1558.57    18.99                             quaternion::resetSoft()
+  0.92   1574.71    16.14 16726948128     0.00     0.00  tVect::abs() const
+  0.87   1589.86    15.15 5090897978     0.00     0.00  tVect::dot(tVect const&) const
+  0.82   1604.23    14.38  2380119     0.00     0.00  DEM::wallParticleContacts()
+  0.81   1618.42    14.19 2392020600     0.00     0.00  particle::updateCorrected(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&)
+  0.75   1631.56    13.14 13147945630     0.00     0.00  operator*(double const&, tVect const&)
+  0.74   1644.56    13.00                             tVect::max() const
+  0.72   1657.19    12.63 2392019595     0.00     0.00  particle::updatePredicted(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&)
+  0.56   1666.94     9.75 2392019595     0.00     0.00  newtonAcc(tVect, tVect, tVect)
+  0.45   1674.71     7.77 4578100277     0.00     0.00  tVect::norm2() const
+  0.45   1682.48     7.77    20001     0.00     0.08  DEM::discreteElementStep()
+  0.36   1688.82     6.33      206     0.03     0.03  tVect::operator/=(double const&)
+  0.35   1694.86     6.04     1005     0.01     0.01  tVect::transport() const
+  0.33   1700.59     5.73 7176058785     0.00     0.00  quaternion::adjoint() const
+  0.32   1706.23     5.64       95     0.06     0.06  tVect::outer(tVect const&) const
+  0.31   1711.67     5.44 227071442     0.00     0.00  DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*)
+  0.29   1716.70     5.03                             tVect::dot2(tVect const&) const
+  0.28   1721.55     4.85                             tVect::operator*=(double const&)
+  0.26   1726.12     4.58  2380119     0.00     0.00  DEM::updateParticlesCorrected()
+  0.19   1729.44     3.32 790777998     0.00     0.00  wall::dist(tVect) const
+  0.16   1732.29     2.85                             vec2quat(tVect)
+  0.12   1734.34     2.05                             quaternion::norm2() const
+  0.11   1736.27     1.93  2380119     0.00     0.00  DEM::corrector()
+  0.11   1738.20     1.93                             node::scatterMass(double&)
+  0.10   1739.94     1.74  2380119     0.00     0.00  DEM::predictor()
+  0.08   1741.31     1.37                             operator*(double const&, quaternion const&)
+  0.08   1742.63     1.32                             DEM::objectParticleCollision(object*, particle const*, tVect const&, Elongation*)
+  0.05   1743.45     0.82                             elmt::translate(tVect const&)
+  0.04   1744.23     0.78                             elmt::resetVelocity()
+  0.04   1744.86     0.63                             DEM::computeApparentForces()
+  0.01   1745.09     0.23 227071442     0.00     0.00  wall::getSpeed(tVect) const
+  0.01   1745.19     0.10        6     0.02     0.02  wall::wallShow() const
+  0.00   1745.24     0.05                             particle::~particle()
+  0.00   1745.27     0.04  2380119     0.00     0.00  DEM::cylinderParticelContacts()
+  0.00   1745.30     0.03  2380119     0.00     0.00  DEM::objectParticleContacts()
+  0.00   1745.33     0.03                             DEM::updateParticlesPredicted()
+  0.00   1745.35     0.02      120     0.00     0.00  DEM::evalNeighborTable()
+  0.00   1745.36     0.01  2380119     0.00     0.00  DEM::saveObjectForces()
+  0.00   1745.37     0.01    33165     0.00     0.00  tVect::print(std::basic_ofstream<char, std::char_traits<char> >&) const
+  0.00   1745.38     0.01      101     0.00     0.00  IO::exportParaviewParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<particle, std::allocator<particle> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.01       15     0.00   108.54  goCycle(IO&, DEM&, LB&)
+  0.00   1745.39     0.01    20001     0.00     0.00  DEM::evolveBoundaries()
+  0.00   1745.39     0.00   913545     0.00     0.00  tVect::printFixedLine(std::basic_ofstream<char, std::char_traits<char> >&) const
+  0.00   1745.39     0.00   120600     0.00     0.00  tVect::linearizePosition(double*, unsigned int*) const
+  0.00   1745.39     0.00   101505     0.00     0.00  tVect::compProd(tVect const&) const
+  0.00   1745.39     0.00    20002     0.00     0.00  IO::createFiles(LB const&, DEM const&)
+  0.00   1745.39     0.00    11055     0.00     0.00  quaternion::print(std::basic_ofstream<char, std::char_traits<char> >&) const
+  0.00   1745.39     0.00    11055     0.00     0.00  quaternion::printLine(std::basic_ofstream<char, std::char_traits<char> >&) const
+  0.00   1745.39     0.00     2524     0.00     0.00  std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long)
+  0.00   1745.39     0.00     2028     0.00     0.00  std::vector<Elongation, std::allocator<Elongation> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*>(__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, __gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*)
+  0.00   1745.39     0.00     1126     0.00     0.00  std::vector<int, std::allocator<int> >::_M_default_append(unsigned long)
+  0.00   1745.39     0.00     1005     0.00     0.01  elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&)
+  0.00   1745.39     0.00     1005     0.00     0.00  elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&)
+  0.00   1745.39     0.00      636     0.00     0.00  GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00      381     0.00     0.00  std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00      184     0.00     0.00  GetPot::_request_variable(char const*) const
+  0.00   1745.39     0.00      120     0.00     0.00  DEM::evalCellTable()
+  0.00   1745.39     0.00      120     0.00     0.00  DEM::destroyElements()
+  0.00   1745.39     0.00      120     0.00     0.00  DEM::evalNearWallTable()
+  0.00   1745.39     0.00      108     0.00     0.00  DEM::updateEnergy(double&)
+  0.00   1745.39     0.00      102     0.00     0.00  GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportEnergy(DEM const&, LB const&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportForces(DEM const&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportWallForce(DEM const&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportParticleOverlap(DEM&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportParticleFlowRate(DEM const&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportMaxSpeedParticles(DEM const&)
+  0.00   1745.39     0.00      101     0.00     0.00  IO::exportParticleCenterOfMass(DEM const&)
+  0.00   1745.39     0.00      101     0.00     0.06  IO::exportParticleCoordination(DEM const&)
+  0.00   1745.39     0.00      101     0.00     0.00  energy::updateTotal()
+  0.00   1745.39     0.00      101     0.00     0.00  energy::reset()
+  0.00   1745.39     0.00       98     0.00     0.00  GetPot::search(char const*)
+  0.00   1745.39     0.00       96     0.00     0.00  GetPot::variable::take(char const*, char const*)
+  0.00   1745.39     0.00       96     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00       95     0.00     0.00  GetPot::variable::~variable()
+  0.00   1745.39     0.00       94     0.00     0.00  void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00   1745.39     0.00       87     0.00     0.00  GetPot::variable::variable(GetPot::variable const&)
+  0.00   1745.39     0.00       61     0.00     0.00  void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&)
+  0.00   1745.39     0.00       36     0.00     0.00  void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00       24     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.00   1745.39     0.00       22     0.00     0.00  particle* std::__do_uninit_copy<particle const*, particle*>(particle const*, particle const*, particle*)
+  0.00   1745.39     0.00       20     0.00     0.00  tVect::show() const
+  0.00   1745.39     0.00       17     0.00     0.00  double GetPot::operator()<double>(char const*, double const&) const
+  0.00   1745.39     0.00       16     0.00     0.00  GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*)
+  0.00   1745.39     0.00       11     0.00     0.00  IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00       11     0.00     0.00  LB::getPositionZ(unsigned int const&) const
+  0.00   1745.39     0.00       11     0.00     0.00  void std::vector<elmt, std::allocator<elmt> >::_M_realloc_insert<elmt const&>(__gnu_cxx::__normal_iterator<elmt*, std::vector<elmt, std::allocator<elmt> > >, elmt const&)
+  0.00   1745.39     0.00       11     0.00     0.00  void std::vector<particle, std::allocator<particle> >::_M_realloc_insert<particle const&>(__gnu_cxx::__normal_iterator<particle*, std::vector<particle, std::allocator<particle> > >, particle const&)
+  0.00   1745.39     0.00       10     0.00     0.00  GetPot::operator()(char const*, char const*) const
+  0.00   1745.39     0.00        8     0.00     0.00  void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&)
+  0.00   1745.39     0.00        8     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00   1745.39     0.00        6     0.00     0.00  boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00        6     0.00     0.00  frame_dummy
+  0.00   1745.39     0.00        4     0.00     0.00  void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&)
+  0.00   1745.39     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00        2     0.00     0.00  std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN2IO10initializeEv
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN3DEM18discreteElementGetER6GetPotS1_
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK2LB6LBShowEv
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4elmt8elmtShowEv
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4node14liquidFractionEv
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4wall4distE5tVect
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK5tVect4showEv
+  0.00   1745.39     0.00        1     0.00     0.00  _GLOBAL__sub_I_exit_code
+  0.00   1745.39     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int) [clone .constprop.0]
+  0.00   1745.39     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int) [clone .constprop.0]
+  0.00   1745.39     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int) [clone .constprop.0]
+  0.00   1745.39     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int) [clone .constprop.0]
+  0.00   1745.39     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int) [clone .constprop.0]
+  0.00   1745.39     0.00        1     0.00     0.00  measureUnits::setComposite()
+  0.00   1745.39     0.00        1     0.00   542.84  LB::latticeBoltzmannGet(GetPot&, GetPot&)
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&)
+  0.00   1745.39     0.00        1     0.00     0.10  DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&)
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::periodicObjects()
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::discreteElementGet(GetPot&, GetPot&)
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::compositeProperties()
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::initializeCylinders()
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::initNeighborParameters()
+  0.00   1745.39     0.00        1     0.00     0.00  GetPot::_read_in_stream[abi:cxx11](std::istream&)
+  0.00   1745.39     0.00        1     0.00     0.00  GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+  0.00   1745.39     0.00        1     0.00     0.00  DEM::criticalTimeStep() const
+  0.00   1745.39     0.00        1     0.00     0.00  std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long)
+  0.00   1745.39     0.00        1     0.00     0.00  std::vector<types, std::allocator<types> >::_M_default_append(unsigned long)
+  0.00   1745.39     0.00        1     0.00     0.00  std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long)
+  0.00   1745.39     0.00        1     0.00     0.00  std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1745.39     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2016 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 1745.39 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     93.3    0.00 1628.27                 parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+                0.01 1085.43      10/15          goCycle(IO&, DEM&, LB&) [2]
+                0.00  542.84       1/1           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00    0.00       1/1           DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00      44/184         GetPot::_request_variable(char const*) const [102]
+                0.00    0.00      27/98          GetPot::search(char const*) [110]
+                0.00    0.00      12/17          double GetPot::operator()<double>(char const*, double const&) const [121]
+                0.00    0.00      10/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+-----------------------------------------------
+                0.00  542.71       5/15          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.01 1085.43      10/15          parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+[2]     93.3    0.01 1628.14      15         goCycle(IO&, DEM&, LB&) [2]
+                7.77 1620.36   20001/20001       DEM::discreteElementStep() [3]
+                0.01    0.00   20001/20001       DEM::evolveBoundaries() [74]
+-----------------------------------------------
+                7.77 1620.36   20001/20001       goCycle(IO&, DEM&, LB&) [2]
+[3]     93.3    7.77 1620.36   20001         DEM::discreteElementStep() [3]
+               57.97  873.56 2380119/2380119     DEM::evaluateForces() [4]
+                1.74  396.40 2380119/2380119     DEM::predictor() [8]
+                1.93  253.29 2380119/2380119     DEM::corrector() [10]
+                4.58   14.19 2380119/2380119     DEM::updateParticlesCorrected() [31]
+               12.63    0.00 2392019595/2392019595     particle::updatePredicted(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [37]
+                4.06    0.00 2392019595/4578100277     tVect::norm2() const [39]
+                0.02    0.01     119/120         DEM::evalNeighborTable() [66]
+-----------------------------------------------
+               57.97  873.56 2380119/2380119     DEM::discreteElementStep() [3]
+[4]     53.4   57.97  873.56 2380119         DEM::evaluateForces() [4]
+               69.81  600.59 2380119/2380119     DEM::particleParticleContacts() [5]
+               62.95    0.00 23934476664/23934514861     tVect::reset() [17]
+               48.71    0.00 4784039190/9568078380     project(tVect, quaternion) [15]
+               14.38   28.69 2380119/2380119     DEM::wallParticleContacts() [24]
+               23.61    0.00 23920195950/153054682294     tVect::operator+(tVect const&) const [12]
+                9.75    0.00 2392019595/2392019595     newtonAcc(tVect, tVect, tVect) [38]
+                8.29    0.00 2392019595/6460471666     tVect::operator/(double const&) const [27]
+                4.78    0.00 4784039190/13147945630     operator*(double const&, tVect const&) [35]
+                1.91    0.00 2392019595/7176058785     quaternion::adjoint() const [47]
+                0.04    0.00 2380119/2380119     DEM::cylinderParticelContacts() [64]
+                0.03    0.00 2380119/2380119     DEM::objectParticleContacts() [65]
+                0.01    0.01 2380119/2380119     DEM::saveObjectForces() [68]
+-----------------------------------------------
+               69.81  600.59 2380119/2380119     DEM::evaluateForces() [4]
+[5]     38.4   69.81  600.59 2380119         DEM::particleParticleContacts() [5]
+              167.59  426.34 4068178008/4068178008     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+                3.71    0.00 2184931594/4578100277     tVect::norm2() const [39]
+                2.95    0.00 2184931594/45963670642     tVect::operator-(tVect const&) const [18]
+-----------------------------------------------
+              167.59  426.34 4068178008/4068178008     DEM::particleParticleContacts() [5]
+[6]     34.0  167.59  426.34 4068178008         DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+              107.28    0.00 12204534024/12659255385     tVect::norm() const [13]
+               50.79    0.00 16272712032/16726846623     tVect::cross(tVect const&) const [21]
+               49.38    0.00 36613602072/45963670642     tVect::operator-(tVect const&) const [18]
+               43.13    0.00 4068178008/4295249450     DEM::normalContact(double const&, double const&, double const&, double const&) const [22]
+               40.55    0.00 16272712032/16727253648     tVect::operator+=(tVect const&) [25]
+               35.24    0.00 4068178008/4295241157     DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+               32.13    0.00 32545424064/153054682294     tVect::operator+(tVect const&) const [12]
+               17.81    0.00 20340890040/117157305920     tVect::operator*(double const&) const [14]
+               15.70    0.00 16272712032/16726948128     tVect::abs() const [32]
+               14.09    0.00 4068178008/6460471666     tVect::operator/(double const&) const [27]
+               12.11    0.00 4068178008/5090897978     tVect::dot(tVect const&) const [33]
+                8.13    0.00 8136356016/13147945630     operator*(double const&, tVect const&) [35]
+-----------------------------------------------
+                0.00  542.84       1/1           parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+[7]     31.1    0.00  542.84       1         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00  542.71       5/15          goCycle(IO&, DEM&, LB&) [2]
+                0.12    0.00       4/206         tVect::operator/=(double const&) [41]
+                0.00    0.00      76/184         GetPot::_request_variable(char const*) const [102]
+                0.00    0.00      46/98          GetPot::search(char const*) [110]
+                0.00    0.00      11/11          LB::getPositionZ(unsigned int const&) const [123]
+                0.00    0.00       7/10          GetPot::operator()(char const*, char const*) const [126]
+                0.00    0.00       6/6           boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+                0.00    0.00       5/17          double GetPot::operator()<double>(char const*, double const&) const [121]
+                0.00    0.00       2/2           std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [132]
+                0.00    0.00       1/1           measureUnits::setComposite() [146]
+                0.00    0.00       1/1           std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long) [154]
+-----------------------------------------------
+                1.74  396.40 2380119/2380119     DEM::discreteElementStep() [3]
+[8]     22.8    1.74  396.40 2380119         DEM::predictor() [8]
+              103.30  293.10 2392019595/2392019595     elmt::predict(double const*, double const*) [9]
+-----------------------------------------------
+              103.30  293.10 2392019595/2392019595     DEM::predictor() [8]
+[9]     22.7  103.30  293.10 2392019595         elmt::predict(double const*, double const*) [9]
+               70.84    0.00 71760587850/153054682294     tVect::operator+(tVect const&) const [12]
+               62.81    0.00 71760587850/117157305920     tVect::operator*(double const&) const [14]
+               62.55    0.00 35880293925/47840391900     quaternion::operator+(quaternion const&) const [16]
+               44.50    0.00 35880293925/47840391900     quaternion::operator*(double const&) const [19]
+               26.14    0.00 2392019595/4784039190     quaternion::normalize() [20]
+               24.36    0.00 2392019595/9568078380     project(tVect, quaternion) [15]
+                1.91    0.00 2392019595/7176058785     quaternion::adjoint() const [47]
+-----------------------------------------------
+                1.93  253.29 2380119/2380119     DEM::discreteElementStep() [3]
+[10]    14.6    1.93  253.29 2380119         DEM::corrector() [10]
+               92.58  160.71 2392019595/2392019595     elmt::correct(double const*, double const*) [11]
+-----------------------------------------------
+               92.58  160.71 2392019595/2392019595     DEM::corrector() [10]
+[11]    14.5   92.58  160.71 2392019595         elmt::correct(double const*, double const*) [11]
+               26.14    0.00 2392019595/4784039190     quaternion::normalize() [20]
+               24.36    0.00 2392019595/9568078380     project(tVect, quaternion) [15]
+               23.61    0.00 23920195950/153054682294     tVect::operator+(tVect const&) const [12]
+               21.62    0.00 2392019595/2392019595     quaternion::operator-(quaternion const&) const [29]
+               20.94    0.00 23920195950/117157305920     tVect::operator*(double const&) const [14]
+               20.85    0.00 11960097975/47840391900     quaternion::operator+(quaternion const&) const [16]
+               14.83    0.00 11960097975/47840391900     quaternion::operator*(double const&) const [19]
+                6.45    0.00 4784039190/45963670642     tVect::operator-(tVect const&) const [18]
+                1.91    0.00 2392019595/7176058785     quaternion::adjoint() const [47]
+-----------------------------------------------
+                0.00    0.00    1005/153054682294     DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.90    0.00 908277475/153054682294     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               23.61    0.00 23920195950/153054682294     DEM::evaluateForces() [4]
+               23.61    0.00 23920195950/153054682294     elmt::correct(double const*, double const*) [11]
+               32.13    0.00 32545424064/153054682294     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+               70.84    0.00 71760587850/153054682294     elmt::predict(double const*, double const*) [9]
+[12]     8.7  151.08    0.00 153054682294         tVect::operator+(tVect const&) const [12]
+-----------------------------------------------
+                0.00    0.00     101/12659255385     DEM::updateEnergy(double&) [76]
+                0.00    0.00  273861/12659255385     DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+                0.00    0.00  304515/12659255385     IO::exportForces(DEM const&) [75]
+                3.99    0.00 454142884/12659255385     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+              107.28    0.00 12204534024/12659255385     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[13]     6.4  111.27    0.00 12659255385         tVect::norm() const [13]
+-----------------------------------------------
+                0.00    0.00       4/117157305920     LB::LBShow() const [83]
+                0.00    0.00    1005/117157305920     elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+                0.00    0.00  273861/117157305920     DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+                0.99    0.00 1135357210/117157305920     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               17.81    0.00 20340890040/117157305920     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+               20.94    0.00 23920195950/117157305920     elmt::correct(double const*, double const*) [11]
+               62.81    0.00 71760587850/117157305920     elmt::predict(double const*, double const*) [9]
+[14]     5.9  102.55    0.00 117157305920         tVect::operator*(double const&) const [14]
+-----------------------------------------------
+               24.36    0.00 2392019595/9568078380     elmt::predict(double const*, double const*) [9]
+               24.36    0.00 2392019595/9568078380     elmt::correct(double const*, double const*) [11]
+               48.71    0.00 4784039190/9568078380     DEM::evaluateForces() [4]
+[15]     5.6   97.42    0.00 9568078380         project(tVect, quaternion) [15]
+-----------------------------------------------
+               20.85    0.00 11960097975/47840391900     elmt::correct(double const*, double const*) [11]
+               62.55    0.00 35880293925/47840391900     elmt::predict(double const*, double const*) [9]
+[16]     4.8   83.40    0.00 47840391900         quaternion::operator+(quaternion const&) const [16]
+-----------------------------------------------
+                0.00    0.00       1/23934514861     DEM::compositeProperties() [84]
+                0.00    0.00       6/23934514861     DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [61]
+                0.00    0.00    1005/23934514861     DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+                0.00    0.00    3015/23934514861     elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+                0.00    0.00   11055/23934514861     DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00   23115/23934514861     elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+               62.95    0.00 23934476664/23934514861     DEM::evaluateForces() [4]
+[17]     3.6   62.95    0.00 23934514861         tVect::reset() [17]
+-----------------------------------------------
+                0.00    0.00  844573/45963670642     DEM::evalNeighborTable() [66]
+                1.07    0.00 790777998/45963670642     wall::dist(tVect) const [40]
+                2.14    0.00 1589475215/45963670642     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+                2.95    0.00 2184931594/45963670642     DEM::particleParticleContacts() [5]
+                6.45    0.00 4784039190/45963670642     elmt::correct(double const*, double const*) [11]
+               49.38    0.00 36613602072/45963670642     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[18]     3.6   61.99    0.00 45963670642         tVect::operator-(tVect const&) const [18]
+-----------------------------------------------
+               14.83    0.00 11960097975/47840391900     elmt::correct(double const*, double const*) [11]
+               44.50    0.00 35880293925/47840391900     elmt::predict(double const*, double const*) [9]
+[19]     3.4   59.33    0.00 47840391900         quaternion::operator*(double const&) const [19]
+-----------------------------------------------
+               26.14    0.00 2392019595/4784039190     elmt::predict(double const*, double const*) [9]
+               26.14    0.00 2392019595/4784039190     elmt::correct(double const*, double const*) [11]
+[20]     3.0   52.27    0.00 4784039190         quaternion::normalize() [20]
+-----------------------------------------------
+                1.42    0.00 454134591/16726846623     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               50.79    0.00 16272712032/16726846623     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[21]     3.0   52.21    0.00 16726846623         tVect::cross(tVect const&) const [21]
+-----------------------------------------------
+                2.41    0.00 227071442/4295249450     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               43.13    0.00 4068178008/4295249450     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[22]     2.6   45.54    0.00 4295249450         DEM::normalContact(double const&, double const&, double const&, double const&) const [22]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     2.6   45.41    0.00                 tVect::operator-=(tVect const&) [23]
+-----------------------------------------------
+               14.38   28.69 2380119/2380119     DEM::evaluateForces() [4]
+[24]     2.5   14.38   28.69 2380119         DEM::wallParticleContacts() [24]
+                5.44   16.52 227071442/227071442     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+                3.32    3.42 789952893/790777998     wall::dist(tVect) const [40]
+-----------------------------------------------
+                0.00    0.00    1005/16727253648     elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+                0.00    0.00  101505/16727253648     IO::exportParticleFlowRate(DEM const&) [78]
+                0.00    0.00  101505/16727253648     IO::exportParticleCenterOfMass(DEM const&) [77]
+                0.00    0.00  203010/16727253648     IO::exportParticleCoordination(DEM const&) [43]
+                1.13    0.00 454134591/16727253648     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               40.55    0.00 16272712032/16727253648     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[25]     2.4   41.68    0.00 16727253648         tVect::operator+=(tVect const&) [25]
+-----------------------------------------------
+                1.97    0.00 227063149/4295241157     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               35.24    0.00 4068178008/4295241157     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[26]     2.1   37.21    0.00 4295241157         DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+                0.00    0.00  273861/12659255385     tVect::norm() const [13]
+                0.00    0.00  273861/6460471666     tVect::operator/(double const&) const [27]
+                0.00    0.00  273861/13147945630     operator*(double const&, tVect const&) [35]
+                0.00    0.00  273861/117157305920     tVect::operator*(double const&) const [14]
+-----------------------------------------------
+                0.00    0.00     101/6460471666     DEM::updateEnergy(double&) [76]
+                0.00    0.00     101/6460471666     IO::exportParticleCenterOfMass(DEM const&) [77]
+                0.00    0.00  273861/6460471666     DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+                8.29    0.00 2392019595/6460471666     DEM::evaluateForces() [4]
+               14.09    0.00 4068178008/6460471666     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[27]     1.3   22.38    0.00 6460471666         tVect::operator/(double const&) const [27]
+-----------------------------------------------
+                5.44   16.52 227071442/227071442     DEM::wallParticleContacts() [24]
+[28]     1.3    5.44   16.52 227071442         DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+                3.99    0.00 454142884/12659255385     tVect::norm() const [13]
+                2.41    0.00 227071442/4295249450     DEM::normalContact(double const&, double const&, double const&, double const&) const [22]
+                2.14    0.00 1589475215/45963670642     tVect::operator-(tVect const&) const [18]
+                1.97    0.00 227063149/4295241157     DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+                1.42    0.00 454134591/16726846623     tVect::cross(tVect const&) const [21]
+                1.13    0.00 454134591/16727253648     tVect::operator+=(tVect const&) [25]
+                0.99    0.00 1135357210/117157305920     tVect::operator*(double const&) const [14]
+                0.90    0.00 908277475/153054682294     tVect::operator+(tVect const&) const [12]
+                0.68    0.00 227071442/5090897978     tVect::dot(tVect const&) const [33]
+                0.44    0.00 454134591/16726948128     tVect::abs() const [32]
+                0.23    0.00 227071442/227071442     wall::getSpeed(tVect) const [60]
+                0.23    0.00 227071442/13147945630     operator*(double const&, tVect const&) [35]
+-----------------------------------------------
+               21.62    0.00 2392019595/2392019595     elmt::correct(double const*, double const*) [11]
+[29]     1.2   21.62    0.00 2392019595         quaternion::operator-(quaternion const&) const [29]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     1.1   18.99    0.00                 quaternion::resetSoft() [30]
+-----------------------------------------------
+                4.58   14.19 2380119/2380119     DEM::discreteElementStep() [3]
+[31]     1.1    4.58   14.19 2380119         DEM::updateParticlesCorrected() [31]
+               14.19    0.00 2392019595/2392020600     particle::updateCorrected(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [34]
+-----------------------------------------------
+                0.00    0.00  101505/16726948128     IO::exportParticleCoordination(DEM const&) [43]
+                0.44    0.00 454134591/16726948128     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+               15.70    0.00 16272712032/16726948128     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[32]     0.9   16.14    0.00 16726948128         tVect::abs() const [32]
+-----------------------------------------------
+                0.00    0.00     303/5090897978     IO::exportParticleFlowRate(DEM const&) [78]
+                0.00    0.00     303/5090897978     IO::exportParticleCenterOfMass(DEM const&) [77]
+                0.00    0.00     606/5090897978     IO::exportParticleCoordination(DEM const&) [43]
+                0.00    0.00    7272/5090897978     IO::exportWallForce(DEM const&) [81]
+                0.00    0.00  101808/5090897978     DEM::updateEnergy(double&) [76]
+                0.01    0.00 4760238/5090897978     DEM::saveObjectForces() [68]
+                0.68    0.00 227071442/5090897978     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+                2.35    0.00 790777998/5090897978     wall::dist(tVect) const [40]
+               12.11    0.00 4068178008/5090897978     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[33]     0.9   15.15    0.00 5090897978         tVect::dot(tVect const&) const [33]
+-----------------------------------------------
+                0.00    0.00    1005/2392020600     elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+               14.19    0.00 2392019595/2392020600     DEM::updateParticlesCorrected() [31]
+[34]     0.8   14.19    0.00 2392020600         particle::updateCorrected(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [34]
+-----------------------------------------------
+                0.00    0.00     101/13147945630     DEM::updateEnergy(double&) [76]
+                0.00    0.00    2010/13147945630     elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+                0.00    0.00  101505/13147945630     IO::exportParticleFlowRate(DEM const&) [78]
+                0.00    0.00  101505/13147945630     IO::exportParticleCenterOfMass(DEM const&) [77]
+                0.00    0.00  273861/13147945630     DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [26]
+                0.23    0.00 227071442/13147945630     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+                4.78    0.00 4784039190/13147945630     DEM::evaluateForces() [4]
+                8.13    0.00 8136356016/13147945630     DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [6]
+[35]     0.8   13.14    0.00 13147945630         operator*(double const&, tVect const&) [35]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.7   13.00    0.00                 tVect::max() const [36]
+-----------------------------------------------
+               12.63    0.00 2392019595/2392019595     DEM::discreteElementStep() [3]
+[37]     0.7   12.63    0.00 2392019595         particle::updatePredicted(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [37]
+-----------------------------------------------
+                9.75    0.00 2392019595/2392019595     DEM::evaluateForces() [4]
+[38]     0.6    9.75    0.00 2392019595         newtonAcc(tVect, tVect, tVect) [38]
+-----------------------------------------------
+                0.00    0.00  101505/4578100277     DEM::updateEnergy(double&) [76]
+                0.00    0.00  203010/4578100277     IO::exportMaxSpeedParticles(DEM const&) [79]
+                0.00    0.00  844573/4578100277     DEM::evalNeighborTable() [66]
+                3.71    0.00 2184931594/4578100277     DEM::particleParticleContacts() [5]
+                4.06    0.00 2392019595/4578100277     DEM::discreteElementStep() [3]
+[39]     0.4    7.77    0.00 4578100277         tVect::norm2() const [39]
+-----------------------------------------------
+                0.00    0.00  101505/790777998     DEM::updateEnergy(double&) [76]
+                0.00    0.00  723600/790777998     DEM::evalNearWallTable() [73]
+                3.32    3.42 789952893/790777998     DEM::wallParticleContacts() [24]
+[40]     0.4    3.32    3.42 790777998         wall::dist(tVect) const [40]
+                2.35    0.00 790777998/5090897978     tVect::dot(tVect const&) const [33]
+                1.07    0.00 790777998/45963670642     tVect::operator-(tVect const&) const [18]
+-----------------------------------------------
+                0.12    0.00       4/206         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                6.21    0.00     202/206         IO::exportParticleCoordination(DEM const&) [43]
+[41]     0.4    6.33    0.00     206         tVect::operator/=(double const&) [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.4    0.00    6.23                 IO::outputStep(LB&, DEM&) [42]
+                0.00    6.21     101/101         IO::exportParticleCoordination(DEM const&) [43]
+                0.00    0.02   20002/20002       IO::createFiles(LB const&, DEM const&) [69]
+                0.00    0.00     101/101         IO::exportForces(DEM const&) [75]
+                0.00    0.00     101/108         DEM::updateEnergy(double&) [76]
+                0.00    0.00     101/101         IO::exportParticleCenterOfMass(DEM const&) [77]
+                0.00    0.00     101/101         IO::exportParticleFlowRate(DEM const&) [78]
+                0.00    0.00     101/101         IO::exportMaxSpeedParticles(DEM const&) [79]
+                0.00    0.00     101/101         IO::exportWallForce(DEM const&) [81]
+                0.00    0.00     505/636         GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+                0.00    0.00     101/101         IO::exportParticleOverlap(DEM&) [107]
+                0.00    0.00     101/101         IO::exportEnergy(DEM const&, LB const&) [106]
+-----------------------------------------------
+                0.00    6.21     101/101         IO::outputStep(LB&, DEM&) [42]
+[43]     0.4    0.00    6.21     101         IO::exportParticleCoordination(DEM const&) [43]
+                6.21    0.00     202/206         tVect::operator/=(double const&) [41]
+                0.00    0.00  203010/16727253648     tVect::operator+=(tVect const&) [25]
+                0.00    0.00  101505/16726948128     tVect::abs() const [32]
+                0.00    0.00     606/5090897978     tVect::dot(tVect const&) const [33]
+-----------------------------------------------
+                                                 <spontaneous>
+[44]     0.4    0.00    6.14                 DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+                0.00    6.04    1005/1005        elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+                0.00    0.10       1/1           DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [61]
+                0.00    0.00       1/120         DEM::evalNeighborTable() [66]
+                0.00    0.00    1005/1005        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+                0.00    0.00    1005/23934514861     tVect::reset() [17]
+                0.00    0.00       1/1           DEM::compositeProperties() [84]
+                0.00    0.00       1/1           DEM::initializeCylinders() [149]
+                0.00    0.00       1/1           DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [147]
+                0.00    0.00       1/1           DEM::periodicObjects() [148]
+                0.00    0.00       1/1           DEM::initNeighborParameters() [150]
+                0.00    0.00       1/1           DEM::criticalTimeStep() const [153]
+-----------------------------------------------
+                0.00    6.04    1005/1005        DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[45]     0.3    0.00    6.04    1005         elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+                6.04    0.00    1005/1005        tVect::transport() const [46]
+                0.00    0.00   23115/23934514861     tVect::reset() [17]
+                0.00    0.00    1005/16727253648     tVect::operator+=(tVect const&) [25]
+                0.00    0.00    2010/13147945630     operator*(double const&, tVect const&) [35]
+                0.00    0.00    1005/117157305920     tVect::operator*(double const&) const [14]
+-----------------------------------------------
+                6.04    0.00    1005/1005        elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [45]
+[46]     0.3    6.04    0.00    1005         tVect::transport() const [46]
+-----------------------------------------------
+                1.91    0.00 2392019595/7176058785     DEM::evaluateForces() [4]
+                1.91    0.00 2392019595/7176058785     elmt::predict(double const*, double const*) [9]
+                1.91    0.00 2392019595/7176058785     elmt::correct(double const*, double const*) [11]
+[47]     0.3    5.73    0.00 7176058785         quaternion::adjoint() const [47]
+-----------------------------------------------
+                5.64    0.00      95/95          tinyMatrix::tinyMatrix(tVect, tVect) [49]
+[48]     0.3    5.64    0.00      95         tVect::outer(tVect const&) const [48]
+-----------------------------------------------
+                                                 <spontaneous>
+[49]     0.3    0.00    5.64                 tinyMatrix::tinyMatrix(tVect, tVect) [49]
+                5.64    0.00      95/95          tVect::outer(tVect const&) const [48]
+-----------------------------------------------
+                                                 <spontaneous>
+[50]     0.3    5.03    0.00                 tVect::dot2(tVect const&) const [50]
+-----------------------------------------------
+                                                 <spontaneous>
+[51]     0.3    4.85    0.00                 tVect::operator*=(double const&) [51]
+-----------------------------------------------
+                                                 <spontaneous>
+[52]     0.2    2.85    0.00                 vec2quat(tVect) [52]
+-----------------------------------------------
+                                                 <spontaneous>
+[53]     0.1    2.05    0.00                 quaternion::norm2() const [53]
+-----------------------------------------------
+                                                 <spontaneous>
+[54]     0.1    1.93    0.00                 node::scatterMass(double&) [54]
+-----------------------------------------------
+                                                 <spontaneous>
+[55]     0.1    1.37    0.00                 operator*(double const&, quaternion const&) [55]
+-----------------------------------------------
+                                                 <spontaneous>
+[56]     0.1    1.32    0.00                 DEM::objectParticleCollision(object*, particle const*, tVect const&, Elongation*) [56]
+-----------------------------------------------
+                                                 <spontaneous>
+[57]     0.0    0.82    0.00                 elmt::translate(tVect const&) [57]
+-----------------------------------------------
+                                                 <spontaneous>
+[58]     0.0    0.78    0.00                 elmt::resetVelocity() [58]
+-----------------------------------------------
+                                                 <spontaneous>
+[59]     0.0    0.63    0.00                 DEM::computeApparentForces() [59]
+-----------------------------------------------
+                0.23    0.00 227071442/227071442     DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [28]
+[60]     0.0    0.23    0.00 227071442         wall::getSpeed(tVect) const [60]
+-----------------------------------------------
+                0.00    0.10       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[61]     0.0    0.00    0.10       1         DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [61]
+                0.10    0.00       6/6           wall::wallShow() const [62]
+                0.00    0.00       6/23934514861     tVect::reset() [17]
+                0.00    0.00       4/4           void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&) [130]
+-----------------------------------------------
+                0.10    0.00       6/6           DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [61]
+[62]     0.0    0.10    0.00       6         wall::wallShow() const [62]
+                0.00    0.00      12/20          tVect::show() const [120]
+-----------------------------------------------
+                                                 <spontaneous>
+[63]     0.0    0.05    0.00                 particle::~particle() [63]
+-----------------------------------------------
+                0.04    0.00 2380119/2380119     DEM::evaluateForces() [4]
+[64]     0.0    0.04    0.00 2380119         DEM::cylinderParticelContacts() [64]
+-----------------------------------------------
+                0.03    0.00 2380119/2380119     DEM::evaluateForces() [4]
+[65]     0.0    0.03    0.00 2380119         DEM::objectParticleContacts() [65]
+-----------------------------------------------
+                0.00    0.00       1/120         DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+                0.02    0.01     119/120         DEM::discreteElementStep() [3]
+[66]     0.0    0.02    0.01     120         DEM::evalNeighborTable() [66]
+                0.00    0.01     120/120         DEM::evalNearWallTable() [73]
+                0.00    0.00  844573/4578100277     tVect::norm2() const [39]
+                0.00    0.00  844573/45963670642     tVect::operator-(tVect const&) const [18]
+                0.00    0.00     120/120         DEM::destroyElements() [104]
+                0.00    0.00     120/120         DEM::evalCellTable() [103]
+                0.00    0.00      36/61          void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&) [116]
+-----------------------------------------------
+                                                 <spontaneous>
+[67]     0.0    0.03    0.00                 DEM::updateParticlesPredicted() [67]
+-----------------------------------------------
+                0.01    0.01 2380119/2380119     DEM::evaluateForces() [4]
+[68]     0.0    0.01    0.01 2380119         DEM::saveObjectForces() [68]
+                0.01    0.00 4760238/5090897978     tVect::dot(tVect const&) const [33]
+-----------------------------------------------
+                0.00    0.02   20002/20002       IO::outputStep(LB&, DEM&) [42]
+[69]     0.0    0.00    0.02   20002         IO::createFiles(LB const&, DEM const&) [69]
+                0.01    0.00     101/101         IO::exportParaviewParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<particle, std::allocator<particle> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [71]
+                0.00    0.01      11/11          IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
+-----------------------------------------------
+                0.01    0.00   33165/33165       IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
+[70]     0.0    0.01    0.00   33165         tVect::print(std::basic_ofstream<char, std::char_traits<char> >&) const [70]
+-----------------------------------------------
+                0.01    0.00     101/101         IO::createFiles(LB const&, DEM const&) [69]
+[71]     0.0    0.01    0.00     101         IO::exportParaviewParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<particle, std::allocator<particle> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [71]
+                0.00    0.00  913545/913545      tVect::printFixedLine(std::basic_ofstream<char, std::char_traits<char> >&) const [92]
+-----------------------------------------------
+                0.00    0.01      11/11          IO::createFiles(LB const&, DEM const&) [69]
+[72]     0.0    0.00    0.01      11         IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
+                0.01    0.00   33165/33165       tVect::print(std::basic_ofstream<char, std::char_traits<char> >&) const [70]
+                0.00    0.00   11055/11055       quaternion::print(std::basic_ofstream<char, std::char_traits<char> >&) const [95]
+                0.00    0.00   11055/11055       quaternion::printLine(std::basic_ofstream<char, std::char_traits<char> >&) const [96]
+-----------------------------------------------
+                0.00    0.01     120/120         DEM::evalNeighborTable() [66]
+[73]     0.0    0.00    0.01     120         DEM::evalNearWallTable() [73]
+                0.00    0.00  723600/790777998     wall::dist(tVect) const [40]
+                0.00    0.00      14/61          void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&) [116]
+-----------------------------------------------
+                0.01    0.00   20001/20001       goCycle(IO&, DEM&, LB&) [2]
+[74]     0.0    0.01    0.00   20001         DEM::evolveBoundaries() [74]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[75]     0.0    0.00    0.00     101         IO::exportForces(DEM const&) [75]
+                0.00    0.00  304515/12659255385     tVect::norm() const [13]
+-----------------------------------------------
+                0.00    0.00       7/108         DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00     101/108         IO::outputStep(LB&, DEM&) [42]
+[76]     0.0    0.00    0.00     108         DEM::updateEnergy(double&) [76]
+                0.00    0.00  101505/790777998     wall::dist(tVect) const [40]
+                0.00    0.00  101808/5090897978     tVect::dot(tVect const&) const [33]
+                0.00    0.00  101505/4578100277     tVect::norm2() const [39]
+                0.00    0.00     101/12659255385     tVect::norm() const [13]
+                0.00    0.00     101/6460471666     tVect::operator/(double const&) const [27]
+                0.00    0.00     101/13147945630     operator*(double const&, tVect const&) [35]
+                0.00    0.00  101505/101505      tVect::compProd(tVect const&) const [94]
+                0.00    0.00     101/101         energy::reset() [109]
+                0.00    0.00     101/101         energy::updateTotal() [108]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[77]     0.0    0.00    0.00     101         IO::exportParticleCenterOfMass(DEM const&) [77]
+                0.00    0.00  101505/16727253648     tVect::operator+=(tVect const&) [25]
+                0.00    0.00  101505/13147945630     operator*(double const&, tVect const&) [35]
+                0.00    0.00     303/5090897978     tVect::dot(tVect const&) const [33]
+                0.00    0.00     101/6460471666     tVect::operator/(double const&) const [27]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[78]     0.0    0.00    0.00     101         IO::exportParticleFlowRate(DEM const&) [78]
+                0.00    0.00  101505/16727253648     tVect::operator+=(tVect const&) [25]
+                0.00    0.00  101505/13147945630     operator*(double const&, tVect const&) [35]
+                0.00    0.00     303/5090897978     tVect::dot(tVect const&) const [33]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[79]     0.0    0.00    0.00     101         IO::exportMaxSpeedParticles(DEM const&) [79]
+                0.00    0.00  203010/4578100277     tVect::norm2() const [39]
+-----------------------------------------------
+                0.00    0.00       1/1           parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+[80]     0.0    0.00    0.00       1         DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00       7/108         DEM::updateEnergy(double&) [76]
+                0.00    0.00   11055/23934514861     tVect::reset() [17]
+                0.00    0.00    1005/153054682294     tVect::operator+(tVect const&) const [12]
+                0.00    0.00    1005/1126        std::vector<int, std::allocator<int> >::_M_default_append(unsigned long) [99]
+                0.00    0.00      37/184         GetPot::_request_variable(char const*) const [102]
+                0.00    0.00      20/98          GetPot::search(char const*) [110]
+                0.00    0.00      11/11          void std::vector<elmt, std::allocator<elmt> >::_M_realloc_insert<elmt const&>(__gnu_cxx::__normal_iterator<elmt*, std::vector<elmt, std::allocator<elmt> > >, elmt const&) [124]
+                0.00    0.00       3/10          GetPot::operator()(char const*, char const*) const [126]
+                0.00    0.00       2/6           frame_dummy [85]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[81]     0.0    0.00    0.00     101         IO::exportWallForce(DEM const&) [81]
+                0.00    0.00    7272/5090897978     tVect::dot(tVect const&) const [33]
+-----------------------------------------------
+                0.00    0.00    1005/1005        DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[82]     0.0    0.00    0.00    1005         elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+                0.00    0.00    3015/23934514861     tVect::reset() [17]
+                0.00    0.00    1005/2392020600     particle::updateCorrected(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [34]
+                0.00    0.00    1005/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                0.00    0.00     994/2028        std::vector<Elongation, std::allocator<Elongation> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*>(__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, __gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*) [98]
+                0.00    0.00      11/11          void std::vector<particle, std::allocator<particle> >::_M_realloc_insert<particle const&>(__gnu_cxx::__normal_iterator<particle*, std::vector<particle, std::allocator<particle> > >, particle const&) [125]
+-----------------------------------------------
+                                                 <spontaneous>
+[83]     0.0    0.00    0.00                 LB::LBShow() const [83]
+                0.00    0.00       4/117157305920     tVect::operator*(double const&) const [14]
+                0.00    0.00       8/20          tVect::show() const [120]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[84]     0.0    0.00    0.00       1         DEM::compositeProperties() [84]
+                0.00    0.00       1/23934514861     tVect::reset() [17]
+                0.00    0.00       4/6           frame_dummy [85]
+                0.00    0.00       1/1           std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long) [156]
+-----------------------------------------------
+                0.00    0.00       2/6           DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00       4/6           DEM::compositeProperties() [84]
+[85]     0.0    0.00    0.00       6         frame_dummy [85]
+-----------------------------------------------
+                0.00    0.00  913545/913545      IO::exportParaviewParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<particle, std::allocator<particle> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [71]
+[92]     0.0    0.00    0.00  913545         tVect::printFixedLine(std::basic_ofstream<char, std::char_traits<char> >&) const [92]
+-----------------------------------------------
+                0.00    0.00  120600/120600      DEM::evalCellTable() [103]
+[93]     0.0    0.00    0.00  120600         tVect::linearizePosition(double*, unsigned int*) const [93]
+-----------------------------------------------
+                0.00    0.00  101505/101505      DEM::updateEnergy(double&) [76]
+[94]     0.0    0.00    0.00  101505         tVect::compProd(tVect const&) const [94]
+-----------------------------------------------
+                0.00    0.00   11055/11055       IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
+[95]     0.0    0.00    0.00   11055         quaternion::print(std::basic_ofstream<char, std::char_traits<char> >&) const [95]
+-----------------------------------------------
+                0.00    0.00   11055/11055       IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
+[96]     0.0    0.00    0.00   11055         quaternion::printLine(std::basic_ofstream<char, std::char_traits<char> >&) const [96]
+-----------------------------------------------
+                                 266             std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                0.00    0.00       2/2524        LB::LB() [256]
+                0.00    0.00       8/2524        parseCommandLine(IO&, GetPot&) [161]
+                0.00    0.00       8/2524        void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [127]
+                0.00    0.00       9/2524        GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+                0.00    0.00      10/2524        parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+                0.00    0.00      24/2524        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [118]
+                0.00    0.00      27/2524        GetPot::~GetPot() [310]
+                0.00    0.00      86/2524        GetPot::variable::variable(GetPot::variable const&) [115]
+                0.00    0.00      96/2524        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [112]
+                0.00    0.00     110/2524        printUfo(GetPot&, GetPot&) [164]
+                0.00    0.00     288/2524        GetPot::variable::take(char const*, char const*) [111]
+                0.00    0.00     387/2524        GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00     464/2524        GetPot::_read_in_stream[abi:cxx11](std::istream&) [151]
+                0.00    0.00    1005/2524        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+[97]     0.0    0.00    0.00    2524+266     std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                                 266             std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+-----------------------------------------------
+                0.00    0.00      11/2028        void std::vector<particle, std::allocator<particle> >::_M_realloc_insert<particle const&>(__gnu_cxx::__normal_iterator<particle*, std::vector<particle, std::allocator<particle> > >, particle const&) [125]
+                0.00    0.00     994/2028        elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+                0.00    0.00    1023/2028        particle* std::__do_uninit_copy<particle const*, particle*>(particle const*, particle const*, particle*) [119]
+[98]     0.0    0.00    0.00    2028         std::vector<Elongation, std::allocator<Elongation> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*>(__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, __gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*) [98]
+-----------------------------------------------
+                0.00    0.00       1/1126        LB::LB() [256]
+                0.00    0.00     120/1126        DEM::evalCellTable() [103]
+                0.00    0.00    1005/1126        DEM::discreteElementGet(GetPot&, GetPot&) [80]
+[99]     0.0    0.00    0.00    1126         std::vector<int, std::allocator<int> >::_M_default_append(unsigned long) [99]
+-----------------------------------------------
+                0.00    0.00      30/636         IO::initialize() [178]
+                0.00    0.00     101/636         IO::exportEnergy(DEM const&, LB const&) [106]
+                0.00    0.00     505/636         IO::outputStep(LB&, DEM&) [42]
+[100]    0.0    0.00    0.00     636         GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+                0.00    0.00       9/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                0.00    0.00       2/8           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [128]
+                0.00    0.00       1/36          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [117]
+                0.00    0.00       1/1           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) [158]
+                0.00    0.00       1/1           GetPot::_read_in_stream[abi:cxx11](std::istream&) [151]
+-----------------------------------------------
+                0.00    0.00       3/381         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [131]
+                0.00    0.00      96/381         GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00      98/381         GetPot::search(char const*) [110]
+                0.00    0.00     184/381         GetPot::_request_variable(char const*) const [102]
+[101]    0.0    0.00    0.00     381         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [101]
+-----------------------------------------------
+                0.00    0.00      10/184         GetPot::operator()(char const*, char const*) const [126]
+                0.00    0.00      17/184         double GetPot::operator()<double>(char const*, double const&) const [121]
+                0.00    0.00      37/184         DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00      44/184         parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+                0.00    0.00      76/184         LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[102]    0.0    0.00    0.00     184         GetPot::_request_variable(char const*) const [102]
+                0.00    0.00     184/381         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [101]
+-----------------------------------------------
+                0.00    0.00     120/120         DEM::evalNeighborTable() [66]
+[103]    0.0    0.00    0.00     120         DEM::evalCellTable() [103]
+                0.00    0.00  120600/120600      tVect::linearizePosition(double*, unsigned int*) const [93]
+                0.00    0.00     120/1126        std::vector<int, std::allocator<int> >::_M_default_append(unsigned long) [99]
+-----------------------------------------------
+                0.00    0.00     120/120         DEM::evalNeighborTable() [66]
+[104]    0.0    0.00    0.00     120         DEM::destroyElements() [104]
+-----------------------------------------------
+                0.00    0.00     102/102         GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+[105]    0.0    0.00    0.00     102         GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [105]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[106]    0.0    0.00    0.00     101         IO::exportEnergy(DEM const&, LB const&) [106]
+                0.00    0.00     101/636         GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+-----------------------------------------------
+                0.00    0.00     101/101         IO::outputStep(LB&, DEM&) [42]
+[107]    0.0    0.00    0.00     101         IO::exportParticleOverlap(DEM&) [107]
+-----------------------------------------------
+                0.00    0.00     101/101         DEM::updateEnergy(double&) [76]
+[108]    0.0    0.00    0.00     101         energy::updateTotal() [108]
+-----------------------------------------------
+                0.00    0.00     101/101         DEM::updateEnergy(double&) [76]
+[109]    0.0    0.00    0.00     101         energy::reset() [109]
+-----------------------------------------------
+                0.00    0.00       5/98          parseCommandLine(IO&, GetPot&) [161]
+                0.00    0.00      20/98          DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00      27/98          parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+                0.00    0.00      46/98          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[110]    0.0    0.00    0.00      98         GetPot::search(char const*) [110]
+                0.00    0.00      98/381         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [101]
+-----------------------------------------------
+                0.00    0.00      96/96          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+[111]    0.0    0.00    0.00      96         GetPot::variable::take(char const*, char const*) [111]
+                0.00    0.00     288/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                0.00    0.00      94/94          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [114]
+-----------------------------------------------
+                0.00    0.00      96/96          GetPot::_read_in_stream[abi:cxx11](std::istream&) [151]
+[112]    0.0    0.00    0.00      96         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [112]
+                0.00    0.00      96/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+-----------------------------------------------
+                0.00    0.00      95/95          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+[113]    0.0    0.00    0.00      95         GetPot::variable::~variable() [113]
+-----------------------------------------------
+                0.00    0.00      94/94          GetPot::variable::take(char const*, char const*) [111]
+[114]    0.0    0.00    0.00      94         void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [114]
+-----------------------------------------------
+                0.00    0.00      87/87          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+[115]    0.0    0.00    0.00      87         GetPot::variable::variable(GetPot::variable const&) [115]
+                0.00    0.00      86/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+-----------------------------------------------
+                0.00    0.00      11/61          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00      14/61          DEM::evalNearWallTable() [73]
+                0.00    0.00      36/61          DEM::evalNeighborTable() [66]
+[116]    0.0    0.00    0.00      61         void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&) [116]
+-----------------------------------------------
+                0.00    0.00       1/36          GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+                0.00    0.00       5/36          printUfo(GetPot&, GetPot&) [164]
+                0.00    0.00      12/36          GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00      18/36          GetPot::_read_in_stream[abi:cxx11](std::istream&) [151]
+[117]    0.0    0.00    0.00      36         void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [117]
+-----------------------------------------------
+                0.00    0.00       1/24          parseCommandLine(IO&, GetPot&) [161]
+                0.00    0.00      23/24          IO::initialize() [178]
+[118]    0.0    0.00    0.00      24         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) [118]
+                0.00    0.00      24/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+-----------------------------------------------
+                0.00    0.00      22/22          void std::vector<particle, std::allocator<particle> >::_M_realloc_insert<particle const&>(__gnu_cxx::__normal_iterator<particle*, std::vector<particle, std::allocator<particle> > >, particle const&) [125]
+[119]    0.0    0.00    0.00      22         particle* std::__do_uninit_copy<particle const*, particle*>(particle const*, particle const*, particle*) [119]
+                0.00    0.00    1023/2028        std::vector<Elongation, std::allocator<Elongation> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*>(__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, __gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*) [98]
+-----------------------------------------------
+                0.00    0.00       8/20          LB::LBShow() const [83]
+                0.00    0.00      12/20          wall::wallShow() const [62]
+[120]    0.0    0.00    0.00      20         tVect::show() const [120]
+-----------------------------------------------
+                0.00    0.00       5/17          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+                0.00    0.00      12/17          parseConfigFile(IO&, DEM&, LB&, GetPot&, GetPot&) [1]
+[121]    0.0    0.00    0.00      17         double GetPot::operator()<double>(char const*, double const&) const [121]
+                0.00    0.00      17/184         GetPot::_request_variable(char const*) const [102]
+-----------------------------------------------
+                0.00    0.00      16/16          void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [127]
+[122]    0.0    0.00    0.00      16         GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*) [122]
+-----------------------------------------------
+                0.00    0.00      11/11          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[123]    0.0    0.00    0.00      11         LB::getPositionZ(unsigned int const&) const [123]
+-----------------------------------------------
+                0.00    0.00      11/11          DEM::discreteElementGet(GetPot&, GetPot&) [80]
+[124]    0.0    0.00    0.00      11         void std::vector<elmt, std::allocator<elmt> >::_M_realloc_insert<elmt const&>(__gnu_cxx::__normal_iterator<elmt*, std::vector<elmt, std::allocator<elmt> > >, elmt const&) [124]
+-----------------------------------------------
+                0.00    0.00      11/11          elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [82]
+[125]    0.0    0.00    0.00      11         void std::vector<particle, std::allocator<particle> >::_M_realloc_insert<particle const&>(__gnu_cxx::__normal_iterator<particle*, std::vector<particle, std::allocator<particle> > >, particle const&) [125]
+                0.00    0.00      22/22          particle* std::__do_uninit_copy<particle const*, particle*>(particle const*, particle const*, particle*) [119]
+                0.00    0.00      11/2028        std::vector<Elongation, std::allocator<Elongation> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*>(__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, __gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*) [98]
+-----------------------------------------------
+                0.00    0.00       3/10          DEM::discreteElementGet(GetPot&, GetPot&) [80]
+                0.00    0.00       7/10          LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[126]    0.0    0.00    0.00      10         GetPot::operator()(char const*, char const*) const [126]
+                0.00    0.00      10/184         GetPot::_request_variable(char const*) const [102]
+-----------------------------------------------
+                0.00    0.00       8/8           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+[127]    0.0    0.00    0.00       8         void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [127]
+                0.00    0.00      16/16          GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*) [122]
+                0.00    0.00       8/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+-----------------------------------------------
+                0.00    0.00       1/8           GetPot::_read_in_stream[abi:cxx11](std::istream&) [151]
+                0.00    0.00       2/8           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00       2/8           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+                0.00    0.00       3/8           printUfo(GetPot&, GetPot&) [164]
+[128]    0.0    0.00    0.00       8         std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [128]
+-----------------------------------------------
+                0.00    0.00       6/6           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[129]    0.0    0.00    0.00       6         boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+-----------------------------------------------
+                0.00    0.00       4/4           DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [61]
+[130]    0.0    0.00    0.00       4         void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&) [130]
+-----------------------------------------------
+                0.00    0.00       3/3           parseCommandLine(IO&, GetPot&) [161]
+[131]    0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [131]
+                0.00    0.00       3/381         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [101]
+-----------------------------------------------
+                0.00    0.00       2/2           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[132]    0.0    0.00    0.00       2         std::vector<double, std::allocator<double> >::_M_default_append(unsigned long) [132]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[133]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN2IO10initializeEv [133]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[134]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN3DEM18discreteElementGetER6GetPotS1_ [134]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[135]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK2LB6LBShowEv [135]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[136]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4elmt8elmtShowEv [136]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[137]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4node14liquidFractionEv [137]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[138]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4wall4distE5tVect [138]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[139]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK5tVect4showEv [139]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[140]    0.0    0.00    0.00       1         _GLOBAL__sub_I_exit_code [140]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[141]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [141]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[142]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [142]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[143]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [143]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[144]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [144]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [432]
+[145]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [145]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[146]    0.0    0.00    0.00       1         measureUnits::setComposite() [146]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[147]    0.0    0.00    0.00       1         DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [147]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[148]    0.0    0.00    0.00       1         DEM::periodicObjects() [148]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[149]    0.0    0.00    0.00       1         DEM::initializeCylinders() [149]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[150]    0.0    0.00    0.00       1         DEM::initNeighborParameters() [150]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+[151]    0.0    0.00    0.00       1         GetPot::_read_in_stream[abi:cxx11](std::istream&) [151]
+                0.00    0.00     464/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                0.00    0.00      96/96          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [112]
+                0.00    0.00      18/36          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [117]
+                0.00    0.00       1/8           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [128]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+[152]    0.0    0.00    0.00       1         GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+                0.00    0.00     387/2524        std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long) [97]
+                0.00    0.00     102/102         GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [105]
+                0.00    0.00      96/381         std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [101]
+                0.00    0.00      96/96          GetPot::variable::take(char const*, char const*) [111]
+                0.00    0.00      95/95          GetPot::variable::~variable() [113]
+                0.00    0.00      87/87          GetPot::variable::variable(GetPot::variable const&) [115]
+                0.00    0.00      12/36          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [117]
+                0.00    0.00      11/61          void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&) [116]
+                0.00    0.00       8/8           void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&) [127]
+                0.00    0.00       2/8           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [128]
+                0.00    0.00       1/1           std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [157]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::discreteElementInit(std::vector<types, std::allocator<types> > const&, std::vector<double, std::allocator<double> > const&, std::vector<tVect, std::allocator<tVect> > const&, tVect, tVect, tVect, bool, bool, double const&) [44]
+[153]    0.0    0.00    0.00       1         DEM::criticalTimeStep() const [153]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::latticeBoltzmannGet(GetPot&, GetPot&) [7]
+[154]    0.0    0.00    0.00       1         std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long) [154]
+-----------------------------------------------
+                0.00    0.00       1/1           LB::LB() [256]
+[155]    0.0    0.00    0.00       1         std::vector<types, std::allocator<types> >::_M_default_append(unsigned long) [155]
+-----------------------------------------------
+                0.00    0.00       1/1           DEM::compositeProperties() [84]
+[156]    0.0    0.00    0.00       1         std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long) [156]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [152]
+[157]    0.0    0.00    0.00       1         std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [157]
+-----------------------------------------------
+                0.00    0.00       1/1           GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [100]
+[158]    0.0    0.00    0.00       1         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) [158]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2016 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [133] _GLOBAL__sub_I__ZN2IO10initializeEv [24] DEM::wallParticleContacts() [40] wall::dist(tVect) const
+ [134] _GLOBAL__sub_I__ZN3DEM18discreteElementGetER6GetPotS1_ [59] DEM::computeApparentForces() [60] wall::getSpeed(tVect) const
+ [135] _GLOBAL__sub_I__ZNK2LB6LBShowEv [28] DEM::wallParticleCollision(wall*, particle const*, double const&, Elongation*) [62] wall::wallShow() const
+ [136] _GLOBAL__sub_I__ZNK4elmt8elmtShowEv [150] DEM::initNeighborParameters() [92] tVect::printFixedLine(std::basic_ofstream<char, std::char_traits<char> >&) const
+ [137] _GLOBAL__sub_I__ZNK4node14liquidFractionEv [65] DEM::objectParticleContacts() [93] tVect::linearizePosition(double*, unsigned int*) const
+ [138] _GLOBAL__sub_I__ZNK4wall4distE5tVect [56] DEM::objectParticleCollision(object*, particle const*, tVect const&, Elongation*) [32] tVect::abs() const
+ [139] _GLOBAL__sub_I__ZNK5tVect4showEv [64] DEM::cylinderParticelContacts() [33] tVect::dot(tVect const&) const
+ [140] _GLOBAL__sub_I_exit_code [5] DEM::particleParticleContacts() [36] tVect::max() const
+ [129] boundary2Type(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [31] DEM::updateParticlesCorrected() [50] tVect::dot2(tVect const&) const
+ [141] __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [67] DEM::updateParticlesPredicted() [13] tVect::norm() const
+ [142] __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [6] DEM::particleParticleCollision(particle const*, particle const*, tVect const&, Elongation*) [120] tVect::show() const
+ [143] __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [10] DEM::corrector() [21] tVect::cross(tVect const&) const
+ [144] __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [8] DEM::predictor() [39] tVect::norm2() const
+ [145] __static_initialization_and_destruction_0(int, int) [clone .constprop.0] [45] elmt::initialize(double const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >&, tVect&) [48] tVect::outer(tVect const&) const
+   [2] goCycle(IO&, DEM&, LB&) [58] elmt::resetVelocity() [70] tVect::print(std::basic_ofstream<char, std::char_traits<char> >&) const
+  [15] project(tVect, quaternion) [82] elmt::generateParticles(unsigned int&, std::vector<particle, std::allocator<particle> >&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [94] tVect::compProd(tVect const&) const
+  [52] vec2quat(tVect)        [11] elmt::correct(double const*, double const*) [46] tVect::transport() const
+  [38] newtonAcc(tVect, tVect, tVect) [9] elmt::predict(double const*, double const*) [27] tVect::operator/(double const&) const
+  [20] quaternion::normalize() [57] elmt::translate(tVect const&) [18] tVect::operator-(tVect const&) const
+  [30] quaternion::resetSoft() [54] node::scatterMass(double&) [14] tVect::operator*(double const&) const
+ [146] measureUnits::setComposite() [17] tVect::reset()   [12] tVect::operator+(tVect const&) const
+  [69] IO::createFiles(LB const&, DEM const&) [41] tVect::operator/=(double const&) [102] GetPot::_request_variable(char const*) const
+ [106] IO::exportEnergy(DEM const&, LB const&) [23] tVect::operator-=(tVect const&) [126] GetPot::operator()(char const*, char const*) const
+  [75] IO::exportForces(DEM const&) [51] tVect::operator*=(double const&) [121] double GetPot::operator()<double>(char const*, double const&) const
+  [81] IO::exportWallForce(DEM const&) [25] tVect::operator+=(tVect const&) [124] void std::vector<elmt, std::allocator<elmt> >::_M_realloc_insert<elmt const&>(__gnu_cxx::__normal_iterator<elmt*, std::vector<elmt, std::allocator<elmt> > >, elmt const&)
+ [107] IO::exportParticleOverlap(DEM&) [151] GetPot::_read_in_stream[abi:cxx11](std::istream&) [130] void std::vector<wall, std::allocator<wall> >::_M_realloc_insert<wall const&>(__gnu_cxx::__normal_iterator<wall*, std::vector<wall, std::allocator<wall> > >, wall const&)
+  [78] IO::exportParticleFlowRate(DEM const&) [100] GetPot::parse_input_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [154] std::vector<tVect, std::allocator<tVect> >::_M_default_append(unsigned long)
+  [72] IO::exportRecycleParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<pbc, std::allocator<pbc> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [105] GetPot::_DBE_expand_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [155] std::vector<types, std::allocator<types> >::_M_default_append(unsigned long)
+  [79] IO::exportMaxSpeedParticles(DEM const&) [152] GetPot::_parse_argument_vector(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [125] void std::vector<particle, std::allocator<particle> >::_M_realloc_insert<particle const&>(__gnu_cxx::__normal_iterator<particle*, std::vector<particle, std::allocator<particle> > >, particle const&)
+  [71] IO::exportParaviewParticles(std::vector<elmt, std::allocator<elmt> > const&, std::vector<particle, std::allocator<particle> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [131] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > GetPot::next<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [127] void std::vector<GetPot::variable, std::allocator<GetPot::variable> >::_M_realloc_insert<GetPot::variable>(__gnu_cxx::__normal_iterator<GetPot::variable*, std::vector<GetPot::variable, std::allocator<GetPot::variable> > >, GetPot::variable&&)
+  [77] IO::exportParticleCenterOfMass(DEM const&) [110] GetPot::search(char const*) [117] void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [43] IO::exportParticleCoordination(DEM const&) [111] GetPot::variable::take(char const*, char const*) [114] void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+   [7] LB::latticeBoltzmannGet(GetPot&, GetPot&) [115] GetPot::variable::variable(GetPot::variable const&) [128] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  [76] DEM::updateEnergy(double&) [113] GetPot::variable::~variable() [97] std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > >::_M_default_append(unsigned long)
+ [103] DEM::evalCellTable()  [108] energy::updateTotal() [156] std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > >::_M_default_append(unsigned long)
+   [4] DEM::evaluateForces() [109] energy::reset()       [132] std::vector<double, std::allocator<double> >::_M_default_append(unsigned long)
+ [147] DEM::initializePbcs(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [34] particle::updateCorrected(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [99] std::vector<int, std::allocator<int> >::_M_default_append(unsigned long)
+ [104] DEM::destroyElements() [37] particle::updatePredicted(elmt const&, std::vector<std::vector<tVect, std::allocator<tVect> >, std::allocator<std::vector<tVect, std::allocator<tVect> > > > const&) [116] void std::vector<unsigned int, std::allocator<unsigned int> >::_M_realloc_insert<unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int&&)
+  [61] DEM::initializeWalls(std::vector<types, std::allocator<types> > const&, std::vector<tVect, std::allocator<tVect> > const&) [63] particle::~particle() [101] std::pair<std::_Rb_tree_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, bool> std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_unique<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+ [148] DEM::periodicObjects() [53] quaternion::norm2() const [157] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::_Identity<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [74] DEM::evolveBoundaries() [95] quaternion::print(std::basic_ofstream<char, std::char_traits<char> >&) const [98] std::vector<Elongation, std::allocator<Elongation> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*>(__gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, __gnu_cxx::__normal_iterator<std::vector<Elongation, std::allocator<Elongation> > const*, std::vector<std::vector<Elongation, std::allocator<Elongation> >, std::allocator<std::vector<Elongation, std::allocator<Elongation> > > > >, std::vector<Elongation, std::allocator<Elongation> >*)
+  [68] DEM::saveObjectForces() [47] quaternion::adjoint() const [158] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
+  [73] DEM::evalNearWallTable() [96] quaternion::printLine(std::basic_ofstream<char, std::char_traits<char> >&) const [119] particle* std::__do_uninit_copy<particle const*, particle*>(particle const*, particle const*, particle*)
+  [66] DEM::evalNeighborTable() [29] quaternion::operator-(quaternion const&) const [122] GetPot::variable* std::__do_uninit_copy<GetPot::variable const*, GetPot::variable*>(GetPot::variable const*, GetPot::variable const*, GetPot::variable*)
+  [80] DEM::discreteElementGet(GetPot&, GetPot&) [19] quaternion::operator*(double const&) const [118] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  [26] DEM::FRtangentialContact(tVect const&, double const&, double const&, double const&, double const&, Elongation*, double const&, double const&, double const&) [16] quaternion::operator+(quaternion const&) const [112] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [84] DEM::compositeProperties() [123] LB::getPositionZ(unsigned int const&) const [55] operator*(double const&, quaternion const&)
+   [3] DEM::discreteElementStep() [22] DEM::normalContact(double const&, double const&, double const&, double const&) const [35] operator*(double const&, tVect const&)
+ [149] DEM::initializeCylinders() [153] DEM::criticalTimeStep() const [85] frame_dummy
