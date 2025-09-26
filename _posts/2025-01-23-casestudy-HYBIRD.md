@@ -12,7 +12,7 @@ categories: case-study
 
 In a pattern common to much research software, HYBIRD was developed as part of a PhD project by a student without formal programming training, however has since been adopted by students and post-docs and extended far beyond the initial scope.
 
-HYBIRD successfully applied to the University of Sheffield's (internal) RSE Call for Proposals 2024, and I was assigned to review the software's performance and investigate a GPU implementation. The early work on this project, which involved reviewing the performance of the existing code, provides a case-study of the impact of applying the SIG-RPC principles to research software.
+HYBIRD successfully applied to the University of Sheffield's (internal) [RSE Call for Proposals](https://rse.shef.ac.uk/collaboration/RSEtime/2024/) in 2024, and I was assigned to review the software's performance and investigate a GPU implementation. The early work on this project, which involved reviewing the performance of the existing code, provides a case-study of the impact of applying the SIG-RPC principles to research software.
 
 HYBIRD is provided with several (small) tutorial models, I was asked to use these as representative workloads.
 
@@ -74,6 +74,7 @@ With there being so many similar functions in this source file, it was easiest t
 When profiled a second time, all of the inlined functions have disappeared. As they are now implemented in-line, they no longer have a function call. If they are still visible, the compiler may have decided to not inline them (`inline` is only a compiler hint), this could be because they are too expensive or you've not enabled compiler optimisations.
 
 <!-- gprof with commit 8cf8b84 and OpenMP disabled (via modifying CMake source) -->
+<!-- not sure if this is correct, although it looks so, the job finished after i'd downloaded this -->
 ```GProf
 Flat profile:
 
@@ -145,6 +146,7 @@ The second most expensive method here, is `std::__heap_select` an internal C++ m
 
 Below is the first section of the call-graph, which contains `std::_heap_select`.
 
+<!-- gprof with commit 319dff5 and OpenMP enabled -->
 ```GProf
 ...
 -----------------------------------------------
@@ -210,21 +212,57 @@ The LBM model within HYBRID stores nodes sparsely, so it has lists `fluidNodes` 
 
 Therefore, it can be understood that `LB::cleanLists()` first sorts the fluid and interface lists, then iterates each of them to remove consecutive duplicate elements before finally combining them to update `activeNodes`. The sorting of the lists here, is probably what's triggering `std::_heap_select`.
 
-This approach to managing duplicates isn't the most naïve (it's avoiding nested iteration), but it would be faster to use a set data-structure ([python set guide](/optimisation/python/set/)<!--@todo-->, until we have a C++ guide). However, when informed of this issue the main author of HYBIRD clarified that this validation was redundant left in from an old bug. As such, I added some pre-processor macros to ensure it was only executed during debug builds ([changes shown here](https://github.com/gnomeCreative/HYBIRD/commit/50d84400a12a937a5697b4d4dc2d54a456d1ef55)).
+This approach to managing duplicates isn't the most naïve (it's avoiding nested iteration), but it would be faster to use a set data-structure ([python set guide](/optimisation/python/set/)<!--@todo-->, until we have a C++ guide). However when informed of this issue the main author of HYBIRD clarified that this validation was redundant, left in from debugging an old issue. As such, I added some pre-processor macros to ensure it was only executed during debug builds ([changes shown here](https://github.com/gnomeCreative/HYBIRD/commit/50d84400a12a937a5697b4d4dc2d54a456d1ef55)).
 
 **This small change, removing redundant validation, reduced the runtime of the granular flow tutorial from 2m4s to 1m9s. A 1.80x speedup to the parallel code! Furthermore, the nature of the removed code would likely scale poorly as the number of particles increased, suggesting it may have enabled higher speedups.**
 
-*It's worth noting that this issue was only prominent in a parallel profile, as it was one of the few methods which did not utilise parallelisation.*
+*It's worth noting that this issue was only prominent in a parallel profile, as it was one of the few methods which did not utilise parallelisation, although it may have become prominent at larger scales.*
 
 ## Set
 
+It was at this point, I asked if there were larger problems I could profile (or how I could scale these tutorials up). As the scale of a problem increases, if a bottleneck is reached it will get slower at a faster pace than the surrounding code. This can make it much easier to spot the bottlenecks within a profile.
 
+I was provided with a bespoke example informally called granular collapse continuum. While conceptually similar to the previous tutorial, this scenario began with 2.2 million `activeNodes` (fluid and interface nodes, mostly fluid). We configured the simulation steps so that roughly half would occur **after** the fluid impacted the wall. This ensured we captured the turbulence generated by the collision, when many nodes change state, while avoiding unnecessary data collection and keeping profiling time manageable.
+
+Again, profiling the parallel code with [GProf](/profiler/cpp/gprof/):
+
+@todo profiling output that shows smoothInterface high
+
+Looking through ?????? `LB::smoothenInterface()`, what first stands out is this comment.
+
+```
+// ERROR: TAKE OUT FROM CYCLE, THIS IS KILLING PERFORMANCE
+```
+
+So an author of the code, knew it was a problem for performance.
+
+I've briefly summarised the algorithm, which removes neighbours of `emptiedNodes` from `fluidNodes` (as they will become `interfaceNodes`) in pseudo-code below
+
+```py
+for emptyNode in emptiedNodes:
+  for neighbour in emptyNode.neighbours:
+    if neighbour.isValid() and neighbour.isFluid():
+        newInterfaceNodes.append(neighbour)
+        neighbour.redistributeMass()
+        # ERROR: TAKE OUT FROM CYCLE, THIS IS KILLING PERFORMANCE
+        for fluidNode in fluidNodes:
+          if fluidNode == neighbour:
+            fluideNodes.erase(fluidNode)
+```
+
+The comment clearly denotes the inner loop. In this particular example we had over 2 million nodes, therefore for every fluid neighbour of an emptied node the entire fluid list would be iterated to remove a neighbour if present. However, it's quite possible multiple fluid nodes would share a neighbour, making some of these searches redundant.
+
+To optimise this, we can replace that inner loop, instead inserting `fluidNode` into a set of nodes to be deleted. After the main outer loop completes, we have a set of unique nodes to be deleted, so we can iterate `fluidNodes` once, deleting any nodes that appear in the set. Checking whether a node exists within our set of nodes to be deleted, should almost always be faster than iterating that same data in a list or array ([changes shown here](https://github.com/gnomeCreative/HYBIRD/commit/f86ab23640b59c9befe5e29290359d4e40789245)).
+
+**Through this change using a set data-structure where appropriate, reduced the runtime of the profiled example from 6h51m to 2h23m. A 2.87x speedup to the parallel code!**
 
 ## Small IO Operations
 
 ## OpenMP
 
-Alongside this
+Alongside this profiling and optimisation work, there were several scattered improvements to the OpenMP within the project. These took the form of typical bad habits; overuse of expensive critical sections, and creating many independent parallel sections rather than creating less and sharing them to reduce the creation overhead.
+
+<!-- todo links to relevant OpenMP optimisation pages when they exist -->
 
 ## Conclusion
 
