@@ -262,9 +262,22 @@ To optimise this, we can replace that inner loop, instead inserting `fluidNode` 
 
 Alongside this profiling and optimisation work, there were several scattered improvements to the OpenMP within the project. These took the form of typical bad habits; overuse of expensive critical sections, and creating many independent parallel sections rather than creating less and sharing them to reduce the creation overhead.
 
-<!-- todo links to relevant OpenMP optimisation pages when they exist -->
+<!--@todo links to relevant OpenMP optimisation pages when they exist -->
 
 ## Conclusion
+
+In all there were a large number of optimisations applied to this code-base throughout the project, and two of the optimisations removed algorithms which scaled poorly, so it's difficult to estimate the combined speed-up.
+
+To provide a summary comparison I benchmarked the [tsunami wave tutorial](https://github.com/gnomeCreative/HYBIRD/wiki/Tutorial-5), which is the largest of the provided examples and combines both DEM and LBM, with both the pre- and post-optimisation code. Before optimisation it took ??? to execute to completion, and afterwards it took 4h15m. This equates to a combined ???x speed-up to that particular example. As previously discussed, these speed ups are highly likely to vary across problems due to the nature of the optimisations.
+
+Further to this speed-up, the replacement of ASCII with binary output files would see the previously mentioned ??? improvement to Paraview's loading speed. Additionally improving research productivity when processing the results.
+
+As this work occurred within a funded project, after these optimisations were exhausted the remaining project time was spent re-implementing the code to execute on GPU with CUDA. A functional proof of concept, which was not further profiled or optimised due to time constraints, was completed and validated. As the code heavily relies on double-precision floating point computation, it was found to execute approximately 4x faster than the optimised parallel CPU code on a 3060RTX GPU and approximately 30x faster than CPU on a H100 GPU.
+
+Overall these changes have enabled increased researcher productivity, and larger more complex physical experiments to be simulated computationally. A short quote from the project's PI and HYBIRD's main author [Dr Alessandro Leonoardi](https://sheffield.ac.uk/mac/people/civil-academic-staff/alessandro-leonardi):
+
+> @TODO
+
 
 Robert Chisholm
 
