@@ -1,0 +1,76 @@
+Elapsed Time: 15584.980s
+    CPU Time: 55311.260s
+        Effective Time: 32865.416s
+        Spin Time: 22412.629s
+         | A significant portion of CPU time is spent waiting. Use this metric
+         | to discover which synchronizations are spinning. Consider adjusting
+         | spin wait parameters, changing the lock implementation (for example,
+         | by backing off then descheduling), or adjusting the synchronization
+         | granularity.
+         |
+            Imbalance or Serial Spinning: 21051.320s
+             | The threading runtime function related to time spent on imbalance
+             | or serial spinning consumed a significant amount of CPU time.
+             | This can be caused by a load imbalance, insufficient concurrency
+             | for all working threads, or busy waits of worker threads while
+             | serial code is executed. If there is an imbalance, apply dynamic
+             | work scheduling or reduce the size of work chunks or tasks. If
+             | there is insufficient concurrency, consider collapsing the outer
+             | and inner loops. If there is a wait for completion of serial
+             | code, explore options for parallelization with Intel Advisor,
+             | algorithm, or microarchitecture tuning of the application's
+             | serial code with VTune Profiler Basic Hotspots or
+             | Microarchitecture Exploration analysis respectively. For OpenMP*
+             | applications, use the Per-Barrier OpenMP Potential Gain metric
+             | set in the HPC Performance Characterization analysis to discover
+             | the reason for high imbalance or serial spin time.
+             |
+            Lock Contention: 1331.299s
+            Other: 30.010s
+        Overhead Time: 33.215s
+            Creation: 33.215s
+            Scheduling: 0s
+            Reduction: 0s
+            Atomics: 0s
+            Other: 0s
+    Total Thread Count: 16
+    Paused Time: 0s
+
+Top Hotspots
+Function                  Module          CPU Time  % of CPU Time(%)
+------------------------  ------------  ----------  ----------------
+gomp_simple_barrier_wait  libgomp.so.1  19693.244s             35.6%
+LB::streaming             hybird         7783.647s             14.1%
+LB::updateMass._omp_fn.1  hybird         2883.653s              5.2%
+node::addForce            hybird         2325.707s              4.2%
+node::computeEquilibrium  hybird         1671.508s              3.0%
+[Others]                  N/A           20953.502s             37.9%
+Effective CPU Utilization: 5.5%
+ | The metric value is low, which may signal a poor logical CPU cores
+ | utilization caused by load imbalance, threading runtime overhead, contended
+ | synchronization, or thread/process underutilization. Explore sub-metrics to
+ | estimate the efficiency of MPI and OpenMP parallelism or run the Locks and
+ | Waits analysis to identify parallel bottlenecks for other parallel runtimes.
+ |
+    Average Effective CPU Utilization: 3.506 out of 64
+Collection and Platform Info
+    Application Command Line: /mnt/parscratch/users/ac1rch/HYBIRD_PRE/buildp/bin/RelWithDebinfo/hybird "-c" "tsunami_wave.cfg" "-d" "results_profile" "-n" "time" 
+    Operating System: 3.10.0-1160.135.1.el7.x86_64 NAME="CentOS Linux" VERSION="7 (Core)" ID="centos" ID_LIKE="rhel fedora" VERSION_ID="7" PRETTY_NAME="CentOS Linux 7 (Core)" ANSI_COLOR="0;31" CPE_NAME="cpe:/o:centos:centos:7" HOME_URL="https://www.centos.org/" BUG_REPORT_URL="https://bugs.centos.org/"  CENTOS_MANTISBT_PROJECT="CentOS-7" CENTOS_MANTISBT_PROJECT_VERSION="7" REDHAT_SUPPORT_PRODUCT="centos" REDHAT_SUPPORT_PRODUCT_VERSION="7"  # This is a "SUSE Liberty Linux release 7.9" # The above strings are preserved only to maintain software compatibility. 
+    Computer Name: node083.pri.stanage.alces.network
+    Result Size: 1.2 GB 
+    Collection start time: 16:12:10 27/09/2025 UTC
+    Collection stop time: 20:31:55 27/09/2025 UTC
+    Collector Type: Driverless Perf per-process counting,User-mode sampling and tracing
+    CPU
+        Name: Intel(R) Xeon(R) Processor code named Icelake
+        Frequency: 2.594 GHz
+        Logical CPU Count: 64
+        LLC size: 50.3 MB 
+        Cache Allocation Technology
+            Level 2 capability: not detected
+            Level 3 capability: available
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.
