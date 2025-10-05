@@ -65,3 +65,5 @@ The length of the list visible to the user does not reflect the length of the in
 This allows it to simply store new items and increase its length-counter when appending.
 Only occasionally, does it need to perform an additional greedy resize.
 This greatly improves the append performance, at the cost of a slight memory overhead.
+
+For these reasons, it is more computationally efficient to use a list rather than a NumPy array when the required length is unknown or changes frequently, since the latter would necessitate frequent and costly calls to `resize()`.
