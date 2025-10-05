@@ -58,3 +58,5 @@ In testing, this produced the following results
 for-loop search: 4.01ms
 'in' keyword search: 0.88ms
 ```
+
+The in keyword performed 4.5x faster than the for-loop, the exact speedup is likely to vary with the length of the sequence being searched.
