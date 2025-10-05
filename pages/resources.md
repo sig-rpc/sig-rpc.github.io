@@ -11,6 +11,7 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
 
 - [Books](#books)
   - [Python](#python-books)
+  - [R](#r-books)
 - [Training](#trainingcourses)
   - [C++](#cpp-training)
   - [Python](#python-training)
@@ -20,11 +21,14 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [Computer Science](#cs-web)
   - [GPU Computing](#gpu-web)
   - [Python](#python-web)
+  - [R](#r-web)
 
 ## Books
 
 - **Python**{:id="python-books"}
   - [High Performance Python, 2nd Edition](https://www.oreilly.com/library/view/high-performance-python/9781492055013/){:target="_blank"} (CC BY-NC-ND 3.0)
+- **R**{:id="r-books"}
+  - [The R Inferno](https://www.burns-stat.com/documents/books/the-r-inferno/){:target="_blank"}
 
 
 ## Training/Courses
