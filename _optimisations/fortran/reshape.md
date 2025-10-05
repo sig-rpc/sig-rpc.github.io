@@ -6,7 +6,7 @@ authors: Joe Wallwork
 name: Reshape
 language: [Fortran]
 subcategory: [Core]
-tags: [reshape]
+tags: [reshape, array]
 ---
 
 It's often required to reshape arrays used in Fortran code. This can be achieved
