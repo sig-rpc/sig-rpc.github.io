@@ -26,11 +26,11 @@ This can be easily demonstrated with Python's `timeit` module in your console.
 ```sh
 # List of length 6
 >python -m timeit "li = [0,1,2,3,4,5]"
-20000000 loops, best of 5: 17.4 nsec per loop
+5000000 loops, best of 5: 69.4 nsec per loop
 
 # Tuple of length 6
 >python -m timeit "tu = (0,1,2,3,4,5)"
-5000000 loops, best of 5: 69.4 nsec per loop
+20000000 loops, best of 5: 17.4 nsec per loop
 
 # List of length 16
 >python -m timeit "li = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"
@@ -60,4 +60,5 @@ In this larger example using comprehension syntax, the tuple constructs 90x fast
 Tuples are a simpler data-structure than lists, this likely means that in addition to Python pre-caching their storage, there is less internal meta-data to setup during initialisation.
 
 *If you have time to investigate this further by checking the CPython source, please [let us know](https://github.com/sig-rpc/sig-rpc.github.io/issues/new?template=improve_optimisation.yml&title=%5BFix%5D%3A%20Improve%20tuple%20technical%20detail)!*
+
 
