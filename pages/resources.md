@@ -19,6 +19,7 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
 - [Web](#web)
   - [C++](#cpp-web)
   - [Computer Science](#cs-web)
+  - [Fortran](#fortran-web)
   - [GPU Computing](#gpu-web)
   - [Python](#python-web)
   - [R](#r-web)
@@ -47,8 +48,11 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
 
 - **C++**{:id="cpp-web"}
   - [Cpp Optimizations Diary](https://cpp-optimizations.netlify.app/){:target="_blank"}
+  - [Open Catalog of Code Guidelines: Optimization](https://open-catalog.codee.com/#optimization){:target="_blank"}
 - **Computer Science**{:id="cs-web"}
   - [What scientists must know about hardware to write fast code](https://viralinstruction.com/posts/hardware/){:target="_blank"}
+- **Fortran**{:id="fortran-web"}
+  - [Open Catalog of Code Guidelines: Optimization](https://open-catalog.codee.com/#optimization){:target="_blank"}
 - **GPU Computing**{:id="gpu-web"}
   - [The CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/){:target="_blank"}
   - [GPU Glossary](https://modal.com/gpu-glossary){:target="_blank"}
