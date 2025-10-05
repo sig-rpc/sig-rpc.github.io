@@ -9,7 +9,7 @@ subcategory: [Core]
 tags: [loop, search, operator]
 ---
 
-Searching for an element in a list with a for-loop and an equality check is very natural, but Python has a built-in `in` keyword which should be used whenever possible.
+Searching for an element in a sequence (e.g. a list) with a for-loop and an equality check is very natural, but Python has a built-in `in` keyword which should be used whenever possible.
 
 <!--more-->
 
