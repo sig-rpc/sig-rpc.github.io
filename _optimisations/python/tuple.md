@@ -49,7 +49,7 @@ It takes 4-5x as long to allocate a list than a tuple of equal length. This gap 
 5000 loops, best of 5: 66 usec per loop
 
 # Tuple length 2000 via comprehension
->python -m timeit "li = (i for i in range(2000))"
+>python -m timeit "tu = (i for i in range(2000))"
 500000 loops, best of 5: 728 nsec per loop
 ```
 
@@ -59,4 +59,5 @@ In this larger example using comprehension syntax, the tuple constructs 90x fast
 
 Tuples are a simpler data-structure than lists, this likely means that in addition to Python pre-caching their storage, there is less internal meta-data to setup during initialisation.
 
-*If you have time to investigate this further by checking the CPython source, please [let us know](https://github.com/sig-rpc/sig-rpc.github.io/issues/new?assignees=&labels=Optimisation&projects=&template=new_optimisation.yml&title=%5BNew%5D%3A+)!*
+*If you have time to investigate this further by checking the CPython source, please [let us know](https://github.com/sig-rpc/sig-rpc.github.io/issues/new?template=improve_optimisation.yml&title=%5BFix%5D%3A%20Improve%20tuple%20technical%20detail)!*
+
