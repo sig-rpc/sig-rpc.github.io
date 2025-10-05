@@ -52,8 +52,11 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
 - **GPU Computing**{:id="gpu-web"}
   - [The CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/){:target="_blank"}
   - [GPU Glossary](https://modal.com/gpu-glossary){:target="_blank"}
- **Python**{:id="python-web"}
+- **Python**{:id="python-web"}
   - [330× faster: Four different ways to speed up your code](https://pythonspeed.com/articles/different-ways-speed/){:target="_blank"}
+- **R**{:id="r-web"}
+  - [Advanced R: Measuring Performance](https://adv-r.hadley.nz/perf-measure.html){:target="_blank"}
+  - [Advanced R: Improving Performance](https://adv-r.hadley.nz/perf-improve.html){:target="_blank"}
   
 
 
