@@ -83,7 +83,7 @@ You might be tempted to use `sapply()` or `vapply()`, which allow you to apply a
 
 This is because the `apply()` family of functions, in contrast to popular believe, are _not_ more performant than `for` loops in R.
 In fact, the `apply()` implementation contains a regular R `for` loop. The reason they may sometimes be more performant than `for` loops
-is because they take care of the common pitfalls with loops, like the [growing data problem](./dont-grow-dataframes.md).
+is because they take care of the common pitfalls with loops, like the [growing data problem](/optimisation/r/dont-grow-dataframes).
 However, using an `apply` function is not vectorisation, it is loop-hiding (see also the Fourth Circle of [The R Inferno](https://www.burns-stat.com/documents/books/the-r-inferno/)).
 
 ## The Technical Detail
