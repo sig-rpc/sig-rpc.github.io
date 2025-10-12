@@ -1,0 +1,20 @@
+name: Improve an Article
+description: Suggest a correction or improvement to an existing article (e.g. profiler, optimisation pattern)
+title: "[Fix]: "
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Please include the web address to the relevant page on sig-rpc.github.io
+      placeholder: e.g. https://sig-rpc.github.io/optimisation/openmp/false-sharing/
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: E.g. an explanation of what is wrong or could be improved.
+      placeholder:
+    validations:
+      required: true
