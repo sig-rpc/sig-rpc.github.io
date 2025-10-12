@@ -47,9 +47,18 @@ On success VizTracer will output a file `result.json` to the working directory. 
 python -m vizviewer result.json
 ```
 
+This should then open `vizviewer` in your web browser.
+
 ## Interpreting Output
 
 VizViewer provides an interactive visualisation of the timeline, that can be panned and zoomed to investigate the call-stack throughout the program's execution.
+
+You can pan the timeline by holding **Shift** and dragging, or by pressing **A** and **D** on your keyboard.
+To zoom, hold **Ctrl** and scroll with your mouse wheel, or use **W** and **S**.
+
+You can also pan and zoom using the bar located just below the ruler at the top of the screen.
+At first, the bar appears white with grey handles on both ends. Drag the handles inward (no **Shift** required) to zoom into part of the timeline.
+To pan, drag the white section itself, or click and drag within the grey area to create a new zoom range.
 
 {% figure caption:"An example of the visualisation provided by VizViewer." label:viztracer-example %}
 [![A visualisation of a call-stack's execution timeline within VizTracer.](/assets/viztracer-example.png)](/assets/viztracer-example.png) 
@@ -80,7 +89,7 @@ If you're more familiar with writing Python inside Jupyter notebooks you can use
 # Your code here
 ```
 
-After the cell has been executed, a "Show VizTracer Report" button will appear, if clicked this will open the results with `vizviewer`.
+After the cell has been executed, a "Show VizTracer Report" button will appear, if clicked this will open the results with `vizviewer` (explaind above).
 
 ## Limitations
 
