@@ -48,8 +48,8 @@ py_sum_ar = "sum(ar*ar)"
 np_sum_ar = "numpy.sum(ar*ar)"
 # Specialised vectorised dot product
 np_dot_ar = "numpy.dot(ar, ar)"
-# Numpy vectorise equivalent of py_sum_ar/py_sum_ls
-np_vec_ar = "sum(numpy.vectorize(<todo lambda>)(ar))"
+# NumPy vectorise equivalent of py_sum_ar/py_sum_ls
+np_vec_ar = "sum(numpy.vectorize(lambda i: i*i)(ar))"
 
 repeats = 1000
 print(f"python_sum_list: {timeit(py_sum_ls, setup=gen_list, number=repeats):.2f}ms")
@@ -59,16 +59,18 @@ print(f"numpy_dot_array: {timeit(np_dot_ar, setup=gen_array, number=repeats):.2f
 print(f"numpy_vec_array: {timeit(np_vec_ar, setup=gen_array, number=repeats):.2f}ms")
 ```
 
-* `python_sum_list` uses list comprehension to perform the multiplication, followed by the Python core `sum()`. This comes out at 46.93ms
-* `python_sum_array` instead directly multiplies the two arrays, taking advantage of NumPy's vectorisation. But uses the core Python `sum()`, this comes in slightly faster at 33.26ms.
-* `numpy_sum_array` again takes advantage of NumPy's vectorisation for the multiplication, and additionally uses NumPy's `sum()` implementation. These two rounds of vectorisation provide a much faster 1.44ms completion.
-* `numpy_dot_array` instead uses NumPy's `dot()` to calculate the dot product in a single operation. This comes out the fastest at 0.29ms, 162x faster than `python_sum_list`. 
+* `python_sum_list` uses list comprehension to perform the multiplication, followed by the Python core `sum()`. This comes out at 81.65ms
+* `python_sum_array` instead directly multiplies the two arrays, taking advantage of NumPy's vectorisation. But uses the core Python `sum()`, this comes in slightly faster at 58.27ms.
+* `numpy_sum_array` again takes advantage of NumPy's vectorisation for the multiplication, and additionally uses NumPy's `sum()` implementation. These two rounds of vectorisation provide a much faster 2.68ms completion.
+* `numpy_dot_array` instead uses NumPy's `dot()` to calculate the dot product in a single operation. **This comes out the fastest at 0.46ms, about 177x faster than `python_sum_list`.**
+* `numpy_vec_array` uses NumPy's `vectorize()`. This was the slowest of the lot at 220.95ms, that's roughly 2.7x slower than `python_sum_list`, likely equivalent to using a Python `for` loop.
 
 ```output
-python_sum_list: 46.93ms
-python_sum_array: 33.26ms
-numpy_sum_array: 1.44ms
-numpy_dot_array: 0.29ms
+python_sum_list: 81.65ms
+python_sum_array: 58.27ms
+numpy_sum_array: 2.68ms
+numpy_dot_array: 0.46ms
+numpy_vec_array: 220.95ms
 ```
 
 ## The Technical Detail
