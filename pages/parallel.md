@@ -130,7 +130,7 @@ Tasks arrays are a really easy way to speed up the execution of embarrassingly p
 
 #### Profiling slurm job efficiencies
 
-To run any job in slurm, the compute resources are specified, even if this is just the default values.
+When you submit a job to slurm, it always requests a certain amount of compute resources (such as CPU cores and memory). These will either come from the HPC system's defaults or from the values you specify in your job script.
 
 This gives scope to introduce inefficiencies by over-specifying or under-specifying the memory and CPU/GPU resources for each job. Over specifying resources implies that the resources are allocated but not used - depriving other jobs and ultimately slowing the HPC system down; whereas under specifying resources can increase the time taken to run the job, or even cause it to fail if the allocated memory is too small.
 
