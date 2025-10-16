@@ -20,7 +20,7 @@ All formal policies and guidance, including the SIG's [terms of reference][terms
 
 Minutes from public meetings, are available from our [minutes repository][minutes_repo] on GitHub.
 
-The last annual general meeting (AGM) was held on [2024-09-24][last_agm_minutes], AGMs are held roughly every 12 months to elect officers. An extraordinary general meeting (EGM) may be held at any time if recruitment of additional officers is required, such as following a resignation.
+The last annual general meeting (AGM) was held on [2025-10-16][last_agm_minutes], AGMs are held roughly every 12 months to elect officers. An extraordinary general meeting (EGM) may be held at any time if recruitment of additional officers is required, such as following a resignation.
 
 ## Officers
 
@@ -32,15 +32,15 @@ The current officers of SIG-RPC:
 
 **Deputy Chair**
 
-[Rich FitzJohn][rich_fitzjohn]
+[Jost Migenda][jost migenda]
 
 **Secretary**
 
 [Peter Heywood][peter_heywood]
 
-**Editor**
+**Officers**
 
-This position is open following a resignation, it will be filled at the next meeting (eta February 2025), that will be considered an EGM.
+[Fred Sonnenwald][fred sonnenwald]
 
 
 ## Supported By
@@ -71,8 +71,10 @@ SIG-RPC has been supported by:
 [ssi_website]: https://www.software.ac.uk/
 [policies_repo]: https://github.com/sig-rpc/policies
 [minutes_repo]: https://github.com/sig-rpc/minutes
-[last_agm_minutes]: https://github.com/sig-rpc/minutes/blob/master/2024/2024-09-24-SIG-RPC-setup-meeting.md
+[last_agm_minutes]: [https://github.com/sig-rpc/minutes/blob/master/2024/2024-09-24-SIG-RPC-setup-meeting.md](https://github.com/sig-rpc/minutes/pull/8/files)
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md <!-- This does not exist yet, URL is assumed -->
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
-[rich_fitzjohn]: https://richfitz.github.io/
+[jost migenda]: ???
 [peter_heywood]: https://ptheywood.uk/
+[fred sonnenwald]: ???
+
