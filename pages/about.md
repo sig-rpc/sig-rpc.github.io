@@ -71,7 +71,8 @@ SIG-RPC has been supported by:
 [ssi_website]: https://www.software.ac.uk/
 [policies_repo]: https://github.com/sig-rpc/policies
 [minutes_repo]: https://github.com/sig-rpc/minutes
-[last_agm_minutes]: [https://github.com/sig-rpc/minutes/blob/master/2024/2024-09-24-SIG-RPC-setup-meeting.md](https://github.com/sig-rpc/minutes/pull/8/files)
+[last_agm_minutes]: https://github.com/sig-rpc/minutes/pull/8/files
+
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md <!-- This does not exist yet, URL is assumed -->
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
 [jost migenda]: ???
