@@ -77,5 +77,5 @@ SIG-RPC has been supported by:
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
 [jost migenda]: ???
 [peter_heywood]: https://ptheywood.uk/
-[fred sonnenwald]: ???
+[fred sonnenwald]: https://orcid.org/0000-0002-2822-0406
 
