@@ -26,6 +26,22 @@
     </div>
 
   </div>
-
 </footer>
 <script src="/assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+  <script>
+    // Wait for the DOM to fully load
+    document.addEventListener("DOMContentLoaded", () => {
+      // Add an event listener to all code fence copy buttons (created via CSS ::before)
+      document.querySelectorAll('div.highlight').forEach(block => {
+        block.addEventListener('click', (e) => {
+          if (e.target === block && window.getComputedStyle(block, '::before').content !== 'none') {
+            const code = block.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+              block.setAttribute('data-copied', 'true');
+              setTimeout(() => block.removeAttribute('data-copied'), 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          }
+        });
+      });
+    });
+  </script>
