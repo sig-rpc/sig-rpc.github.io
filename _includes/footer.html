@@ -26,6 +26,32 @@
     </div>
 
   </div>
-
 </footer>
 <script src="/assets/bootstrap-5.0.2/js/bootstrap.min.js"></script>
+<script>
+  // Wait for the DOM to fully load
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('div.highlight').forEach(block => {
+      // Create the button
+      const button = document.createElement('button');
+      button.className = 'copy-button';
+      button.textContent = '📋 Copy';
+      
+      // Append button to the highlight div
+      block.insertBefore(button, block.firstChild);
+      
+      // Add click event listener for copying
+      button.addEventListener('click', (e) => {
+          const code = block.querySelector('code').textContent;
+          navigator.clipboard.writeText(code).then(() => {
+            button.setAttribute('data-copied', 'true');
+            button.textContent = "✔️ Copied";
+            setTimeout(() => {
+              button.removeAttribute('data-copied');
+              button.textContent = "📋 Copy";
+            }, 2000);
+          }).catch(err => console.error('Failed to copy:', err));
+      });
+    });
+  });
+</script>

@@ -28,3 +28,31 @@ div#profilers hr, div#optimisations hr {
 .media-body {
   flex: 1;
 }
+
+/*
+Copy to clipboard button dynamically added to multiline code fences
+Hidden if Javascript is disabled.
+Content of button changes after successful copy, until that times out (e.g. 2 seconds).
+*/
+div.highlight {
+  position: relative;
+}
+button.copy-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border-width: 0px;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+}
+button.copy-button:hover {
+  background: #0056b3;
+}
+button.copy-button[data-copied="true"] {
+  background: #28a745;
+}
