@@ -4,18 +4,18 @@ published: true
 authors: Robert Chisholm
 
 name: gprof
-language: [C/C++]
+language: [C/C++, Fortran]
 style: [Function-Level]
 website: https://ftp.gnu.org/old-gnu/Manuals/gprof-2.9.1/html_mono/gprof.html
 ---
 
-`gprof` is the GNU profiler, suitable for function-level profiling code compiled with C, C++ & Fortran compiled with the GNU compilers. If already compiling your code with GCC/G++, it's relatively easy to setup and use. As a command-line profiler output is provided in a plaintext format, this can be challenging to interpret for more nuanced and subtle bottlenecks.
+`gprof` is the GNU profiler, suitable for function-level profiling code compiled with C, C++ & Fortran compiled with the GNU, PGI, Intel & other compilers. If already compiling your code with a supported compiler, it's relatively easy to setup and use. As a command-line profiler output is provided in a plaintext format, this can be challenging to interpret for more nuanced and subtle bottlenecks.
 
 <!--more-->
 
 ## QuickStart
 
-**1.** In order to profile with `gprof`, you should pass the flag `-pg` to a Release (optimised) build at compile time.
+**1.** In order to profile with `gprof`, you should pass the flag `-pg` to a Release (optimised) build at compile time. *If using an Intel compiler `-pg` has been deprecated, and `-p` should be used instead.*
 
 e.g. 
 
@@ -23,8 +23,17 @@ e.g.
 # Compile hello_world.c with -pg -O3
 gcc -pg -O3 -o hello_world hello_world.c
 # or
+<<<<<<< HEAD
 # Configure the cmake project to build with -pg and compiler optimisations
 cmake -DCMAKE_C_FLAGS=-pg -DCMAKE_CXX_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg -DCMAKE_BUILD_TYPE=Release ..
+=======
+# Compile hello_world.f with -pg
+f77 -o hello_world -fast -pg hello_world.f
+# or
+# Configure the cmake project to build with -pg
+# Some of these arguments will be redundant, so you may receive a warning that they're unused
+cmake -DCMAKE_C_FLAGS=-pg -DCMAKE_CXX_FLAGS=-pg -DCMAKE_Fortran_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg ..
+>>>>>>> 16326a5... Add Fortran detail to gprof guide.
 ```
 
 **2.** Now you can execute the program compiled with `-pg` like normal, this will output a profiling dump of the run to `gmon.out`. The program must exit successfully.
