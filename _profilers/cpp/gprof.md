@@ -219,5 +219,5 @@ This table describes the call tree of the program, and was sorted by
 
 ## Limitations
 
-Whilst `gprof` will profile code that includes OpenMP, it produces spurious timing information if OpenMP execution is present.
+Whilst `gprof` will profile code that includes OpenMP, it can produce spurious timing information if OpenMP execution is present. As such you may also want to disable compiling with OpenMP, and profile the serial execution of your code instead. The process for disabling OpenMP at compile time will differ between projects, so check the documentation.
 <!-- More broadly, does it work with parallel C/C++? -->
