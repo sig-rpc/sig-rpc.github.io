@@ -15,16 +15,16 @@ website: https://ftp.gnu.org/old-gnu/Manuals/gprof-2.9.1/html_mono/gprof.html
 
 ## QuickStart
 
-**1.** In order to profile with `gprof`, you should pass the flag `-pg` at compile time.
+**1.** In order to profile with `gprof`, you should pass the flag `-pg` to a Release (optimised) build at compile time.
 
 e.g. 
 
 ```sh
-# Compile hello_world.c with -pg
-gcc -pg -o hello_world hello_world.c
+# Compile hello_world.c with -pg -O3
+gcc -pg -O3 -o hello_world hello_world.c
 # or
-# Configure the cmake project to build with -pg
-cmake -DCMAKE_C_FLAGS=-pg -DCMAKE_CXX_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg ..
+# Configure the cmake project to build with -pg and compiler optimisations
+cmake -DCMAKE_C_FLAGS=-pg -DCMAKE_CXX_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg -DCMAKE_BUILD_TYPE=Release ..
 ```
 
 **2.** Now you can execute the program compiled with `-pg` like normal, this will output a profiling dump of the run to `gmon.out`. The program must exit successfully.
