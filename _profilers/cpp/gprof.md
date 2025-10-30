@@ -23,17 +23,12 @@ e.g.
 # Compile hello_world.c with -pg -O3
 gcc -pg -O3 -o hello_world hello_world.c
 # or
-<<<<<<< HEAD
-# Configure the cmake project to build with -pg and compiler optimisations
-cmake -DCMAKE_C_FLAGS=-pg -DCMAKE_CXX_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg -DCMAKE_BUILD_TYPE=Release ..
-=======
 # Compile hello_world.f with -pg
 f77 -o hello_world -fast -pg hello_world.f
 # or
 # Configure the cmake project to build with -pg
 # Some of these arguments will be redundant, so you may receive a warning that they're unused
 cmake -DCMAKE_C_FLAGS=-pg -DCMAKE_CXX_FLAGS=-pg -DCMAKE_Fortran_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg ..
->>>>>>> 16326a5... Add Fortran detail to gprof guide.
 ```
 
 **2.** Now you can execute the program compiled with `-pg` like normal, this will output a profiling dump of the run to `gmon.out`. The program must exit successfully.
