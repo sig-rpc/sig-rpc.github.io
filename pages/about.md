@@ -76,7 +76,6 @@ SIG-RPC has been supported by:
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md <!-- This does not exist yet, URL is assumed -->
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
 [jost migenda]: https://www.kcl.ac.uk/people/jost-migenda
-
 [peter_heywood]: https://ptheywood.uk/
 [fred sonnenwald]: https://orcid.org/0000-0002-2822-0406
 
