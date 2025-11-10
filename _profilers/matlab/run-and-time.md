@@ -19,7 +19,7 @@ The MATLAB desktop application (as opposed to the MATLAB web application) has bu
 ![A screenshot of MATLAB R2025b showing part of the Editor tab, including the drop-down menu from the 'Run' button which includes the 'Run and Time' option.](/assets/matlab/run-and-time-button.png)
 {% endfigure %}
 
-1. Open your code, as you would normally run it within MATLAB.
+1. Open your code with the MATLAB Editor, as you would normally would when working on it.
 2. Click "Run and Time", which can be found in the drop-down menu of the regular "Run" button (see [Figure 1 (above)](#run-and-time-button)).
 3. After your code exits successfully, a new window "Profiler" will open containing your profiling results.
 
