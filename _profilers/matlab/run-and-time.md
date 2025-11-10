@@ -76,7 +76,7 @@ If a cell within the flame graph is clicked, it will navigate to a profile summa
 
 ### Profile Summary Table
 
-The table beneath the flame graph lists each of the  functions called in order of their total execution time. This provides the same information as the flame graph, however it includes all functions called including very quick ones which would be difficult to visualise in the flame graph.
+The table beneath the flame graph lists each of the functions called in order of their total execution time. This provides the same information as the flame graph, however it includes all functions called including very quick ones which would be difficult to visualise in the flame graph.
 
 The table has 5 columns:
 
