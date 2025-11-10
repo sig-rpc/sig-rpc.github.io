@@ -103,7 +103,7 @@ A flame graph scoped such that the selected function occupies the full width. Th
 
 **Parents**
 
-A table of parent functions which called this function and how many times they were called. This data is aggregated, so it won't uniquely identify individual locations if a function was called from multiple places within the same parent file or function.
+A table of parent functions which called this function and how many times they were called. This data is aggregated, so it won't uniquely identify individual locations if a function was called from multiple places within the same parent file or function. If there was no calling function, this section will state "No parent".
 
 **Lines that take the most time**
 
