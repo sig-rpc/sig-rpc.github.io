@@ -1,4 +1,4 @@
-# Code of Conduct - Reasonable Performance Computing SIG's Website & Knowledge-base
+# Code of Conduct - Reasonable Performance Computing SIG
 
 ## Our Pledge
 
