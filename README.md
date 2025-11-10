@@ -6,13 +6,13 @@ The goal of the website is to make profiling and optimisation guidance accessibl
 
 ### Contributing
 
-Regardless of your familiarity with code performance and optimisation, we welcome your contribution. Contributions may be as small as providing feedback on how a guide is unclear or could be improved, to a fully drafted new guide ready for publication.
+Regardless of your familiarity with code performance and optimisation, we welcome your contribution. Contributions may be as small as providing feedback on how a guide is unclear or could be improved, or as large as a fully drafted new guide ready for publication.
 
-Authors with highly technical backgrounds can easily make assumptions, which aren't clear to those less experienced, this is why even feedback from those new to software performance is important!
+Authors with highly technical backgrounds can easily make assumptions, which aren't clear to those less experienced. This is why even feedback from those new to software performance is important!
 
-Ideas and feedback can be submit via the repository's [issue templates](https://github.com/sig-rpc/sig-rpc.github.io/issues/new/choose).
+Ideas and feedback can be submitted via the repository's [issue templates](https://github.com/sig-rpc/sig-rpc.github.io/issues/new/choose).
 
-New articles can be submit directly as pull requests. It's worth using an existing guide as a template, these can be found in `_profilers/` and `_optimisations/` respectively.
+New articles can be submitted directly as pull requests. It's worth using an existing guide as a template, these can be found in `_profilers/` and `_optimisations/` respectively.
 
 For the full contribution guidance, including a loose style guide, please refer to [`.github/CONTRIBUTING.MD`](.github/CONTRIBUTING.MD).
 
