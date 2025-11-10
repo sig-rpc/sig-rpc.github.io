@@ -26,10 +26,10 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the
-[Reasonable Performance Computing SIG's Code of Conduct](https://github.com/sig-rpc/sig-rpc.github.io/blob/master/CODE_OF_CONDUCT.md).
+SIG-RPC and everyone participating in this website and wider projects/events are governed by the
+[Society of Research Software Engineering's Code of Conduct](https://society-rse.org/about/policies/code-of-conduct-for-trustees/).
 By participating, you are expected to uphold this code. Please report unacceptable behaviour
-to <sig-rpc-managers@society-rse.org>.
+to <sig-rpc-managers@society-rse.org>, more serious/urgent grievances can be raised with <coc@society-rse.org> as explained in the [Complaints and Grievances Policy](https://society-rse.org/about/policies/complaints-and-grievances-policy/).
 
 
 ## I Have a Question
