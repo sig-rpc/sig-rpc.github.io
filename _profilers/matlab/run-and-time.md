@@ -122,7 +122,7 @@ Clicking a line number in the table, will jump down to that specific line in the
 
 **Children**
 
-A table of child function calls, and their respective execution times. This is similar to the profile summary page's table, however the "Self Time" column has been replaced with "% Time" which represents the total time relative the parent function's execution time.
+A table of child function calls, and their respective execution times. This is similar to the profile summary page's table, however the "Self Time" column has been replaced with "% Time" which represents the total time relative the parent function's execution time. If no child functions were called, this section will state "No children".
 
 **Code Analyzer results**
 
