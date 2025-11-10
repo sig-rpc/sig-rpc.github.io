@@ -107,7 +107,7 @@ A table of parent functions which called this function and how many times they w
 
 **Lines that take the most time**
 
-A table listing the most expensive lines of code
+A table listing the most expensive lines of code.
 
 The table has 6 columns:
 
