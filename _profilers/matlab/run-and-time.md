@@ -37,17 +37,20 @@ If your code is too complicated, or scales such that this approach is impractica
 % MATLAB code
 % ...
 
-profile on % Enable the profiler
+% Enable the profiler
+profile on 
  
 % MATLAB code to be profiled
 % ...
 
-profile off % Disable the profiler
+% Disable the profiler
+profile off 
 
 % More MATLAB code
 % ...
 
-profile viewer  % Open the profile report (if not already open)
+% Open the profile report (if not already open)
+profile viewer  
 ```
 
 You should only enable and disable the profiler once during execution, as each time it is re-enabled the data that was previously collected will be discarded.
