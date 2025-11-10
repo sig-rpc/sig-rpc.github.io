@@ -80,15 +80,15 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/sig-rp
 Guides live under the `optimisations/` and `profilers/` directories respectively, grouped by language. Each guide is written in Markdown (`.md`) and should:
 
 - Setup the YAML header:
-  - `level`, The priority of the guide in search results, make a judgement call, more common issues should have a level closer to 1.
+  - `level`, The priority of the guide in search results. Make a judgement call, more common issues should have a level closer to 1.
   - `published`, By default this should be set to `true`.
-  - `authors`, The name of author/s that have contributed to the guide.
+  - `authors`, The name of the author/s that have contributed to the guide.
   - `name`, A short and general name which describes the optimisation or the profiler's name.
-  - `language`, An array of languages that guide refers to. *Be careful to ensure this matches the capitalisation of other guides for the language!*
+  - `language`, An array of languages that the guide refers to. *Be careful to ensure this matches the capitalisation of other guides for the language!*
   - `subcategory`, *(Optimisations only)* Ways to sub-categorise the optimisation, e.g. the library it corresponds to.
   - `tags`, *(Optimisations only)* An array of terms which may help this guide be found when searching (with the website's crude JS search).
-  - `style`, *(Profiler's only)* The profiling styles the profiler supports (e.g., Function-Level, Line-Level, Memory, Timeline, Hardware-Metrics, Benchmarking)
-  - `website`, *(Profiler's only)* URL of the profiler's main website.
+  - `style`, *(Profilers only)* The profiling styles the profiler supports (e.g., Function-Level, Line-Level, Memory, Timeline, Hardware-Metrics, Benchmarking)
+  - `website`, *(Profilers only)* URL of the profiler's main website.
 - Each guide should begin with a short paragraph to introduce the guide
   - This will also appear in the directory, before users click through to the guide
   - The first paragraph should be followed by `<!--more-->`, which tells Jekyll where to place the fold.
