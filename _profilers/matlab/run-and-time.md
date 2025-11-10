@@ -56,7 +56,7 @@ Ensure that you remove or comment these lines once you've finished profiling, as
 
 ## Interpreting Output
 
-The initial page displayed within the profiler window is the Profile Summary, this presents a Flame Graph and a table which lists the functions called alongside their execution time. This page can be returned to at any time, by clicking the "Profile Summary" button in the top-left corner of the profiler.
+The initial page displayed within the profiler window is the Profile Summary, which presents a Flame Graph and a table listing the functions called alongside their execution time. This page can be returned to at any time, by clicking the "Profile Summary" button in the top-left corner of the profiler.
 
 {% figure caption:"An example of the Profile Summary window. (Screenshot from MATLAB R2025b)" label:profile-summary %}
 ![A screenshot of MATLAB R2025b showing the Profile Summary page within the Profiler.](/assets/matlab/profile-summary.png)
