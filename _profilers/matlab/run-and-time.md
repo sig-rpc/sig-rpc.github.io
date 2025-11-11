@@ -29,7 +29,7 @@ Profiling captures extra information during your code's execution, this both slo
 
 By default, MATLAB has a profiler history size of 5 million function calls to limit the size of the data collected. If this value is exceeded, some profiler features (such as the Flame Graph) will not be available.
 
-To make profiling as useful as possible, it's recommended where feasible to reduce the configuration you profile so that it executes in 1-2 minutes. This could be as simple as reducing the number of steps or iterations.
+To make profiling as useful as possible, it's recommended where feasible to profile a small but representative example so that it executes in 1-2 minutes. This could be as simple as reducing the number of iterations, or the problem size.
 
 If your code is too complicated, or scales such that this approach is impractical. You can instead enable and disable the profiler dynamically during execution to profile a particular part of your code using the command [`profile`](https://uk.mathworks.com/help/matlab/ref/profile.html) and then execute it normally.
 
