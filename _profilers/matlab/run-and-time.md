@@ -67,7 +67,7 @@ The initial page displayed within the profiler window is the Profile Summary, wh
 
 ### Flame Graph
 
-*If the flame graph fails to produce, try reducing the scope of the profile as too much data was collected.*
+*If the flame graph section states "Flame graph is not available...", try reducing the scope of the profile as too much data was collected. If you can't see that message or the graph, make sure the flame graph accordion is expanded.*
 
 Flame graphs are a common approach to visualising aggregate function-level profiling data (or if vertically reflected, called an icicle graph). The bottom row of the flame graph is the root of the profile which occupies 100% of the runtime, this is shown to be the "Profile Summary". Each row above this shows the most expensive functions (or files) executed by the previous row, producing a hierarchical visualisation of where time was being spent during execution. Each function will only appear as a child of the function it was called within once, as multiple child-calls to the same function are aggregated. As rows progress up the graph the proportion of the graph's width occupied by cells typically reduces, producing the flame (or icicle) pattern the graph is named after. These gaps represent the execution time of the function that was not spent executing child functions, e.g., basic arithmetic and control flow.
 
