@@ -116,7 +116,7 @@ The table has 6 columns:
 - **Calls**, The number of times that line of code was executed.
 - **Total Time**, The absolute time spent executing that line of code.
 - **% Time**, The total time spent executing that line, relative to the time spent executing the parent function.
-- **Time Plot**, A bar representing the total time, with respect to the total runtime.
+- **Time Plot**, A bar representing the total time, with respect to the total time spent in the current file or function.
 
 Clicking a line number in the table, will jump down to that specific line in the Function Listing section below.
 
