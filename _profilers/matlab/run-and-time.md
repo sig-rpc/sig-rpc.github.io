@@ -87,7 +87,7 @@ The table has 5 columns:
 - **Calls**, The number of times that function (or file) was called.
 - **Total Time**, The absolute time spent executing that function, including child function calls.
 - **Self Time**, The absolute time spent executing that function, excluding child function calls.
-- **Total Time Plot**, A bar representing the total time and self time, with respect to the total runtime. This is how it would appear within the flame graph as a child of the root.
+- **Total Time Plot**, A bar representing the total time and self time, with respect to the total runtime of the profile. This is how it would appear within the flame graph as a child of the root.
 
 If a function name is clicked within the table, the profiler will navigate to a profile summary for the selected function which contains both function-level and line-level information.
 
