@@ -73,7 +73,7 @@ Flame graphs are a common approach to visualising aggregate function-level profi
 
 If a particular cell of MATLAB's flame graph is hovered with the mouse cursor, a tool tip appears saying the percentage runtime (equivalent to the cell's width) and absolute runtime of that function including child function calls. Grey cells represent MATLAB functions, and blue cells represent your code.
 
-In [Figure 2 (above)](#profile-summary) it's clear that `moving_matrix_plotter_limits` was the most expensive function (98.5% of the runtime), that's because we profiled `moving_matrix_plotter_limits.m`. The row above show that `fzero` and `hold` within `moving_matrix_plotter_limits.m` occupied 25.9% and 46.6% of the runtime respectively. That would suggest they should be investigated.
+In [Figure 2 (above)](#profile-summary) it's clear that `moving_matrix_plotter_limits` was the most expensive function (98.5% of the runtime), that's because we profiled `moving_matrix_plotter_limits.m`. The row above show that `fzero` and `hold` within `moving_matrix_plotter_limits.m` occupied 25.9% and 46.6% of the runtime respectively. That would suggest that those functions, and how are they are being used, should be investigated.
 
 If a cell within the flame graph is clicked, it will navigate to a profile summary for the selected cell's file or function.
 
