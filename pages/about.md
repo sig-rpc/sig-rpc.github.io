@@ -42,6 +42,11 @@ The current officers of SIG-RPC:
 
 [Fred Sonnenwald][fred sonnenwald]
 
+## Code of Conduct
+
+As a SIG within Society RSE, SIG-RPCand it's members and contributors are bound [Society RSE's Organisation Code of Conduct][org_coc], with events additionally held under the [Society RSE Events Code of Conduct][event_coc]. Minor issues may be directed at the officers of SIG-RPC via [sig-rpc-managers@society-rse.org][officers_email] as a first point of call.
+
+Full [contribution guidance][CONTRIBUTING.md] can be found on the [website's GitHub repository][website_repo].
 
 ## Supported By
 
@@ -69,13 +74,17 @@ SIG-RPC has been supported by:
 
 [socrse_website]: https://society-rse.org/
 [ssi_website]: https://www.software.ac.uk/
+[website_repo]: https://github.com/sig-rpc/sig-rpc.github.io).
 [policies_repo]: https://github.com/sig-rpc/policies
 [minutes_repo]: https://github.com/sig-rpc/minutes
-[last_agm_minutes]: https://github.com/sig-rpc/minutes/pull/8/files
+[org_coc]: https://society-rse.org/about/policies/code-of-conduct-for-trustees
+[event_coc]: https://society-rse.org/about/policies/code-of-conduct/
 
+[CONTRIBUTING.md]: https://github.com/sig-rpc/sig-rpc.github.io/blob/master/CONTRIBUTING.md
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md <!-- This does not exist yet, URL is assumed -->
+[last_agm_minutes]: https://github.com/sig-rpc/minutes/blob/master/2025/2025-10-16-agm.md
+[officers_email]: mailto:sig-rpc-managers@society-rse.org
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
 [jost migenda]: https://www.kcl.ac.uk/people/jost-migenda
 [peter_heywood]: https://ptheywood.uk/
 [fred sonnenwald]: https://orcid.org/0000-0002-2822-0406
-
