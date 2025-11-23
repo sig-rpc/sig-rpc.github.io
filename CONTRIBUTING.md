@@ -70,7 +70,7 @@ Suggested improvements are tracked as [GitHub issues](https://github.com/sig-rpc
 - Select and follow the **[most appropriate issue template](https://github.com/sig-rpc/sig-rpc.github.io/issues/new/choose)**.
 - Use a **clear and descriptive title** for the issue to identify your suggestion.
 - Be **specific about the location** on the website that your improvement corresponds to.
-- **Explain why this improvement would be useful** to most Reasonable Performance Computing SIG's Website & Knowledgebase users.
+- **Explain why this improvement would be useful** to a significant fraction of users.
 - You may also want to point out **relevant websites/projects** that cover the suggested idea, which could serve as inspiration. 
 - If you think a dynamic feature of the website is broken or could be improved:
   - **Describe the current behaviour** and **explain which behaviour you expected to see instead** and why.
