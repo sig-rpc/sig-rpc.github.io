@@ -44,7 +44,7 @@ The current officers of SIG-RPC:
 
 ## Code of Conduct
 
-As a SIG within Society RSE, SIG-RPC and it's officers are bound [Society RSE's Organisation Code of Conduct][org_coc], with events additionally held under the [Society RSE Events Code of Conduct][event_coc]. Minor issues may be reported to the officers of SIG-RPC via [sig-rpc-managers@society-rse.org][officers_email] as a first point of call.
+As a SIG within Society RSE, SIG-RPC and it's officers are bound [Society RSE's Organisation Code of Conduct][org_coc], with events additionally held under the [Society RSE Events Code of Conduct][event_coc]. Minor issues may be reported to the officers of SIG-RPC via [sig-rpc-managers@society-rse.org][officers_email] as a first point of call, more serious/urgent grievances can be raised with [coc@society-rse.org][coc_email] as explained in the [Complaints and Grievances Policy][grievances_policy].
 
 We ask that SIG members and contributors abide by our [minimal contributor code of conduct][contributor-coc] to ensure that SIG-RPC remains a welcoming community.
 
@@ -81,11 +81,13 @@ SIG-RPC has been supported by:
 [minutes_repo]: https://github.com/sig-rpc/minutes
 [org_coc]: https://society-rse.org/about/policies/code-of-conduct-for-trustees
 [event_coc]: https://society-rse.org/about/policies/code-of-conduct/
+[grievances_policy]: https://society-rse.org/about/policies/complaints-and-grievances-policy/
 [contributor_coc]: https://github.com/sig-rpc/policies/blob/master/contributor_code_of_conduct.md
 
 [CONTRIBUTING.md]: https://github.com/sig-rpc/sig-rpc.github.io/blob/master/CONTRIBUTING.md
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md 
 [last_agm_minutes]: https://github.com/sig-rpc/minutes/blob/master/2025/2025-10-16-agm.md
+[coc_email]: mailto:coc@society-rse.org
 [officers_email]: mailto:sig-rpc-managers@society-rse.org
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
 [jost migenda]: https://www.kcl.ac.uk/people/jost-migenda

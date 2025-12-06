@@ -26,11 +26,9 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 
 ## Code of Conduct
 
-SIG-RPC and everyone participating in this website and SIG-RPC's wider projects/events are governed by our
-[Contributor Code of Conduct](https://github.com/sig-rpc/policies/blob/master/contributor_code_of_conduct.md).
-By participating, you are expected to uphold this code. Please report unacceptable behaviour
-to <sig-rpc-managers@society-rse.org>, more serious/urgent grievances can be raised with <coc@society-rse.org> as explained in the [Complaints and Grievances Policy](https://society-rse.org/about/policies/complaints-and-grievances-policy/).
+As a SIG within Society RSE, SIG-RPC and it's officers are bound [Society RSE's Organisation Code of Conduct](https://society-rse.org/about/policies/code-of-conduct-for-trustees), with events additionally held under the [Society RSE Events Code of Conduct](https://society-rse.org/about/policies/code-of-conduct/). Minor issues may be reported to the officers of SIG-RPC via sig-rpc-managers@society-rse.org as a first point of call, more serious/urgent grievances can be raised with coc@society-rse.org as explained in the [Complaints and Grievances Policy](https://society-rse.org/about/policies/complaints-and-grievances-policy/).
 
+We ask that SIG members and contributors abide by our [minimal contributor code of conduct](https://github.com/sig-rpc/policies/blob/master/contributor_code_of_conduct.md) to ensure that SIG-RPC remains a welcoming community.
 
 ## I Have a Question
 
