@@ -81,7 +81,7 @@ Suggested improvements are tracked as [GitHub issues](https://github.com/sig-rpc
 
 ### Your First Guide Contribution
 
-Guides live under the `optimisations/` and `profilers/` directories respectively, grouped by language. Each guide is written in the [Kramdown](https://kramdown.gettalong.org/documentation.html) superset of Markdown (`.md`) and should:
+Guides live under the `_optimisations/` and `_profilers/` directories respectively, grouped by language. Each guide is written in the [Kramdown](https://kramdown.gettalong.org/documentation.html) superset of Markdown (`.md`) and should:
 
 - Setup the YAML header:
   - `level`, The priority of the guide in search results. Make a judgement call, more common issues should have a level closer to 1.
