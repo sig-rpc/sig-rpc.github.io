@@ -1,4 +1,4 @@
-# sig-rpc.github.io
+# [sig-rpc.github.io](sig-rpc.github.io)
 
 The Reasonable Performance Computing SIG's Website & Knowledge-base, where user-submitted guides can help those writing software to identify and address performance problems in their code.
 
