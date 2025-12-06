@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Contributing to Reasonable Performance Computing SIG's Website & Knowledgebase
+# Contributing to Reasonable Performance Computing SIG's [Website & Knowledge Base](https://sig-rpc.github.io/)
 
 First off, thanks for taking the time to contribute! ❤️
 
