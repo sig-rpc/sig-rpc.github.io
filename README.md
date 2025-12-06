@@ -2,7 +2,7 @@
 
 The Reasonable Performance Computing SIG's Website & Knowledge-base, where user-submitted guides can help those writing software to identify and address performance problems in their code.
 
-The goal of the website is to make profiling and optimisation guidance accessible to even novice programmers. The main pre-requisite for readers is that they're able to read through code and recognise how it will execute.
+The goal of [the website](sig-rpc.github.io) is to make profiling and optimisation guidance accessible to even novice programmers. The main pre-requisite for readers is that they're able to read through code and recognise how it will execute.
 
 ### Contributing
 
