@@ -80,8 +80,6 @@ SIG-RPC has been supported by:
 [org_coc]: https://society-rse.org/about/policies/code-of-conduct-for-trustees
 [event_coc]: https://society-rse.org/about/policies/code-of-conduct/
 [grievances_policy]: https://society-rse.org/about/policies/complaints-and-grievances-policy/
-[contributor_coc]: https://github.com/sig-rpc/policies/blob/master/contributor_code_of_conduct.md
-
 [CONTRIBUTING.md]: https://github.com/sig-rpc/sig-rpc.github.io/blob/master/CONTRIBUTING.md
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md 
 [last_agm_minutes]: https://github.com/sig-rpc/minutes/blob/master/2025/2025-10-16-agm.md
