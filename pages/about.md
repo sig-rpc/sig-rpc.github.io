@@ -44,9 +44,7 @@ The current officers of SIG-RPC:
 
 ## Code of Conduct
 
-As a SIG within Society RSE, SIG-RPC and it's officers are bound [Society RSE's Organisation Code of Conduct][org_coc], with events additionally held under the [Society RSE Events Code of Conduct][event_coc]. Minor issues may be reported to the officers of SIG-RPC via [sig-rpc-managers@society-rse.org][officers_email] as a first point of call, more serious/urgent grievances can be raised with [coc@society-rse.org][coc_email] as explained in the [Complaints and Grievances Policy][grievances_policy].
-
-We ask that SIG members and contributors abide by our [minimal contributor code of conduct][contributor-coc] to ensure that SIG-RPC remains a welcoming community.
+As a SIG within the Society of RSE, SIG-RPC and its members and contributors are bound by the Society's [Code of Conduct][event_coc] to ensure that SIG-RPC remains a welcoming community. Elected officers of SIG-RPC are additionally bound by the Society’s [Trustee Code of Conduct][org_coc]. Minor issues may be reported to the officers of SIG-RPC via [sig-rpc-managers@society-rse.org][officers_email] as a first point of call, more serious/urgent grievances can be raised with [coc@society-rse.org][coc_email] as explained in the [Complaints and Grievances Policy][grievances_policy].
 
 Full [contribution guidance][CONTRIBUTING.md] can be found on the [website's GitHub repository][website_repo].
 
