@@ -6,7 +6,9 @@ slug: profiling
 ---
 
 <!--This content is a cut down version of https://rse.shef.ac.uk/pando-python/profiling-introduction.html-->
-This page provides a high-level overview of profiling. If you want to learn more about profiling code in a specific programming language, visit the [profiler database]({{ site.pages.profilers.url | relative_url }}). 
+This page provides a high-level overview of profiling, for a more detailed introduction read through our long-form [getting started guide](/getting-started/).
+
+If you want to learn more about profiling code in a specific programming language, visit the [profiler database](/profiling/). 
 
 ## What is Profiling?
 
