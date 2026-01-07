@@ -84,6 +84,6 @@ np.random.choice(list): 4.37ms
 np.array(list, copy=False): 4.32ms
 ```
 
-NumPy developers confirmed in the [bug report](https://github.com/numpy/numpy/issues/25371 that this performance issue is more widespread, and not something they intend to resolve.
+NumPy developers confirmed in the [bug report](https://github.com/numpy/numpy/issues/25371) that this performance issue is more widespread, and not something they intend to resolve.
 
 For the example used in this guide, generating a random integer to select the element (e.g. `numpy.random.randint(len(ls))`) would be even faster yet. This is regardless of whether a `list` or `numpy.array` is used, as it avoids some additional branching due to the complex configuration `numpy.random.choice()` permits.
