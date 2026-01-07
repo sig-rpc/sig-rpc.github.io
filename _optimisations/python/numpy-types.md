@@ -17,7 +17,7 @@ If you are passing long `list` this cost is higher, and if you're performing it 
 
 ## Example Code
 
-The below example sees an identical `list` and`numpy. array` constructed of 1 million length.
+The below example sees an identical `list` and `numpy. array` constructed of 1 million length.
 
 `numpy.random.choice()` is then called to select a random element 100 times.
 
