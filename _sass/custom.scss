@@ -66,3 +66,9 @@ button.copy-button:hover {
 button.copy-button[data-copied="true"] {
   background: #28a745;
 }
+div.post-content {
+  hr,
+  details {
+    margin-bottom: 15px;
+  }
+}
