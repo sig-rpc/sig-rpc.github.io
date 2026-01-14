@@ -66,9 +66,43 @@ button.copy-button:hover {
 button.copy-button[data-copied="true"] {
   background: #28a745;
 }
-div.post-content {
+/* Theme does not give bottom margins to hr/details */
+.post-content {
   hr,
   details {
     margin-bottom: 15px;
   }
+}
+
+/*GPT gen basic styling of summary/details*/
+details {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  background: #fafafa;
+}
+details[open] {
+  padding-bottom: 0; /* Was doubling with content margin */
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+summary::marker {
+  display: none;
+}
+summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  transition: transform 0.15s ease;
+}
+
+.post-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.post-content details > *:not(summary) {
+  margin-top: 0.5rem;
 }
