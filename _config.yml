@@ -52,6 +52,13 @@ jekyll-archives:
     layouts:
       language: optimisations-language-archive
     slug_mode: pretty
+  optimisations:
+    enabled: [language]
+    permalinks:
+      language: '/case-studies/:name/'
+    layouts:
+      language: casestudies-language-archive
+    slug_mode: pretty
 
 
 defaults:
