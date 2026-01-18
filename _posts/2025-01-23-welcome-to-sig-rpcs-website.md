@@ -3,7 +3,7 @@ layout: post
 title: Welcome to SIG-RPC's Website!
 date: 2025-01-23 09:00:00
 author: Robert Chisholm (Chair)
-categories: website, news
+categories: [website, news]
 ---
 
 Hi and welcome to the reasonable performance computing special interest group's (SIG-RPC's) website. We've put this together over the last few weeks based on the ideas discussed during our [second meeting](https://github.com/sig-rpc/minutes/pull/3) (held 2024-12-06).

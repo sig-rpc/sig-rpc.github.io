@@ -3,7 +3,7 @@ layout: post
 title: RSECon25 Workshop
 date: 2025-09-10 15:30:00
 author: Robert Chisholm (Chair)
-categories: event, news
+categories: [event, news]
 ---
 
 On the 10th September we're hosting our first workshop at [RSECon25](https://rsecon25.society-rse.org/) (15:30-17:00 in OC0.04).

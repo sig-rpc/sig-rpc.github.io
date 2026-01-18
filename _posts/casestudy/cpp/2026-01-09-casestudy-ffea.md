@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Case Study: FFEA"
-date: 2026-01-15 09:00:00
+date: 2026-01-15 09:00:01
 author: Robert Chisholm (Chair)
-categories: case-study, c++
+categories: [case-study]
+language: [C/C++]
 excerpt_separator: <!--more-->
 ---
 
-[FFEA](https://ffea.bitbucket.io/) standard for Fluctuating Finite Element Analysis. It is a research software platform used to model biological molecules as they move and flex under thermal effects. The software itself was first released in 2018, building on methods that had been developed and published since 2010.
+[FFEA](https://ffea.bitbucket.io/) stands for Fluctuating Finite Element Analysis. It is a research software platform used to model biological molecules as they move and flex under thermal effects. The software itself was first released in 2018, building on methods that had been developed and published since 2010.
 
 Since then, FFEA has seen steady adoption in the academic literature, with around 12 published studies using it, including work led by researchers who were not involved in its development. This level of continuity and uptake is relatively successful for specialised scientific software.
 

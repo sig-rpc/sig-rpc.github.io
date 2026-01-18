@@ -41,7 +41,7 @@
               {% endfor %}
             </ul>
           </li>
-          <!-- Optimisation -->           
+          <!-- Optimisation -->
           <li class="nav-item dropdown">
             <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Optimisation
@@ -71,6 +71,30 @@
           <!-- Blog -->
           <li class="nav-item">
             <a class="nav-link active" {% if page.url == "/blog/" %}aria-current="page"{% endif %} href="/blog">Blog</a>
+          </li>
+          <!-- Case Studies -->
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Case Studies
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" {% if page.url == "/case-studies/" %}aria-current="page"{% endif %} href="/case-studies/">Case Studies Home</a></li>
+              <li><hr class="dropdown-divider"></li>              
+              <!-- Create an array of unique optimisation languages. -->
+              {% assign posts = site.categories["case-study"] %}
+              {% assign all_languages = "" %}
+              {% for post in site.categories["case-study"] %}
+                {% for language in post.language %}
+                  {% assign all_languages = all_languages | append: language | append: "," %}
+                {% endfor %}
+              {% endfor %}
+              {% assign unique_languages = all_languages | split: "," | uniq | sort %}
+              {% for lang in unique_languages %}
+                {% assign pretty_slug = lang | slugify: 'pretty' %}    
+                {% assign cs_url = "/case-studies/" | append: pretty_slug | append: "/" %}
+                <li><a class="dropdown-item" {% if page.url == cs_url %}aria-current="page"{% endif %} href="{{ cs_url }}">{{ lang }}</a></li>
+              {% endfor %}
+            </ul>
           </li>
           <!-- Resources -->
           <li class="nav-item">
