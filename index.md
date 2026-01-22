@@ -15,7 +15,7 @@ layout: default-wide
     </div>
     <div class="col-md-10 mx-auto col-lg-4 border rounded-3 bg-light p-2">
       <h2>New to profiling code?</h2>
-      <a class="w-100 btn btn-lg btn-primary" href="/getting-started">Getting Started!</a>
+      <a class="w-100 btn btn-lg btn-primary" href="/getting-started">Get Started!</a>
     </div>
   </div>
   <div class="row">
