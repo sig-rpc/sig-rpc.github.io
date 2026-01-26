@@ -4,12 +4,12 @@ published: true
 authors: Robert Chisholm
 
 name: Compiler Optimisations (Release Builds)
-language: [C/C++]
+language: [C/C++, Fortran]
 subcategory: [Core]
 tags: [compiler]
 ---
 
-Modern C/C++ compilers support many automatic low-level optimisations which can improve the performance of the compiled code. The actual performance gain depends on your specific code, but it is not uncommon to see 5–10x speedups, and in some cases, 50x or more, especially for compute-intensive tasks.
+Modern compilers support many automatic low-level optimisations which can improve the performance of the compiled code. The actual performance gain depends on your specific code, but it is not uncommon to see 5–10x speedups, and in some cases, 50x or more, especially for compute-intensive tasks.
 
 <!--more-->
 
@@ -58,5 +58,5 @@ To enable compiler optimisations manually, navigate to *Project Properties* > *C
 
 ## The Technical Detail
 
-There are many different optimisations which can be performed by a compiler, GCC [lists most of their compiler optimisations](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) and allows them to be individually toggled. 
+There are many different optimisations which can be performed by a compiler, GCC [lists most of their compiler optimisations](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) and allows them to be individually toggled. Passing `-Q --help=optimizers` to GCC will list the exact set of optimisations enabled by the chosen optimisation level.
 
