@@ -14,7 +14,7 @@ Ideas and feedback can be submitted via the repository's [issue templates](https
 
 New articles can be submitted directly as pull requests. It's worth using an existing guide as a template, these can be found in `_profilers/` and `_optimisations/` respectively.
 
-For the full contribution guidance, including a loose style guide, please refer to [`.github/CONTRIBUTING.MD`](.github/CONTRIBUTING.MD).
+For the full contribution guidance, including a loose style guide, please refer to [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 *Something is better than nothing.*
 
