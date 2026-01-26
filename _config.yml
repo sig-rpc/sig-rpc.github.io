@@ -52,7 +52,7 @@ jekyll-archives:
     layouts:
       language: optimisations-language-archive
     slug_mode: pretty
-  optimisations:
+  posts:
     enabled: [language]
     permalinks:
       language: '/case-studies/:name/'
