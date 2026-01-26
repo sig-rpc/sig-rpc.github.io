@@ -3,7 +3,7 @@ level: 1
 published: true
 authors: Mike Croucher
 
-name: Preallocaton
+name: Preallocation
 language: [MATLAB]
 subcategory: [Core]
 tags: [array, loops]
