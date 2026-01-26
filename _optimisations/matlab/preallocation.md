@@ -55,4 +55,4 @@ See the pattern? On the k-th time through the loop, MATLAB has to make a copy of
 
 Bottom line: memory copying during the assignment statement causes the time required to execute the loop to be proportional to n^2. For large N, this is very slow!
 
-From R2010b onwards, [MATLAB uses a much more efficient memory allocation strategy](https://blogs.mathworks.com/steve/2011/05/16/automatic-array-growth-gets-a-lot-faster-in-r2011a/?s_tid=blogs_rc_2) when it encounters loops like this so you are not 'punished' as much as you used to be if your code follows this pattern. However, it is still sugnificantly less efficient than simply creating the array once and writing to it in the loop.
+From R2010b onwards, [MATLAB uses a much more efficient memory allocation strategy](https://blogs.mathworks.com/steve/2011/05/16/automatic-array-growth-gets-a-lot-faster-in-r2011a/?s_tid=blogs_rc_2) when it encounters loops like this so you are not 'punished' as much as you used to be if your code follows this pattern. However, it is still significantly less efficient than simply creating the array once and writing to it in the loop.
