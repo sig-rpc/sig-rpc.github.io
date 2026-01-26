@@ -4,17 +4,19 @@ published: true
 authors: Joe Wallwork
 
 name: Loop ordering
-language: [Fortran, MATLAB]
+language: [Fortran, MATLAB, R]
 subcategory: [Core]
 tags: [loop, array]
 ---
 
-In Fortran and MATLAB, arrays are stored in column-major order, meaning that the
-leftmost index varies most quickly. This is different from many other popular
-scientific programming languages such as C, C++, and Fortran, which use a
-row-major ordering. The implication for writing loops is that the ordering of
-loops is important - it is always best to order loops by which indices vary
-quickest.
+In Fortran, MATLAB, and R, arrays are stored in column-major order, meaning that
+the entries from the left-most index are stored contiguously in memory. This is
+often referred to as the left-most index _varying quickest_. This is different
+from many other popular scientific programming languages such as C, C++, and
+Python, which use a row-major ordering. The implication for writing loops is
+that it is always best to order loops by which indices vary quickest. In this
+way, the loop nest will traverse contiguous memory, which can be done
+efficiently.
 
 <!--more-->
 
