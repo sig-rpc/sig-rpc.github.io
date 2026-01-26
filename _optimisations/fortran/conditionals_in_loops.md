@@ -1,7 +1,7 @@
 ---
 level: 1
 published: true
-author: Connor Aird
+authors: Connor Aird
 
 name: Move invariant conditional out of the loop to facilitate vectorisation
 language: [C/C++, Fortran]
@@ -12,6 +12,8 @@ tags: [vectorisation]
 Many Fortran compilers will attempt to automatically vectorise a loop if possible. There are several bad practices which can inhibit this automatic vectorisation.
 One such pattern is when a conditional evaluates to the same value for all loop iterations and can be moved outside the loop. In this scenario, not only are we
 redundantly evaluating the same conditional but we are also inhibiting automatic vectorisation.
+
+<!--more-->
 
 ## Example Code
 
