@@ -49,7 +49,7 @@ Elapsed time is 0.040541 seconds.
 
 Prior to MATLAB R2010b, memory allocation worked like this: 
 
-The first time through the loop, the variable x hasn't been assigned to yet, so MATLAB creates it through the assignment to x(1). The second time through the loop assigns to x(2), which doesn't exist yet. So MATLAB allocates enough new memory for two elements and then copies x(1) and assigns x(2) into the new space. The third time through the loop assigns to x(3), which doesn't exist yet. So MATLAB allocates enough new memory for three elements and then copies x(1) and x(2) and assigns x(3) into the new space.
+The first time through the loop, the variable x hasn't been assigned to yet, so MATLAB creates it through the assignment to `x(1)`. The second time through the loop assigns to `x(2)`, which doesn't exist yet. So MATLAB allocates enough new memory for two elements and then copies `x(1)` and assigns `x(2)` into the new space. The third time through the loop assigns to `x(3)`, which doesn't exist yet. So MATLAB allocates enough new memory for three elements and then copies `x(1)` and `x(2)` and assigns `x(3)` into the new space.
 
 See the pattern? On the k-th time through the loop, MATLAB has to make a copy of k elements into newly allocated memory. The time required to copy k elements is proportional to k. The time required to execute the entire loop is therefore proportional to the sum of the integers from 1 to n, which is n*(n+1)/2.
 
