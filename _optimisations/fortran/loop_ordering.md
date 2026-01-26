@@ -29,7 +29,7 @@ integer :: i, j, k
 
 ! Initialisation of a and b omitted
 
-! Hand-coded c = a + b
+! Hand-coded c = a + b using column-major
 do k = 1, n
   do j = 1, n
     do i = 1, n
@@ -39,7 +39,7 @@ do k = 1, n
 end do
 ```
 At `-O0` optimisation, this will likely run four or more times faster than the
-equivalent row-major version:
+(not recommended) equivalent row-major version:
 ```fortran
 integer, parameter :: n = 500
 real, dimension(n, n, n) :: a, b, c
@@ -47,7 +47,7 @@ integer :: i, j, k
 
 ! Initialisation of a and b omitted
 
-! Hand-coded c = a + b
+! Hand-coded c = a + b using row-major
 do i = 1, n
   do j = 1, n
     do k = 1, n
@@ -55,4 +55,19 @@ do i = 1, n
     end do
   end do
 end do
+```
+At higher optimisation levels, simple loops such as this would likely be
+optimised out by the compiler. However, this would not necessarily be the case
+for more complex loop structures.
+
+A further comment on the simple loops above is that the same could be achieved
+with an array operation, which has a more compact notation:
+```fortran
+integer, parameter :: n = 500
+real, dimension(n, n, n) :: a, b, c
+
+! Initialisation of a and b omitted
+
+! Compute c = a + b with an array operation
+c(:,:,:) = a + b
 ```
