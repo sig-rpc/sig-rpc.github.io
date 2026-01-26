@@ -1,5 +1,5 @@
 ---
-level: 1
+level: 2
 published: true
 authors: Connor Aird
 
@@ -97,6 +97,12 @@ pure subroutine example(array)
   end if
 end subroutine example
 ```
+
+#### Benchmarks
+
+Benchmarks written using the above example (compiling with GNU Fortran (Homebrew GCC 15.2.0) 15.2.0) have shown
+a performance improvement of more than 50% without optimisation flags (`-O0`) and an improvement of less than 1% with
+higher optimisations (e.g. `-O3`).
 
 ## References
 
