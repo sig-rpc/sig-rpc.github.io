@@ -58,5 +58,5 @@ To enable compiler optimisations manually, navigate to *Project Properties* > *C
 
 ## The Technical Detail
 
-There are many different optimisations which can be performed by a compiler, GCC [lists most of their compiler optimisations](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) and allows them to be individually toggled. Passing `-Q --help=optimizers` to GCC will list the exact set of optimisations enabled by the chosen optimisation level.
+There are many different optimisations which can be performed by a compiler, GCC [lists most of their compiler optimisations](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) and allows them to be individually toggled. Passing `-Q --help=optimizers` to `gcc`, `g++`, or `gfortran` will list the exact set of optimisations enabled by the chosen optimisation level.
 
