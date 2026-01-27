@@ -6,12 +6,12 @@ permalink: /getting-started/
 
 *This article is approximately 4000 words, and is expected to take 20 minutes to read.*
 
-If you're new to learning about performance (and using this website), this long form introduction is a great place to start. The Reasonable Performance Computing SIG website is intended to provide enough introductory software performance material to get beginners started identifying and (hopefully) resolving performance traps in their own code.
+If you're new to learning about performance (and using this website), this long-form introduction is a great place to start. The Reasonable Performance Computing SIG website is intended to provide enough introductory software performance material to get beginners started identifying and (hopefully) resolving performance traps in their own code.
 
-If you're already familiar with the basics, perhaps you want to skip ahead
+If you're already familiar with the basics, perhaps you want to skip ahead.
 
 - [Introduction to Profiling](#introduction-to-profiling)
-- [Types of Profiling](#types-of-profiling)
+- [Profiling Tools](#profiling-tools)
 - [How to Profile](#how-to-profile)
 - [Interpreting Results](#interpreting-results)
   - [Flame and Icicle Graphs](#flame-and-icicle-graphs)
@@ -25,7 +25,7 @@ If you're already familiar with the basics, perhaps you want to skip ahead
 
 Profiling is the practice of executing code whilst collecting granular metrics, in particular performance profilers collect information to help reveal where time is being spent in the code during execution. The information collected ranges from the time spent executing each function or line of code, to low-level hardware metrics such as achieved memory bandwidth. Profiler output narrows the scope for optimisation from the entire codebase to potentially just a handful of lines, enabling quick identification of issues that might otherwise be overlooked.
 
-Regardless of experience, whether a self-taught or trained programmer, it's always possible to introduce small inefficiencies into your code that significantly impact performance. These may not impact the correctness of your results, so it's easy for them to go overlooked. Perhaps you added some crude validation code whilst debugging, then months later you've scaled up several orders of magnitude and forgotten about the validation code (as the same bug hasn't resurfaced) but it's now accounting for a significant proportion of your runtime. Or maybe you're simply unfamiliar with a performant feature of a library or language that you've used.
+Regardless of experience, whether a self-taught or trained programmer, it's always possible to introduce small inefficiencies into your code that significantly impact performance. These may not impact the correctness of your results, so it's easy for them to go overlooked. Perhaps you added some crude validation code whilst debugging, then months later you've scaled up several orders of magnitude and forgotten about the validation code (as the same bug hasn't resurfaced) but it's now accounting for a significant proportion of your code's runtime. Or maybe you're simply unfamiliar with a performant feature of a library or language that you've used.
 
 Profiling tools are designed to uncover where time is being spent executing your code, helping to reduce the volume of code worth investigating for performance optimisations. As Donald Knuth famously observed, we should only focus our attention on optimising the critical 3% of our code:
 
@@ -34,7 +34,7 @@ Profiling tools are designed to uncover where time is being spent executing your
 <!-- Could add mathjax to render the formula $O = \frac{1}{(1-P) + \frac{P}{S}}$ -->
 To quantify this idea, we can use Amdahl's law which shows that the overall performance improvement from optimising a single part of a system is limited by the fraction of time that the improved part is actually used. [Figure 1](#interactive-amdahls) provides an interactive graph where you can explore changing the proportion of runtime optimised (`P`).
 
-{% figure caption:"An interactive graph demonstrating Amdahl's law, the overall speedup following a speedup (S) to proportion (P) of the code." label:interactive-amdahls %}
+{% figure caption:"An interactive graph demonstrating Amdahl's law: Move the slider to select the proportion (P) of the code that gets improved; the graph then shows the overall speedup of the whole program (O) as a function of the speedup to the improved portion of the code (S)." label:interactive-amdahls %}
 <!-- Interactive Amdahl's law graph, vibe coded with GPT -->
 <canvas id="graph" width="600" height="400"></canvas>
 
@@ -49,7 +49,7 @@ To quantify this idea, we can use Amdahl's law which shows that the overall perf
 
 For example, if a function which accounts for 20% (`P=0.20`) of the total application runtime was improved to be 128x faster then the total performance improvement would be less than 1.25x. This shows why we should focus optimisation attention on the significant components. There's little value in making small optimisations to inexpensive sections of the runtime if it will have negligible impact to the overall performance.
 
-However Amdahl's law is theoretical. In practice, computer hardware is shared and bottlenecks may impact multiple components of the code. Hence, it's possible for some optimisations to improve performance beyond the affected code. A [memorable example](/blog/casestudy-ffea) saw profiling attribute slightly below 80% of the runtime to redundant object copies that when removed, led to a 10x speedup - yet Amdahl's law would predict a 5x speedup.
+However Amdahl's law is theoretical. In practice, computer hardware is shared and bottlenecks may impact multiple components of the code. Hence, it's possible for some optimisations to improve performance beyond the affected code. In one [memorable example](/blog/casestudy-ffea), profiling attributed slightly below 80% of the runtime to redundant object copies. Removing these led to a 10x speedup - even though Amdahl's law would only predict a 5x speedup.
 
 ## Profiling Tools
 
@@ -61,13 +61,13 @@ Most programming languages have one or more tools for hot-path profiling. While 
 
 Hot-path profiling typically operates at two levels, or a combination of both: function-level and line-level. Function-level profiling measures metrics for each function, including time spent both inclusive and exclusive of child function calls. Line-level profiling instead tracks execution time for each line of code. Although line-level profiling generates much more data, it can provide additional context when function-level metrics alone are insufficient.
 
-For either level, hot-path profiling tools generally use one of two approaches to collect performance data. The simplest are deterministic profilers, which record every function call and every executed line of code. This method provides detailed insights, such as how many times each function is called or how often each branch of a conditional is executed. However the high frequency of data collection carried out by deterministic profilers often has a significant computational overhead, increasing the time spent profiling and making them less desirable when profiling long workflows that would lead to collecting large amounts of data.
+For either level, hot-path profiling tools generally use one of two approaches to collect performance data. The simplest are deterministic profilers, which record every function call and every executed line of code. This method provides detailed insights, such as how many times each function is called or how often each branch of a conditional is executed. However, the high frequency of data collection carried out by deterministic profilers often has a significant computational overhead, increasing the time spent profiling and making them less desirable when profiling long workflows that would lead to collecting large amounts of data.
 
-More advanced profilers typically use a sampling approach. In this method, the profiler periodically checks which line of code is executing, for example 1,000 times per second. The sample rate is usually configurable. Sampling captures only a fraction of the data collected by deterministic profilers, so it provides an approximate picture. However, this approximation is sufficient for our purposes. We are primarily interested in the most expensive parts of the code. If a function consumes a significant portion of runtime, for example 10 percent or more, it will normally appear proportionally in the samples. Sampling profilers therefore introduce much lower overhead, making them ideal for profiling long workflows.
+More advanced profilers typically use a sampling approach. In this method, the profiler periodically checks which line of code is executing, for example 1,000 times per second. The sample rate is usually configurable. Sampling captures only a fraction of the data collected by deterministic profilers, so it provides an approximate picture. However, this approximation is sufficient for our purposes. We are primarily interested in the most expensive parts of the code. If a function consumes a significant portion of runtime, for example 10% or more, it will normally appear proportionally in the samples. Sampling profilers therefore introduce much lower overhead, making them ideal for profiling long workflows.
 
 It is not essential to memorise these differences. In most cases, you can simply use the profiler that is available. The key points are summarised in [figure 2](#profiler-type-table) below.
 
-{% figure caption:"A table summarsing the strengths and weaknesses of different profiling tools." label:profiler-type-table %}
+{% figure caption:"A table summarising the strengths and weaknesses of different profiling tools." label:profiler-type-table %}
 | Collection method | Attribution level | Strengths                           | Weaknesses       |
 | ----------------- | ----------------- | ----------------------------------- | ----------------- |
 | Sampling          | Function          | Minimal overhead                    | Statistical noise for small runs |
@@ -76,11 +76,11 @@ It is not essential to memorise these differences. In most cases, you can simply
 | Deterministic     | Line              | Precise attribution, branching info | High overhead     |
 {% endfigure %}
 
-In addition to common hot-path profiling tools, you may come across more specialist profilers. In general these take two forms.
+In addition to common hot-path profiling tools, you may come across more specialised profilers. In general these take two forms.
 
 Firstly there are timeline profilers, these typically operate similar to function-level profilers however instead of presenting aggregations of the function-level metrics, they present function calls on a timeline of the code's execution. Timeline profiling is particularly useful when investigating parallel codes as it clearly displays synchronisation points and idle threads. It may also be useful if profiling a code where performance degrades over runtime as this can be difficult to diagnose with aggregated metrics.
 
-You may also come across advanced profiling tools, which we consider "hardware metric" profilers. These are typically provided by hardware manufacturers (e.g. Intel VTune, AMD μProf & NVIDIA NSight Compute) and gather metrics from hardware-specific counters. They allow expert users to analyse data such as theoretical vs achieved memory bandwidth or floating-point operations per second. Interpreting these metrics correctly requires deeper knowledge, so it’s normal if they don’t immediately make sense. For most purposes, you can focus on hot-path profiling. Some of these tools, including Intel VTune, also offer a hot-path profiling mode, which simply needs to be selected when starting a profiling session.
+Secondly you may also come across "hardware metric" profilers. These are typically provided by hardware manufacturers (e.g. Intel VTune, AMD μProf & NVIDIA NSight Compute) and gather metrics from hardware-specific counters. They allow expert users to analyse data such as theoretical vs achieved memory bandwidth or floating-point operations per second. Interpreting these metrics correctly requires deeper knowledge, so it’s normal if they don’t immediately make sense. For most purposes, you can focus on hot-path profiling. Some of these tools, including Intel VTune, also offer a hot-path profiling mode, which needs to be selected when starting a profiling session.
 
 In addition to performance profiling, profiling can sometimes refer to memory profiling. Memory profilers are designed for tracking memory allocations to help diagnose the source of memory leaks (when a program's memory utilisation erroneously continues increasing) or merely high memory utilisation. While memory profilers are valuable for diagnosing memory issues, they are generally not helpful for evaluating overall software performance.
 
@@ -105,15 +105,13 @@ If the code is iterative, such as a simulation that runs for thousands of steps,
 Be aware that profiling adds runtime overhead and will slow execution. To minimise time spent profiling, it is generally preferable to profile a configuration that runs for several minutes. If this is not feasible, profiling a longer or full configuration is still acceptable. In that case, note that some profilers stop collecting data once internal buffers are full, although if you run into this behaviour it can often be adjusted by configuring buffer sizes or delaying the point at which the profiler begins to collect data.
 
 <!-- Configuring the code to be profiled -->
-Most profilers can be used without modifying your project. The main exception is compiled languages such as C and C++, which typically require the build to be configured explicitly for profiling.
-
-This usually involves compiling with both debug symbols and compiler optimisations enabled. Debug symbols allow the profiler to map the compiled machine instructions back to locations in the source code, while compiler optimisations ensure that the profiled execution is representative of production.
+Most profilers can be used without modifying your project. The main exception is compiled languages such as C and C++, which typically require the build to be configured explicitly for profiling. This usually involves compiling with both debug symbols and compiler optimisations enabled. Debug symbols allow the profiler to map the compiled machine instructions back to locations in the source code, while compiler optimisations ensure that the profiled execution is representative of production.
 
 Some profilers may also require limited changes to the code, such as explicitly marking functions to be profiled or controlling when data collection begins and ends. These requirements vary between tools and use-case, so you should consult the documentation for your chosen profiler to determine whether any configuration or code changes are necessary.
 
 ## Interpreting Results
 
-Once your code executes to completion via the profiler, you should be able to view the results. There are a few common approaches in which profilers present these results:
+Once your code executes to completion via the profiler, you should be able to view the results. There are a few common approaches for how profilers present these results:
 
 ### Flame and Icicle Graphs
 
@@ -152,19 +150,19 @@ Depending on the tool, the table may be interactive, allowing rows to be sorted 
 Flat profile:
 
 Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls   s/call   s/call  name    
- 13.75     16.38    16.38 125676749836     0.00     0.00  tVect::operator+(tVect const&) const
- 12.60     31.40    15.02 94039864750     0.00     0.00  tVect::operator*(double const&) const
- 10.02     43.34    11.94 65081331     0.00     0.00  elmt::correct(double const*, double const*)
-  8.54     53.52    10.18 4068178008     0.00     0.00  DEM::particleParticleCollision(particle const*...
-  7.62     62.60     9.08 2392019595     0.00     0.00  elmt::predict(double const*, double const*)
-  5.66     69.34     6.74 41323211762     0.00     0.00  tVect::operator-(tVect const&) const
-  5.45     75.84     6.50 36306445222     0.00     0.00  quaternion::operator*(double const&) const
-  4.74     81.49     5.65 7264658795     0.00     0.00  project(tVect, quaternion)
-  4.60     86.97     5.48 32022205839     0.00     0.00  quaternion::operator+(quaternion const&) const
-  3.61     91.27     4.30  2380119     0.00     0.00  DEM::evaluateForces()
-  2.25     93.95     2.68 16726846623     0.00     0.00  tVect::cross(tVect const&) const
+  %   cumulative   self                self     total           
+ time   seconds   seconds    calls     s/call   s/call  name    
+ 13.75     16.38    16.38 125676749836   0.00     0.00  tVect::operator+(tVect const&) const
+ 12.60     31.40    15.02  94039864750   0.00     0.00  tVect::operator*(double const&) const
+ 10.02     43.34    11.94     65081331   0.00     0.00  elmt::correct(double const*, double const*)
+  8.54     53.52    10.18   4068178008   0.00     0.00  DEM::particleParticleCollision(particle const*...
+  7.62     62.60     9.08   2392019595   0.00     0.00  elmt::predict(double const*, double const*)
+  5.66     69.34     6.74  41323211762   0.00     0.00  tVect::operator-(tVect const&) const
+  5.45     75.84     6.50  36306445222   0.00     0.00  quaternion::operator*(double const&) const
+  4.74     81.49     5.65   7264658795   0.00     0.00  project(tVect, quaternion)
+  4.60     86.97     5.48  32022205839   0.00     0.00  quaternion::operator+(quaternion const&) const
+  3.61     91.27     4.30      2380119   0.00     0.00  DEM::evaluateForces()
+  2.25     93.95     2.68  16726846623   0.00     0.00  tVect::cross(tVect const&) const
   ...
 ```
 {% endfigure %}
@@ -179,7 +177,7 @@ For large codebases, which may contain tens or hundreds of thousands of lines, i
 
 This workflow is intentional rather than limiting. Line-level profiling is most effective once function-level profiling has already narrowed the investigation to a small set of candidate functions. In many cases, function-level results are sufficient on their own, with line-level profiling serving as a deeper diagnostic tool when necessary.
 
-{% figure caption:"An example of the plain-text table output by Python package line_profiler. As an exclusively line-level profiler, it requires users to specify which function they wish to profile. Supporting terminals present line contents with code highlighting." label:line_profiler-table %}
+{% figure caption:"An example of the plain-text table output by Python package `line_profiler`. As an exclusively line-level profiler, it requires users to specify which function they wish to profile. Supporting terminals present line contents with code highlighting." label:line_profiler-table %}
 ```
 Wrote profile results to my_script.py.lprof
 Timer unit: 1e-06 s
@@ -201,7 +199,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ```
 {% endfigure %}
 
-{% figure caption:"Part of an example Function listing within a function's profile summary, demonstrating how the most expensive lines appear. Columns, left-to-right, absolute time, calls, line number. (Screenshot from MATLAB R2025b)" label:matlab-function-listing %}
+{% figure caption:"Part of an example function listing within a function's profile summary, demonstrating how the most expensive lines appear. Columns (from left to right) show the absolute time, calls and line number. (Screenshot from MATLAB R2025b)" label:matlab-function-listing %}
 ![A screenshot of MATLAB R2025b showing part of a Function listing section of a profile, with two of the lines highlighted with difference shades of red.](/assets/matlab/function-listing.png)
 {% endfigure %}
 
@@ -209,7 +207,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 Once profiling results have been interpreted, the next step is to determine whether there are obvious optimisation opportunities in the components identified as most expensive.
 
-Many of the easiest performance improvements come from eliminating redundant work. This can take several forms. In some cases the issue will be immediately obvious to the code’s author, such as expensive logging, validation, or diagnostics performed on every iteration that could be remove.d entirely or reduced in frequency. In other cases, profiling highlights expensive calculations, object creation, or other intensive operations that are repeated unnecessarily inside loops and could instead be performed once and reused.
+Many of the easiest performance improvements come from eliminating redundant work. This can take several forms. In some cases the issue will be immediately obvious to the code’s author, such as expensive logging, validation, or diagnostics performed on every iteration that could be removed entirely or reduced in frequency. In other cases, profiling highlights expensive calculations, object creation, or other intensive operations that are repeated unnecessarily inside loops and could instead be performed once and reused.
 
 More subtle forms of redundancy are often hidden behind incorrect library usage. For example, passing an inappropriate data type to a library function, such as a [Python list to a NumPy function](/optimisation/python/numpy-types), may trigger an implicit and expensive conversion on every call.
 
@@ -220,7 +218,7 @@ Other quick optimisations require more experience to recognise. A common example
 It is difficult to provide a comprehensive checklist for identifying all possible optimisations. If the most expensive components appear reasonable and no obvious issues stand out, it may be that the code is already performing as well as expected. If doubts remain, there are several practical next steps:
 
 - Look for relevant patterns in the SIG-RPC [optimisation database](/optimisations/) and [external resources list](/resources/), which are regularly updated with new examples.
-- Ask a large language model to review a small, self-contained code snippet for performance issues. Providing additional context such as data types and expected input sizes will significantly improve the quality of feedback. Although if you find what it tells you doesn't work in practice, you should be aware that AI may also provide you incorrect advice.
+- Ask a large language model to review a small, self-contained code snippet for performance issues. Providing additional context such as data types and expected input sizes will significantly improve the quality of feedback. Though be aware that LLMs often provide incorrect advice, so you should always verify whether the suggestions actually improve performance and give correct results.
 - Request a review from a local Research Software Engineering (RSE) or Research IT team. With profiling results available, experienced developers can often identify potential issues quickly or help investigate less obvious ones.
 
 After applying any optimisation, always re-profile the code and carry out your normal validation. It is important to make sure your optimised code still produces valid results as optimisation changes can introduce subtle correctness issues. A formal test suite is ideal for catching such errors. You may also find at this stage, upon re-profiling, that removing one bottleneck has exposed smaller secondary ones which could be worth optimising too.
@@ -237,7 +235,7 @@ If you are interested in contributing, you can [get in touch](mailto:sig-rpc-man
 
 ## Key Points
 
-The key information to takeaway from this article is:
+The key information to take away from this article is:
 
 - Profiling collects detailed performance metrics and highlights where optimisation will have the greatest impact.
 - Focus optimisation on code that accounts for a significant portion of runtime.
@@ -249,47 +247,6 @@ The key information to takeaway from this article is:
 - After making changes, profile again, as new bottlenecks may appear.
 
 Now that you've read through the introductory materials, you should visit our [profilers database](/profilers/) to find a suitable profiler for your code.
-
-<!--
-https://github.com/sig-rpc/sig-rpc.github.io/issues/45
-- Purpose of website
-
-- Hello if you're new to performance
- - links to some common questions?
-
-- What is profiling
-- Who should profile their code
-- Why profile
-  - premature optimisation
-  - interactive amdahl's law graph
-- Doesn't need to be difficult, or time consuming
-- Hot path profiling is similar across all languages and profilers
-  - function vs line level
-  - sampling vs deterministic
-  - figure to explain
-  - Only need to be able to understand the code you're profiling (and be able to run it)
-- Other profiling tools exist, but in most cases you don't need to be concerned by these
-  - timeline, good for parallel
-  - "hardware metric", good for advanced fine tuning (with relevant technical expertise)
-  - memory profiling, maybe you think your code requires more RAM than expected
-- If you're code is something more advanced, e.g. MPI (or potentially even some parallel codes), fall outside the scope of this guidance. May benefit from profiling single-threaded variant, however more advanced processes required.
-- When to profile
-- What to profile
-- How to profile (in general)
-- Interpreting output
-  - Tabular function output (in general)
-  - Flame/Icicle graph (in general)
-  - Line-level information in general
-- Now you've isolated where time is being spent, how to analyse it and spot mistakes
-- What next (restart the process)
-- Case studies
-- Key points
-  - Select any "hot path" (e.g. function-level/line-level) profiling to your
-  - When your code is ready for production/release, review performance
-  - If your results show something suspicious, investigate it further
-    - If you manage to resolve this, start again
-  - Be happy in the knowledge you've no major performance issues
--->
 
 
 <script>
