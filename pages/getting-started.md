@@ -145,7 +145,7 @@ Depending on the tool, the table may be interactive, allowing rows to be sorted 
 ![A screenshot of MATLAB R2025b showing the Profile Summary page within the Profiler, which contains a flame graph (top) and a table with function-level profiling results (bottom).](/assets/matlab/profile-summary.png)
 {% endfigure %}
 
-{% figure caption:"An example of the plaint-text Flat profile table output by GProf. (Some function prototypes have been compacted)" label:gprof-table %}
+{% figure caption:"An example of the plain-text Flat profile table output by GProf. (Some function prototypes have been compacted)" label:gprof-table %}
 ```
 Flat profile:
 
