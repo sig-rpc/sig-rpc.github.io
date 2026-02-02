@@ -176,6 +176,6 @@ Therefore, variables stored consecutively in memory will be loaded at the same t
 
 In contrast, if you operate as though memory is row-major, consecutively accessed variables will be stored a long way apart from each other in memory. Hence each individual access will need to load a full cache line from RAM. Due to this high turnover, it's likely by the time a second variable would be accessed from any cache line, that the cache line has been evicted to be replaced with a fresher load.
 
-If you're working with 4-byte types you could be doing 16x the RAM accesses, with 8-byte types its still 8x!
+If you're working with 4-byte types you could be doing 16x the RAM accesses, with 8-byte types it's still 8x!
 
 Furthermore, in order for the compiler to perform vectorisation, it needs to be able to apply vector instructions to a full cache line of variables. If you are not operating consecutively on variables within a cache line, it can be much harder for the compiler to detect that vectorisation is appropriate.
