@@ -156,7 +156,18 @@ end program benchmark_loops
 
 </details>
 
-Compiled with GFortran 11.4.0 and compiler optimisations enabled with `-O3`, column-major accesses were 7x faster!
+Compiled with GFortran and compiler optimisations enabled, column-major accesses were 2.4x faster under Ubuntu!
+
+```output
+$ gfortran -O3 benchmark.f90
+$ ./a.out
+ Column-major time (s):    3.98375320    
+  checksum:    67108864.0    
+ Row-major time (s):       9.72134018    
+  checksum:    67108864.0
+```
+
+Under WSL on different hardware a greater 7.1x speedup was seen, so results are likely to vary, but should remain positive.
 
 ```output
 $ gfortran -O3 benchmark.f90
