@@ -40,7 +40,7 @@ do k = 1, n
   end do
 end do
 ```
-At `-O0` optimisation, this will likely run several times faster than the (not
+Without compiler optimisations, this will likely run several times faster than the (not
 recommended) equivalent row-major version:
 ```fortran
 integer, parameter :: n = 500
