@@ -75,7 +75,7 @@ c(:,:,:) = a + b
 
 ### Benchmark
 
-Below these examples have been extended into a full benchmark, to demonstrate the impact
+Below these examples have been extended into a full benchmark, to demonstrate the impact. An additional checksum is used to ensure the code we're benchmarking isn't optimised away by the compiler.
 
 <details>
 <summary>Benchmark Code</summary>
