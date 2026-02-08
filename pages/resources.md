@@ -16,6 +16,8 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [C++](#cpp-training)
   - [Python](#python-training)
   - [R](#r-training)
+- [Podcasts]
+  - [Python](#python-podcasts)
 - [Web](#web)
   - [C++](#cpp-web)
   - [Computer Science](#cs-web)
@@ -41,8 +43,15 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [Performance Profiling & Optimisation (Python)](https://carpentries-incubator.github.io/pando-python/){:target="_blank"}
   - [High Performance Python; Improving Code Efficiency and Performance](https://www.youtube.com/watch?v=eQbmQxP2HRo){:target="_blank"} (Video 1h38m)
     - [Course Materials](https://github.com/ycrc/high_performance_python)
+  - [Python 1002: Improving the performance of Python programs](https://python-102.readthedocs.io/en/latest/performance.html)
+  - [System Development With Python: Performance and Profiling](https://uwpce-pythoncert.github.io/SystemDevelopment/profiling.html)
 - **R**{:id="r-training"}
   - [Performant R: Doing things faster with R](https://richardjacton.github.io/performantR/Performant_R.html){:target="_blank"}
+
+## Podcasts
+
+- **Python**{:id="python-podcasts"}
+  - [UCL for Code in Research: Research Software Engineering with Python (COMP233) - Performance](https://uclforcodeinresearch.buzzsprout.com/2430461/episodes/18015174-9-9-research-software-engineering-with-python-comp233-performance)
 
 ## Web
 
@@ -57,10 +66,10 @@ Please [suggest further resources on GitHub](https://github.com/sig-rpc/sig-rpc.
   - [The CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/){:target="_blank"}
   - [GPU Glossary](https://modal.com/gpu-glossary){:target="_blank"}
 - **Python**{:id="python-web"}
-  - [330× faster: Four different ways to speed up your code](https://pythonspeed.com/articles/different-ways-speed/){:target="_blank"}
+  - [pythonspeed.com](https://pythonspeed.com/){:target="_blank"}
+  - [Python Performance Testing: A Comprehensive Guide](https://blog.sentry.io/python-performance-testing-a-comprehensive-guide/)
 - **R**{:id="r-web"}
   - [Advanced R: Measuring Performance](https://adv-r.hadley.nz/perf-measure.html){:target="_blank"}
-  - [Advanced R: Improving Performance](https://adv-r.hadley.nz/perf-improve.html){:target="_blank"}
   
 
 
