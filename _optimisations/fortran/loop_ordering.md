@@ -58,9 +58,8 @@ do i = 1, n
   end do
 end do
 ```
-At higher optimisation levels, simple loops such as this would likely be
-optimised out by the compiler. However, this would not necessarily be the case
-for more complex loop structures.
+With compiler optimisations, simple loops such as this where the result of the sum are unused would
+however likely be optimised out by the compiler. In practice you wouldn't normally have a redundant loop in your code, so this shouldn't be a concern.
 
 A further comment on the simple loops above is that the same could be achieved
 with an array operation, which has a more compact notation:
