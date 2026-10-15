@@ -61,9 +61,9 @@ SIG-RPC has been supported by:
   <!-- Would prefer SSI logo to be centered, and text algined bottom, but css -->
   <a href="https://www.software.ac.uk/">
     <div markdown="span" style="text-align: center; width: 300px;">
-      ![The Institutes of Research Software's Logo](/assets/irs-logo/Primarylogo-Black.svg)
+      ![The Institute of Research Software's Logo](/assets/irs-logo/Primarylogo-Black.svg)
       
-      The Institutes of Research Software<br/>
+      The Institute of Research Software<br/>
       (Formerly Software Sustainability Institute)
     </div>
   </a>
