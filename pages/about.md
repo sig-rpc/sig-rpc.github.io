@@ -20,7 +20,7 @@ All formal policies and guidance, including the SIG's [terms of reference][terms
 
 Minutes from public meetings, are available from our [minutes repository][minutes_repo] on GitHub.
 
-The last annual general meeting (AGM) was held on [2025-10-16][last_agm_minutes], AGMs are held roughly every 12 months to elect officers. An extraordinary general meeting (EGM) may be held at any time if recruitment of additional officers is required, such as following a resignation.
+The last annual general meeting (AGM) was held on [2026-10-15][last_agm_minutes], AGMs are held roughly every 12 months to elect officers. An extraordinary general meeting (EGM) may be held at any time if recruitment of additional officers is required, such as following a resignation.
 
 ## Officers
 
@@ -37,10 +37,6 @@ The current officers of SIG-RPC:
 **Secretary**
 
 [Peter Heywood][peter_heywood]
-
-**Officers**
-
-[Fred Sonnenwald][fred sonnenwald]
 
 ## Code of Conduct
 
@@ -65,9 +61,10 @@ SIG-RPC has been supported by:
   <!-- Would prefer SSI logo to be centered, and text algined bottom, but css -->
   <a href="https://www.software.ac.uk/">
     <div markdown="span" style="text-align: center; width: 300px;">
-      ![The Software Sustainability Institutes's Logo](https://github.com/softwaresaved/outreach-materials/raw/refs/heads/master/logos/SSI-LOGOS/RED%20LOGOS/SSI_PRIMARY-LOGO.svg)
+      ![The Institutes of Research Software's Logo](/assets/irs-logo/Primarylogo-Black.svg)
       
-      The Software Sustainability Institute
+      The Institutes of Research Software<br/>
+      (Formerly Software Sustainability Institute)
     </div>
   </a>
 </div>
@@ -82,10 +79,9 @@ SIG-RPC has been supported by:
 [grievances_policy]: https://society-rse.org/about/policies/complaints-and-grievances-policy/
 [CONTRIBUTING.md]: https://github.com/sig-rpc/sig-rpc.github.io/blob/master/CONTRIBUTING.md
 [terms_of_reference]: https://github.com/sig-rpc/policies/blob/master/terms_of_reference.md 
-[last_agm_minutes]: https://github.com/sig-rpc/minutes/blob/master/2025/2025-10-16-agm.md
+[last_agm_minutes]: https://github.com/sig-rpc/minutes/blob/master/2026/2026-10-15-agm.md
 [coc_email]: mailto:coc@society-rse.org
 [officers_email]: mailto:sig-rpc-managers@society-rse.org
 [robert_chisholm]: https://staffwww.dcs.shef.ac.uk/people/R.Chisholm/
 [jost migenda]: https://www.kcl.ac.uk/people/jost-migenda
 [peter_heywood]: https://ptheywood.uk/
-[fred sonnenwald]: https://orcid.org/0000-0002-2822-0406
