@@ -50,7 +50,7 @@ SIG-RPC has been supported by:
 <!-- Maybe we should be self hosting these logos?-->
 
 <div style="display: flex; flex-flow: row wrap; justify-content: center; align-items: flex-end; gap: 20px;">
-  <a href="https://society-rse.org/">
+  <a href="https://society-rse.org/get-involved/">
     <div markdown="span" style="text-align: center; width: 300px;">    
       ![The Society of Research Software Engineering's Logo](https://society-rse.org/wp-content/uploads/2022/05/Soc_RSE_master_logo4-766x1024.png){:height="228px"}
       
